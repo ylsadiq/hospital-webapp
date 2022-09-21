@@ -6,11 +6,12 @@ import './Navbar.css'
 const Navbar = () => {
 
     return (
-        <nav className='container mx-auto'>
+        <nav>
           <div className="top-bar flex justify-end items-center">
-          <span><FontAwesomeIcon icon={faPhone} /> +0089892</span>
+          <FontAwesomeIcon icon={faPhone} /><span>Emergency: +0089892</span>
+
           </div>
-          <div className="navbar bg-base-100">
+          <div className="navbar">
   <div className="navbar-start">
     <div className="brand-logo">
     <a className="normal-case text-xl"><img src="https://doccure-wpv2.dreamguystech.com/wp-content/themes/doccure/assets/images/logo.png" alt="" /></a>

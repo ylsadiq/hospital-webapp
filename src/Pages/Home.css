@@ -1,0 +1,30 @@
+@media only screen and (min-device-width: 1024px) and (min-width: 1224px) {
+  header {
+    display: block;
+    background: #E5F1FB;
+    height: 100%;
+    width: 100%;
+  }
+  header::before {
+    content: "";
+    background: url(https://doccure-wp.dreamguystech.com/wp-content/themes/doccure/assets/images/shape-10.png) no-repeat;
+    background-size: cover cover;
+    width: 400px;
+    max-width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 5px;
+    top: 14px;
+  }
+  header::after {
+    content: "";
+    background: url(https://doccure-wp.dreamguystech.com/wp-content/themes/doccure/assets/images/shape-8.png) no-repeat;
+    background-size: cover cover;
+    width: 250px;
+    max-width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}/*# sourceMappingURL=Home.css.map */

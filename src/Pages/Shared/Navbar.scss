@@ -1,6 +1,14 @@
 .top-bar{
     padding: 0 1rem;
 }
+.top-bar svg{
+    color: red;
+    font-size: 1.1rem;
+}
+.top-bar span{
+    margin-left: .7rem;
+    font-size: 1.1rem;
+}
 .brand-logo{
     width: 160px;
 }

@@ -1,3 +1,6 @@
 [submodule "healing-hospital"]
 	path = healing-hospital
 	url = https://github.com/greeenOrange/healing-hospital.git
+[submodule "healing-hospital-webapps"]
+	path = healing-hospital-webapps
+	url = https://github.com/greeenOrange/healing-hospital-webapps.git

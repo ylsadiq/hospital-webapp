@@ -1,3 +1,7 @@
+.header-content {
+  background: linear-gradient(to bottom, rgb(247, 247, 247), rgb(212, 240, 250));
+}
+
 @media only screen and (min-device-width: 1024px) and (min-width: 1224px) {
   header {
     display: block;

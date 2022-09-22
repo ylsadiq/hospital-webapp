@@ -1,1 +1,35 @@
-/*# sourceMappingURL=Banner.css.map */
+.hero-container .outer_circle {
+  position: relative;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  display: inline-block;
+  background: rgb(100, 45, 255);
+  background: linear-gradient(180deg, rgba(100, 45, 255, 0.9140698516) 29%, rgb(255, 255, 255) 69%);
+}
+.hero-container .outer_circle button {
+  position: absolute;
+  bottom: 9rem;
+  left: -7rem;
+  border: none;
+  box-shadow: 0px 4px 8px rgba(45, 12, 87, 0.38);
+  padding: 15px 30px;
+  background: #2D89FF;
+  color: #fff;
+}
+.hero-container .inner_circle {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.3rem;
+  width: 420px;
+  height: 420px;
+  background: white;
+  border-radius: 50%;
+}
+.hero-container .inner_circle .inner-img {
+  position: absolute;
+  bottom: 3rem;
+  left: -1rem;
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=Banner.css.map */

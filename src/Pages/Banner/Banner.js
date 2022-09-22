@@ -1,10 +1,31 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
+import './Banner.css'
 
 const Banner = () => {
     return (
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nihil corporis est quisquam quae omnis itaque adipisci quidem saepe. Pariatur ea quod voluptate earum? Eum id deserunt adipisci voluptas inventore expedita odit debitis rerum, cum ducimus ut aliquid commodi cupiditate aliquam non laborum nostrum unde consequatur, aperiam quisquam ullam impedit, asperiores placeat tenetur! Earum expedita, magnam obcaecati veniam ipsam veritatis possimus excepturi explicabo distinctio accusamus exercitationem sit saepe perferendis sapiente temporibus nulla necessitatibus autem maxime ullam eum numquam aliquam iusto, eligendi sequi? Perspiciatis qui quisquam sed aspernatur obcaecati nulla, id architecto, impedit odio tempore voluptatum libero voluptatibus delectus vitae quasi repellat a, repudiandae velit doloremque ratione rerum eveniet recusandae minus. Voluptate autem tenetur modi ea iusto, quisquam officia cupiditate deleniti et iste. Minima tempora temporibus ipsa reprehenderit itaque facilis fugit eos ea accusantium voluptas repellat libero ipsam atque debitis, sit quod non dignissimos, hic, consequuntur a. Blanditiis reiciendis expedita distinctio repellat assumenda ratione itaque incidunt impedit consequuntur vel officia, delectus vero doloribus quia sequi deleniti unde libero necessitatibus odio, nulla totam laboriosam exercitationem atque. Vero obcaecati quo in nisi nemo? Error amet numquam velit praesentium, ratione omnis quisquam est, libero minima eius, saepe aliquid repellendus sequi soluta nihil odit ipsum iste cum. Odio eos optio natus temporibus? Facilis, necessitatibus aliquid obcaecati facere temporibus neque rerum beatae modi excepturi vitae eius deleniti quam repudiandae, aperiam, doloribus perferendis quasi reiciendis assumenda commodi sit! Aliquam aperiam qui quaerat eaque itaque praesentium, sunt soluta nihil fuga alias? Dolorem inventore error accusantium beatae amet praesentium doloremque in magnam omnis quam. Consequatur ex similique, et dolore, aut iste recusandae inventore fuga praesentium doloremque, minus blanditiis eligendi? Explicabo incidunt dolore esse aspernatur odit asperiores mollitia. Odit aliquid sint quas expedita! Dolores quae eaque nesciunt ducimus, dolorum nostrum ullam iste sequi deleniti veritatis iure! Nihil id suscipit enim dolore perferendis dolores ex fugiat, minus iure odit hic accusantium, possimus vel, maxime inventore unde excepturi obcaecati libero consectetur! Similique doloribus impedit quasi ducimus exercitationem, iure libero repudiandae neque accusantium minima nulla quidem voluptas nam magni commodi beatae accusamus quisquam explicabo magnam quibusdam eius inventore minus? Molestiae eligendi reiciendis deleniti quam fuga id distinctio nobis perspiciatis itaque quasi facere veritatis voluptatibus dolore doloremque dolorem quos consectetur, unde impedit et corporis sed veniam. Magni veritatis quidem nisi reprehenderit aliquam in rerum porro amet vitae facilis, illo incidunt eveniet accusamus natus fuga ea consectetur omnis ab numquam ullam ratione, similique autem? Ab!</p>
+            <section className="hero-section mt-10">
+                <div className="container">
+                <div className="hero-container flex justify-items-center justify-between">
+  <div className='w-3/5 text-left'>
+      <h1 className="text-5xl font-bold"><span className='block'>Your <span className='text-sky-400'>Health</span> is Our</span>  Top <span className='text-blue-500'>Priority</span></h1>
+      <p className="py-6 text-lg">There are many variations of passages of lpsum available, but the majority hae suffered.</p>
+      <button className="btn btn-primary">Get Started</button>
+    </div>
+        <div className='w-2/5'>
+        <div class="outer_circle">
+                        <div class="inner_circle">
+                        <div className="inner-img">
+                        <img src="https://i.ibb.co/fFzmyXP/pose-2.png" alt="pose-2" />
+                        </div>
+                        </div>
+                        <button> <FontAwesomeIcon icon={faCircleCheck} /> Regular checkup</button>
+                    </div>
         </div>
+  </div>
+                </div>
+</section>
     );
 };
 

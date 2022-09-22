@@ -1,3 +1,7 @@
+$mdSmall: 640px;
+$mdMedium: 767px;
+$smSmall: 320px;
+$smMedium: 640px;
 .hero-container{
     .outer_circle{
         position: relative;
@@ -37,4 +41,128 @@
         }
     }
     
+}
+
+@media (min-width: $smSmall) and (max-width:$smMedium){
+    .hero-container{
+        h1{
+            font-size: 2.5rem;
+        }
+        .outer_circle{
+            text-align: center;
+            margin-top: 4rem;
+            width: 340px;
+            height: 340px; 
+    
+            button{
+                position: absolute;
+                bottom: 9rem;
+                left: 0;
+                border: none;
+                box-shadow: 0px 4px 8px rgba(45, 12, 87, 0.38);
+                padding: 12px 24px;
+                background: #2D89FF;
+                color: #fff;
+            }
+        }
+        .inner_circle {
+            position: absolute;
+            top: 1.3rem;
+            left: 1.4rem;
+            width: 300px;
+            height: 300px;
+            background: #ffff;
+            border-radius: 50%;
+    
+            .inner-img{
+                position: absolute;
+                bottom: 3rem;
+                left: -1rem;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+    }
+}
+
+
+@media (min-width: $mdSmall) and (max-width:$mdMedium){
+    .hero-container{
+
+        .outer_circle{
+            text-align: center;
+            margin: 4rem 0 auto;
+            width: 380px;
+            height: 380px; 
+    
+            button{
+                position: absolute;
+                bottom: 9rem;
+                left: -5rem;
+                border: none;
+                box-shadow: 0px 4px 8px rgba(45, 12, 87, 0.38);
+                padding: 12px 24px;
+                background: #2D89FF;
+                color: #fff;
+            }
+        }
+        .inner_circle {
+            position: absolute;
+            top: 1.3rem;
+            left: 1.4rem;
+            width: 340px;
+            height: 340px;
+            background: #ffff;
+            border-radius: 50%;
+    
+            .inner-img{
+                position: absolute;
+                bottom: 3rem;
+                left: -1rem;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+    }
+}
+
+@media screen and (min-width: 962px) and (max-width: 1024px) {
+    .hero-container{
+
+        .outer_circle{
+            width: 420px;
+            height: 420px; 
+    
+            button{
+                position: absolute;
+                bottom: 9rem;
+                left: -4rem;
+                border: none;
+                box-shadow: 0px 4px 8px rgba(45, 12, 87, 0.38);
+                padding: 10px 20px;
+                background: #2D89FF;
+                color: #fff;
+            }
+        }
+        .inner_circle {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            width: 360px;
+            height: 360px;
+            background: #ffff;
+            border-radius: 50%;
+    
+            .inner-img{
+                position: absolute;
+                bottom: 3rem;
+                left: -1rem;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+    }
 }

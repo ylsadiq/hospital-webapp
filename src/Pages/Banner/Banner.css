@@ -32,4 +32,108 @@
   left: -1rem;
   width: 100%;
   height: 100%;
+}
+
+@media (min-width: 320px) and (max-width: 640px) {
+  .hero-container h1 {
+    font-size: 2.5rem;
+  }
+  .hero-container .outer_circle {
+    text-align: center;
+    margin-top: 4rem;
+    width: 340px;
+    height: 340px;
+  }
+  .hero-container .outer_circle button {
+    position: absolute;
+    bottom: 9rem;
+    left: 0;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(45, 12, 87, 0.38);
+    padding: 12px 24px;
+    background: #2D89FF;
+    color: #fff;
+  }
+  .hero-container .inner_circle {
+    position: absolute;
+    top: 1.3rem;
+    left: 1.4rem;
+    width: 300px;
+    height: 300px;
+    background: white;
+    border-radius: 50%;
+  }
+  .hero-container .inner_circle .inner-img {
+    position: absolute;
+    bottom: 3rem;
+    left: -1rem;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .hero-container .outer_circle {
+    text-align: center;
+    margin: 4rem 0 auto;
+    width: 380px;
+    height: 380px;
+  }
+  .hero-container .outer_circle button {
+    position: absolute;
+    bottom: 9rem;
+    left: -5rem;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(45, 12, 87, 0.38);
+    padding: 12px 24px;
+    background: #2D89FF;
+    color: #fff;
+  }
+  .hero-container .inner_circle {
+    position: absolute;
+    top: 1.3rem;
+    left: 1.4rem;
+    width: 340px;
+    height: 340px;
+    background: white;
+    border-radius: 50%;
+  }
+  .hero-container .inner_circle .inner-img {
+    position: absolute;
+    bottom: 3rem;
+    left: -1rem;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 962px) and (max-width: 1024px) {
+  .hero-container .outer_circle {
+    width: 420px;
+    height: 420px;
+  }
+  .hero-container .outer_circle button {
+    position: absolute;
+    bottom: 9rem;
+    left: -4rem;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(45, 12, 87, 0.38);
+    padding: 10px 20px;
+    background: #2D89FF;
+    color: #fff;
+  }
+  .hero-container .inner_circle {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 360px;
+    height: 360px;
+    background: white;
+    border-radius: 50%;
+  }
+  .hero-container .inner_circle .inner-img {
+    position: absolute;
+    bottom: 3rem;
+    left: -1rem;
+    width: 100%;
+    height: 100%;
+  }
 }/*# sourceMappingURL=Banner.css.map */

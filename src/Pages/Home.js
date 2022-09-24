@@ -4,11 +4,10 @@ import Navbar from './Shared/Navbar';
 import './Home.css'
 const Home = () => {
     return (
-        <div className='px-4'>
+        <div className=''>
 
            <div className='header-content'>
            <Navbar />
-           <Banner />
            </div>
         </div>
     );

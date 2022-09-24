@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import './Navbar.css'
+import ReactFlagsSelect from 'react-flags-select';
+import './Navbar.css';
+import Banner from '../Banner/Banner';
 
 const Navbar = () => {
-
+  const [selected, setSelected] = useState("");
     return (
-        <nav>
+        <section className='header-container'>
+          <nav className='px-4'>
           <div className="top-bar flex justify-end items-center">
           <FontAwesomeIcon icon={faPhone} /><span>Emergency: +0089892</span>
-
+          <ReactFlagsSelect
+          countries={["US", "DE", "FR", "BD", "SA"]}
+          customLabels={{ US: "English", DE: "German", FR: "French", BD: "Bangla", SA: "Arabic"}}
+          selected={selected}
+          onSelect={(code) => setSelected(code)}
+        />
           </div>
           <div className="navbar">
   <div className="navbar-start">
@@ -68,8 +76,10 @@ const Navbar = () => {
     </div>
   </div>
 </div>
-
+{/* Banner section added */}
+<Banner/>
         </nav>
+        </section>
     );
 };
 

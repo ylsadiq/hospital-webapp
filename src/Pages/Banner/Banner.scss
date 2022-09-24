@@ -44,7 +44,73 @@ $smMedium: 640px;
             height: 100%;
         }
     }
-    
+    .banner-left{
+        position: relative;
+        .doctors-card{
+            position: absolute;
+            bottom: 7rem;
+            right: 5rem;
+            background: #fff;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            padding: .5rem 1rem;
+            width: 220px;
+            h5{
+                text-align: left;
+                padding: .5rem 0;
+            }
+            .doc-info{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                width: 40px;
+                max-width: 50px;
+                height: 40px;
+                max-height: 50px;
+                margin: 0px -4px;            
+                img{
+                    width: 100%;
+                    border-radius: 50%;
+                }
+                span{
+                    background: #2D89FF;
+                    padding: .5rem .7rem;
+                    border-radius: 50%;
+                    color: #fff;
+                    margin-left: .6rem;
+                }
+            }
+            .doc-card-line{
+                margin: .5rem 0;
+                .doc-card-line_one{
+                    width: 189px;
+                    height: 14px;
+                    background: linear-gradient(90deg, rgba(45, 137, 255, 0.57) 0%, rgba(45, 137, 255, 0) 100%);
+                    border-radius: 50px;
+                    margin: .5rem 0;
+                }
+                .doc-card-line_two{
+                    width: 189px;
+                    height: 14px;
+                    background: linear-gradient(90deg, rgba(45, 137, 255, 0.3) 0%, rgba(45, 137, 255, 0) 100%);
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+    .countup{
+        margin: 1.4rem 0;
+        text-align: left;
+        h4{
+            text-align: left;
+            font-size: 24px;
+            line-height: 29px;
+            font-weight: 600;
+        }
+         h6{
+            font-size: 16px;
+        }
+    }    
 }
 
 @media (min-width: $smSmall) and (max-width:$smMedium){

@@ -1,17 +1,23 @@
 .header-container{
-    background: linear-gradient(to bottom, rgb(247, 247, 247), rgb(212, 240, 250))
-}
-.top-bar{
-    padding: 0 1rem;
-}
-.top-bar svg{
-    color: red;
-    font-size: 1.1rem;
-}
-.top-bar span{
-    margin-left: .7rem;
-    font-size: 1.1rem;
-}
-.brand-logo{
-    width: 160px;
+    background: linear-gradient(to bottom, rgb(247, 247, 247), rgb(212, 240, 250));
+    .top-bar{
+        padding: 0 1rem;
+        svg{
+            color: red;
+            font-size: 1.1rem;
+        }
+        span{
+            margin-left: .7rem;
+            font-size: 1.1rem;
+        }
+        .menu-flags{
+            button{
+                border: none;
+            }
+        }
+    }
+    
+    .brand-logo{
+        width: 160px;
+    }
 }

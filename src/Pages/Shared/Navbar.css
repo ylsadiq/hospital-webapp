@@ -1,21 +1,20 @@
 .header-container {
   background: linear-gradient(to bottom, rgb(247, 247, 247), rgb(212, 240, 250));
 }
-
-.top-bar {
+.header-container .top-bar {
   padding: 0 1rem;
 }
-
-.top-bar svg {
+.header-container .top-bar svg {
   color: red;
   font-size: 1.1rem;
 }
-
-.top-bar span {
+.header-container .top-bar span {
   margin-left: 0.7rem;
   font-size: 1.1rem;
 }
-
-.brand-logo {
+.header-container .top-bar .menu-flags button {
+  border: none;
+}
+.header-container .brand-logo {
   width: 160px;
 }/*# sourceMappingURL=Navbar.css.map */

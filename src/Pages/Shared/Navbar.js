@@ -1,23 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import ReactFlagsSelect from 'react-flags-select';
+import { useTranslation} from 'react-i18next';
+import i18next from 'i18next';
+// import ReactFlagsSelect from 'react-flags-select';
 import './Navbar.css';
 import Banner from '../Banner/Banner';
+import { useEffect } from 'react';
+
 
 const Navbar = () => {
-  const [selected, setSelected] = useState("");
+  const { t, i18n } = useTranslation(["common"]);
+
+  useEffect(() => {
+		if (localStorage.getItem("i18nextLng")?.length > 2) {
+			i18next.changeLanguage("en");
+		}
+	}, []);
+
+  const handleLanguageChange = (e) => {
+		i18n.changeLanguage(e.target.value);
+	};
     return (
         <section className='header-container'>
           <nav className='px-4'>
+
           <div className="top-bar flex justify-end items-center">
-          <FontAwesomeIcon icon={faPhone} /><span>Emergency: +0089892</span>
-          <ReactFlagsSelect
+          <FontAwesomeIcon icon={faPhone} /><span>{t("emergency")}: +0089892</span>
+          {/* <ReactFlagsSelect
           countries={["US", "DE", "FR", "BD", "SA"]}
           customLabels={{ US: "English", DE: "German", FR: "French", BD: "Bangla", SA: "Arabic"}}
           selected={selected}
-          onSelect={(code) => setSelected(code)}
-        />
+          onSelect={onSelect}
+          className="menu-flags"
+          onClick={() => changeLanguage("en")}
+        /> */}
+
+        <select 
+        className="select w-auto max-w-xs"
+        value={localStorage.getItem("i18nextLng")}
+				onChange={handleLanguageChange}
+        >
+        <option selected>English</option>
+        <option value="bn">Bangla</option>
+				<option value="fr">Français</option>
+				<option value="es">Español</option>
+      </select>
           </div>
           <div className="navbar">
   <div className="navbar-start">
@@ -37,10 +65,10 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
-      <li><a>Home</a></li>
+      <li><a>{t("home")}</a></li>
       <li tabIndex={0}>
         <a>
-        Departments
+        {t("departments")}
           <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
         </a>
         <ul className="p-2">
@@ -50,10 +78,10 @@ const Navbar = () => {
           <li><a>Urology</a></li>
         </ul>
       </li>
-      <li><a>Doctors</a></li>
-      <li><a>About</a></li>
-      <li><a>Blog</a></li>
-      <li><a>Contact Us</a></li>
+      <li><a>{t("doctor")}</a></li>
+      <li><a>{t("about")}</a></li>
+      <li><a>{t("blog")}</a></li>
+      <li><a>{t("contract")}</a></li>
     </ul>
   </div>
   <div className="navbar-end">

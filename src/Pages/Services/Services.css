@@ -1,0 +1,94 @@
+.service-section a {
+  text-decoration: none;
+}
+.service-section .common-service {
+  height: 320px;
+  max-height: 500px;
+  width: 100%;
+  position: relative;
+  background: rgba(0, 113, 220, 0.05);
+  border: 1px solid rgba(152, 162, 176, 0.34);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all ease-in 0.2s;
+}
+.service-section .common-service:before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+.service-section .common-service:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.service-section .common-service:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background-color: rgb(0, 113, 220);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+.service-section .common-service:hover {
+  cursor: pointer;
+}
+.service-section .common-service:hover .inner-img {
+  display: none;
+}
+.service-section .common-service:hover .overlay {
+  visibility: visible;
+}
+.service-section .common-service:hover .service-card {
+  color: #fff;
+}
+.service-section .common-service:hover .service-card button {
+  visibility: visible;
+}
+.service-section .common-service .overlay {
+  visibility: hidden;
+}
+.service-section .common-service .overlay span {
+  position: absolute;
+  top: 2rem;
+  bottom: 0;
+  left: 4rem;
+  right: 0;
+}
+.service-section .common-service .overlay span img {
+  width: 60px;
+}
+.service-section .common-service .service-card {
+  text-align: center;
+  margin: 9rem auto;
+  font-size: 1.2rem;
+}
+.service-section .common-service .service-card button {
+  margin: 1rem;
+  visibility: hidden;
+}
+.service-section .common-service .service-inner-box {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  opacity: 1;
+}
+.service-section .common-service .service-inner-box .inner-img {
+  background-color: rgb(0, 113, 220);
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+.service-section .common-service .service-inner-box .inner-img img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 36px;
+  max-width: 100%;
+}/*# sourceMappingURL=Services.css.map */

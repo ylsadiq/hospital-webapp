@@ -1,0 +1,99 @@
+.service-section{
+    a{
+            text-decoration: none;
+        }
+    .common-service{
+        height: 320px;
+        max-height: 500px;
+        width: 100%;
+        position: relative;
+        background: rgba(0, 113, 220, 0.05);
+        border: 1px solid rgba(152, 162, 176, 0.34);
+        border-radius: 6px;
+        overflow: hidden;
+        transition: all ease-in .2s;
+        &:before {  
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        } 
+        &:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        &:before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            inset: 0 0 0 0;
+            background-color: rgba(0, 113, 220, 1);
+            z-index: -1;
+            transition: transform .3s ease;
+        }
+       &:hover{
+           cursor: pointer;
+        .inner-img{
+            display: none;
+        }
+        .overlay{
+            visibility: visible;
+        }
+        .service-card{
+            color: #fff;
+            button{
+                visibility: visible;
+            }
+        }
+        
+       }
+       
+        .overlay{
+            visibility: hidden;
+            span{
+                position: absolute;
+                top: 2rem;
+                bottom: 0;
+                left: 4rem;
+                right: 0;   
+                img{
+                    width: 60px;
+                }
+            }
+            
+        }
+        
+        .service-card{
+            text-align: center;
+            margin: 9rem auto;
+            font-size: 1.2rem;
+            button{
+                margin: 1rem;
+                visibility: hidden;
+            }
+        }
+        .service-inner-box{
+            position: absolute;
+            top: -15px;
+            right: -10px;
+            opacity: 1;
+            .inner-img{
+                background-color: rgba(0, 113, 220, 1);
+                height: 80px;
+                width: 80px;
+                border-radius: 50%;
+                img{
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 36px;
+                    max-width: 100%;
+                   
+                }
+            }
+        }
+        
+    }
+}

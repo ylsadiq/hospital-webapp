@@ -1,4 +1,11 @@
 .service-section{
+    margin: 2.5rem 0;
+    h2{
+        text-align: left;
+        font-size: 32px;
+        margin: 1rem 0;
+        font-weight: 600;
+    }
     a{
             text-decoration: none;
         }
@@ -32,6 +39,9 @@
         }
        &:hover{
            cursor: pointer;
+           .common-img{
+            opacity: .8;
+           }
         .inner-img{
             display: none;
         }
@@ -53,8 +63,9 @@
                 position: absolute;
                 top: 2rem;
                 bottom: 0;
-                left: 4rem;
-                right: 0;   
+                left: 7.2rem;
+                right: 0; 
+                margin: auto;  
                 img{
                     width: 60px;
                 }
@@ -63,13 +74,16 @@
         }
         
         .service-card{
-            text-align: center;
-            margin: 9rem auto;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            padding: 0 .5rem;                
+            h3{
+                font-weight: 600;
+            }
             button{
-                margin: 1rem;
+                margin: .3rem 0;
                 visibility: hidden;
             }
+ 
         }
         .service-inner-box{
             position: absolute;
@@ -81,17 +95,30 @@
                 height: 80px;
                 width: 80px;
                 border-radius: 50%;
-                img{
+                span{
+                    display: block;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 5rem;
+                    background: #fff;
                     position: absolute;
-                    top: 0;
+                    top: -.5rem;
                     bottom: 0;
-                    left: 0;
+                    left: .2rem;
                     right: 0;
                     margin: auto;
-                    width: 36px;
-                    max-width: 100%;
-                   
+                    img{
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 36px;
+                        max-width: 100%;
+                    }
                 }
+                
             }
         }
         

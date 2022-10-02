@@ -1,0 +1,30 @@
+.our-process{
+    h5{
+        font-size: 1.2rem;
+    }
+    h2{
+        font-size: 36px;
+    }
+    .process{
+        .heart-pulse{
+            .outer-circle{
+                display: block;
+                width: 80px;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                box-shadow: 0 0 0 1em #005b88 inset;
+                background: #005b88;
+                border-radius: 5rem;
+                color: #fff;
+                cursor: pointer; 
+                border: 1px solid #005b88;
+                transition: .4s ease-out;
+                
+            }
+            
+        }
+    }
+}

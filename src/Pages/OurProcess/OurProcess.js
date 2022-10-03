@@ -10,11 +10,16 @@ const OurProcess = () => {
             <h2>Our Process</h2>
             <div className="process grid grid-cols-3 gap-4">
                 <div className="heart-pulse">
-                <span className='outer-circle'>
-                    <span className='inner-circle'>
-                    <FontAwesomeIcon icon={faHeartPulse}/>
-                    </span>
-                </span>
+                <div className="main-circle">
+                <div className='outer-circle'>
+                <span className='circle-icons'>
+                        <FontAwesomeIcon icon={faHeartPulse}/>
+                        </span>
+                </div>
+                <div className='inner-circle'>
+                        
+                    </div>
+                </div>
                 <h6>What we do</h6>
                 <h4>we care about you</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus felis sed consequat sodales. Proin pulvinar rhoncus bibendum. In mollis magna.</p>

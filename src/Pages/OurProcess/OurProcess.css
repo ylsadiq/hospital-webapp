@@ -4,19 +4,43 @@
 .our-process h2 {
   font-size: 36px;
 }
-.our-process .process .heart-pulse .outer-circle {
-  display: block;
-  width: 80px;
-  height: 80px;
+.our-process .process .heart-pulse .main-circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+}
+.our-process .process .heart-pulse .main-circle:hover .inner-circle {
+  width: 110px;
+  height: 110px;
+}
+.our-process .process .heart-pulse .main-circle:hover .circle-icons {
+  transition-delay: 0.3s;
+  opacity: 1;
+  transform: scale(1);
+}
+.our-process .process .heart-pulse .main-circle .outer-circle {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  box-shadow: 0 0 0 1em #005b88 inset;
+  width: 120px;
+  height: 120px;
   background: #005b88;
   border-radius: 5rem;
-  color: #fff;
-  cursor: pointer;
-  border: 1px solid #005b88;
-  transition: 0.4s ease-out;
+  box-shadow: 0 0 0 1em #005b88 inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.our-process .process .heart-pulse .main-circle .outer-circle .circle-icons {
+  font-size: 2.5rem;
+}
+.our-process .process .heart-pulse .main-circle .inner-circle {
+  width: 0;
+  height: 0;
+  background: rgb(228, 227, 226);
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  border-radius: 5rem;
+  -webkit-transition: all 0.4s ease-in-out;
 }/*# sourceMappingURL=OurProcess.css.map */

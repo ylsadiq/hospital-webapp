@@ -3,6 +3,7 @@ import Navbar from './Shared/Navbar';
 import './Home.css'
 import Services from './Services/Services';
 import OurProcess from './OurProcess/OurProcess';
+import Blog from './BlogAndNews/Blog';
 const Home = () => {
 
     return (
@@ -13,6 +14,9 @@ const Home = () => {
            <div className="services">
             <Services />
             <OurProcess />
+           </div>
+           <div className="blog">
+            <Blog />
            </div>
         </div>
     );

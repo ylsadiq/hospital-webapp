@@ -1,0 +1,13 @@
+a {
+  text-decoration: none;
+}
+
+.blog-and-news {
+  margin: 2.5rem 0;
+}
+.blog-and-news a {
+  box-shadow: whitesmoke;
+}
+.blog-and-news .blog-and-news {
+  display: flex;
+}/*# sourceMappingURL=Blog.css.map */

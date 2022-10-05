@@ -1,5 +1,6 @@
 a {
   text-decoration: none;
+  box-shadow: whitesmoke;
 }
 
 .blogs-and-news {
@@ -12,20 +13,24 @@ a {
   font-size: 1.6rem;
   font-weight: 600;
 }
-.blogs-and-news a {
-  box-shadow: whitesmoke;
+.blogs-and-news .blog-news-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 .blogs-and-news .common-blog {
   margin-top: 2.5rem;
 }
 .blogs-and-news .common-blog .blog-news {
   margin-right: 0.6rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 .blogs-and-news .common-blog .blog-news .blog-img-batch {
   position: absolute;
-  bottom: 0.6rem;
-  left: 5rem;
+  bottom: -1rem;
+  left: 4.5rem;
   display: block;
   width: 110px;
   padding: 0.5rem 0;
@@ -35,9 +40,6 @@ a {
 .blogs-and-news .common-blog .blog-news .blog-img-batch p {
   text-align: center;
 }
-.blogs-and-news .common-blog .blog-details {
-  margin-top: 0;
-}
 .blogs-and-news .common-blog .blog-details h3 {
   margin: 0.5rem 0;
   font-weight: 600;
@@ -45,6 +47,9 @@ a {
   font-size: 1.5rem;
   color: #222;
 }
-.blogs-and-news .common-blog .blog-details button {
+.blogs-and-news .common-blog .blog-details .read-more {
   margin: 0.5rem 0;
+}
+.blogs-and-news .common-blog .blog-details .read-more:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=Blog.css.map */

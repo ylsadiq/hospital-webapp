@@ -1,0 +1,12 @@
+.faq-section{
+    .faq-container{
+        display: flex;
+        justify-content: space-between;
+        .faq-img{
+            img{
+                width: 100%;
+            }
+        }
+    }
+    
+}

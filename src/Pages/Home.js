@@ -4,6 +4,7 @@ import './Home.css'
 import Services from './Services/Services';
 import OurProcess from './OurProcess/OurProcess';
 import Blog from './BlogAndNews/Blog';
+import FAQ from './FAQ/FAQ';
 const Home = () => {
 
     return (
@@ -17,6 +18,7 @@ const Home = () => {
            </div>
            <div className="blog">
             <Blog />
+            <FAQ />
            </div>
         </div>
     );

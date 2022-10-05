@@ -1,5 +1,6 @@
 a{
     text-decoration: none;
+    box-shadow: whitesmoke;
 }
 .blogs-and-news{
     margin: 2.5rem 0;
@@ -10,19 +11,23 @@ a{
         font-size: 1.6rem;
         font-weight: 600;
     }
-    a{
-        box-shadow: whitesmoke;
+    .blog-news-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
     }
         .common-blog{
             margin-top: 2.5rem;
 
             .blog-news{
                 margin-right: .6rem;
+                margin-bottom: 2rem;
                 position: relative;
                 .blog-img-batch{
                     position: absolute;
-                    bottom: .6rem;
-                    left: 5rem;
+                    bottom: -1rem;
+                    left: 4.5rem;
                     display: block;
                     width: 110px;
                     padding: .5rem 0;
@@ -34,10 +39,6 @@ a{
                 }
             }
             .blog-details{
-               margin-top: 0;
-               h5{
-
-               }
                h3{
                 margin: .5rem 0;
                 font-weight: 600;
@@ -45,10 +46,14 @@ a{
                 font-size: 1.5rem;
                 color: #222
                }
-               button{
+               .read-more{
                 margin: .5rem 0;
+                &:hover{
+                    cursor: pointer;
+                }
                }
             }        
         }
-    
+   
+        
 }

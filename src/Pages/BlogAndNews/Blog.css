@@ -2,12 +2,49 @@ a {
   text-decoration: none;
 }
 
-.blog-and-news {
+.blogs-and-news {
   margin: 2.5rem 0;
 }
-.blog-and-news a {
+.blogs-and-news h5 {
+  font-size: 1.1rem;
+}
+.blogs-and-news h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.blogs-and-news a {
   box-shadow: whitesmoke;
 }
-.blog-and-news .blog-and-news {
-  display: flex;
+.blogs-and-news .common-blog {
+  margin-top: 2.5rem;
+}
+.blogs-and-news .common-blog .blog-news {
+  margin-right: 0.6rem;
+  position: relative;
+}
+.blogs-and-news .common-blog .blog-news .blog-img-batch {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 5rem;
+  display: block;
+  width: 110px;
+  padding: 0.5rem 0;
+  border-radius: 0.6rem;
+  background: #9696f7;
+}
+.blogs-and-news .common-blog .blog-news .blog-img-batch p {
+  text-align: center;
+}
+.blogs-and-news .common-blog .blog-details {
+  margin-top: 0;
+}
+.blogs-and-news .common-blog .blog-details h3 {
+  margin: 0.5rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: #222;
+}
+.blogs-and-news .common-blog .blog-details button {
+  margin: 0.5rem 0;
 }/*# sourceMappingURL=Blog.css.map */

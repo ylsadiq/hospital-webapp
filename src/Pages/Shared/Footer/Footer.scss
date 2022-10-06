@@ -1,0 +1,63 @@
+.footer-section{
+        .footer-contract{
+            .emergency{
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                svg{
+                    font-size: 1.6rem;
+                }
+            }
+            .home-visit{
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                svg{
+                    font-size: 1.6rem;
+                }
+            }
+        .contract-now{
+            h5{
+                font-size: 1.1rem;
+            }
+            h2{
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .social-media{
+        
+        .social-heading{
+            .tooth-whiting{
+                display: block;
+                position: absolute;
+                z-index: 5;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                top: 0;
+                h2{
+                    line-height: 1.6rem;
+                }
+                .tooth-white{
+                    
+                    h2{
+                        font-size: 1.4rem;
+                    }
+                    img{
+                        max-width: 100%;
+                        height: auto;
+                        display: block;
+                        width: 100%;
+                    }
+                    }
+                }
+                h5{
+                    font-size: 1.1rem;
+                }
+                
+            }
+            
+        }
+    }
+}

@@ -1,8 +1,30 @@
 .faq-section{
+    margin-bottom: 2rem;
+    position: relative;
+    .faq-heading{
+        h5{
+            font-size: 1.1rem;
+        }
+        h2{
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+    }
+    
     .faq-container{
         display: flex;
         justify-content: space-between;
+        .collapse-plus .collapse-title:after{
+            color: #2D89FF;
+        }
         .faq-img{
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 2rem;
+            width: 300px;
+            height: 300px;
+            max-width: 400px;
             img{
                 width: 100%;
             }

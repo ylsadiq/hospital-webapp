@@ -4,9 +4,13 @@ import './FAQ.css'
 const FAQ = () => {
     var faq1 = require('../../images/faq-doc.png');
     return (
-        <section className='faq-section px-4'>
+        <section className='faq-section'>
+          <div className="faq-heading md:pl-4">
+          <h5>FAQ Qusetions</h5>
+          <h2>Get Your General Anwser</h2>
+          </div>
             <div className="faq-container">
-            <div className="rounded-box w-2/5">
+            <div className="rounded-box w-2/5 mt-4">
             <div className="collapse collapse-plus border-base-300 bg-base-100 rounded-box">
   <input type="checkbox" /> 
   <div className="collapse-title text-xl font-medium">

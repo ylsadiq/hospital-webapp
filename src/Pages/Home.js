@@ -5,6 +5,7 @@ import Services from './Services/Services';
 import OurProcess from './OurProcess/OurProcess';
 import Blog from './BlogAndNews/Blog';
 import FAQ from './FAQ/FAQ';
+import Footer from './Shared/Footer/Footer';
 const Home = () => {
 
     return (
@@ -19,6 +20,9 @@ const Home = () => {
            <div className="blog">
             <Blog />
             <FAQ />
+           </div>
+           <div className="footer">
+            <Footer />
            </div>
         </div>
     );

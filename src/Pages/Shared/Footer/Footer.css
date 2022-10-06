@@ -1,0 +1,37 @@
+.footer-section .footer-contract .emergency {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.footer-section .footer-contract .emergency svg {
+  font-size: 1.6rem;
+}
+.footer-section .footer-contract .home-visit {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.footer-section .footer-contract .home-visit svg {
+  font-size: 1.6rem;
+}
+.footer-section .footer-contract .contract-now h5 {
+  font-size: 1.1rem;
+}
+.footer-section .footer-contract .contract-now h2 {
+  font-size: 1.6rem;
+}
+.footer-section .social-media .social-heading .tooth-whiting h2 {
+  line-height: 1.6rem;
+}
+.footer-section .social-media .social-heading .tooth-whiting .tooth-white {
+  display: block;
+}
+.footer-section .social-media .social-heading .tooth-whiting .tooth-white h2 {
+  font-size: 1.4rem;
+}
+.footer-section .social-media .social-heading .tooth-whiting .tooth-white img {
+  width: 200px;
+}
+.footer-section .social-media .social-heading .tooth-whiting h5 {
+  font-size: 1.1rem;
+}/*# sourceMappingURL=Footer.css.map */

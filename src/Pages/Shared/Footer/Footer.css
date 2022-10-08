@@ -1,37 +1,55 @@
-.footer-section .footer-contract .emergency {
+.footer-section {
+  background: linear-gradient(90deg, rgb(209, 238, 228) 0%, rgb(250, 250, 250) 39%, rgb(254, 253, 254) 69%, rgb(240, 219, 244) 100%);
+}
+.footer-section h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.footer-section .footer-contract svg {
+  font-size: 2.6rem;
+  color: #005b88;
+  margin-right: 0.8rem;
+}
+.footer-section .footer-contract .emergency-contract .emergency-home {
   display: flex;
   align-items: center;
   justify-content: start;
 }
-.footer-section .footer-contract .emergency svg {
-  font-size: 1.6rem;
+.footer-section .footer-contract .emergency-contract .emergency-home .emergency-home-details h5 {
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
 }
-.footer-section .footer-contract .home-visit {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-}
-.footer-section .footer-contract .home-visit svg {
-  font-size: 1.6rem;
+.footer-section .footer-contract .contract-now {
+  margin-bottom: 2rem;
 }
 .footer-section .footer-contract .contract-now h5 {
   font-size: 1.1rem;
 }
-.footer-section .footer-contract .contract-now h2 {
-  font-size: 1.6rem;
+.footer-section .social-media .social-heading .tooth-whiting {
+  display: block;
 }
 .footer-section .social-media .social-heading .tooth-whiting h2 {
   line-height: 1.6rem;
 }
-.footer-section .social-media .social-heading .tooth-whiting .tooth-white {
-  display: block;
+.footer-section .social-media .social-heading .tooth-whiting .tooth-white .tooth-link {
+  position: absolute;
+  right: 25rem;
 }
-.footer-section .social-media .social-heading .tooth-whiting .tooth-white h2 {
+.footer-section .social-media .social-heading .tooth-whiting .tooth-white .tooth-link ul li {
+  line-height: 1.6rem;
+}
+.footer-section .social-media .social-heading .tooth-whiting .tooth-white .tooth-link h2 {
   font-size: 1.4rem;
+  line-height: 1.7rem;
+  letter-spacing: 0.3rem;
+  font-weight: 600;
 }
 .footer-section .social-media .social-heading .tooth-whiting .tooth-white img {
-  width: 200px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 100%;
 }
-.footer-section .social-media .social-heading .tooth-whiting h5 {
+.footer-section .social-media .social-heading h5 {
   font-size: 1.1rem;
 }/*# sourceMappingURL=Footer.css.map */

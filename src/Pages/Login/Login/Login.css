@@ -1,0 +1,14 @@
+.login-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-section .social-login li a {
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+  border-radius: 0.2rem;
+}
+.login-section .social-login li a svg {
+  font-size: 1.2rem;
+  color: #fff;
+}/*# sourceMappingURL=Login.css.map */

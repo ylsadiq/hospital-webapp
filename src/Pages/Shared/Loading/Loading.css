@@ -1,16 +1,16 @@
-.login-section {
+.loading-section {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.login-section .social-login li button {
+.loading-section .social-login li button {
   display: block;
   text-align: left;
   padding: 0.5rem;
   margin-bottom: 0.8rem;
   border-radius: 0.2rem;
 }
-.login-section .social-login li button svg {
+.loading-section .social-login li button svg {
   font-size: 1.2rem;
   color: #fff;
-}/*# sourceMappingURL=Login.css.map */
+}/*# sourceMappingURL=Loading.css.map */

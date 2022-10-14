@@ -12,6 +12,17 @@ module.exports = {
           ghost: "#642DFF",
           "base-100": "#ffffff",
         },
+        extend: {
+          animation: {
+            wiggle: 'wiggle 1s ease-in-out infinite',
+          },
+          keyframes: {
+            wiggle: {
+              '0%, 100%': { transform: 'rotate(-3deg)' },
+              '50%': { transform: 'rotate(3deg)' },
+            }
+          },
+        }
       },
       "dark",
       "cupcake",

@@ -6,6 +6,7 @@ import Blog from './Pages/Blog/Blog';
 import Home from './Pages/Home';
 import Appointment from './Pages/Appointment/Appointment';
 import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
       </Routes> 
     </Suspense>
           

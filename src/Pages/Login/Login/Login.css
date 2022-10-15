@@ -1,16 +1,24 @@
-.login-section {
+.login-container p {
+  text-align: center;
+  margin: 0.7rem 0;
+}
+.login-container p a {
+  font-weight: 600;
+  margin-left: 0.2rem;
+}
+.login-container .login-section {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.login-section .social-login li button {
+.login-container .login-section .social-login li button {
   display: block;
   text-align: left;
   padding: 0.5rem;
   margin-bottom: 0.8rem;
   border-radius: 0.2rem;
 }
-.login-section .social-login li button svg {
+.login-container .login-section .social-login li button svg {
   font-size: 1.2rem;
   color: #fff;
 }/*# sourceMappingURL=Login.css.map */

@@ -7,11 +7,19 @@ import ReactFlagsSelect from 'react-flags-select';
 import './Navbar.css';
 import Banner from '../Banner/Banner';
 import { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { getAuth, signOut } from 'firebase/auth';
+import auth from '../../firebase.init';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [selected, setSelected] = useState("GB");
   const { t, i18n } = useTranslation(["common"]);
-
+  const [user, loading, error] = useAuthState(auth);
+  console.log(user);
+  const logout = () => {
+    signOut(auth);
+  };
   useEffect(() => {
 		if (localStorage.getItem("i18nextLng")?.length > 2) {
 			i18next.changeLanguage("en");
@@ -86,16 +94,17 @@ const Navbar = () => {
         </ul>
       </li>
       <li><a>{t("doctor")}</a></li>
-      <li><a>{t("about")}</a></li>
+      <li><Link to='/appointment'>{t("Appointment")}</Link></li>
       <li><a>{t("blog")}</a></li>
       <li><a>{t("contract")}</a></li>
     </ul>
   </div>
   <div className="navbar-end">
-  <div className="dropdown dropdown-end">
+  {user ? <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img src="https://placeimg.com/80/80/people" />
+          {user?.photoURL ? <img src={user?.photoURL} />:
+          <img src="https://placeimg.com/80/80/people" />}
         </div>
       </label>
       <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -106,9 +115,9 @@ const Navbar = () => {
           </a>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li><button onClick={logout}>Logout</button></li>
       </ul>
-    </div>
+    </div> : <button className='btn btn-ghost'><Link to='/login'>login</Link></button>}
   </div>
 </div>
 {/* Banner section added */}

@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faLinkedin, faGooglePlus } from "@fortawesome/free-brands-svg-icons";
-import { useSignInWithGoogle, useSignInWithFacebook, useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle, useSignInWithFacebook, useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebase-hooks/auth';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 import './Login/Login.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -17,23 +17,28 @@ const Register = () => {
     loading,
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
-
+  const [photoURL, setPhotoURL] = useState('');
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const navigate = useNavigate()
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
-  const onSubmit = data => {
+
+  const onSubmit = async (data) => {
     if(data.password !== data.password2){
       return console.log("went someting wrong"); 
      }
-    console.log(data);
-    createUserWithEmailAndPassword(data?.email, data?.password)
-    reset()
+     await createUserWithEmailAndPassword(data?.email, data?.password);
+     await updateProfile({ displayName: data.name, photoURL: data?.photo })
+     reset()
+     console.log(data);
+     navigate('/appointment')
   }
 
   let signInError;
-  if(loading || gLoading){
+  if(loading || gLoading || fLoading || updating){
      return <Loading />
   }
-  if(error||fError){
-    signInError = <p class="text-red-500 text-xs italic">{Error?.message || fError?.message}</p>
+  if(error || fError || gError || updateError){
+    signInError = <p class="text-red-500 text-xs italic">{error?.message || fError?.message || gError?.message || updateError?.message}</p>
   }
     return (
         <div className="login-container lg:mt-28">
@@ -53,10 +58,17 @@ const Register = () => {
   {errors?.name?.type === 'required' && <p class="text-red-500 text-xs italic">Invalid User</p>}
   <input  {...register("email", { required: true })} aria-invalid={errors.email ? "true" : "false"} type="email" placeholder="Your email address" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
   {errors?.email?.type === 'required' && <p class="text-red-500 text-xs italic">Invalid Email</p>}
+  <input  {...register("photo", { required: true })} type="photoURL" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
+  {errors?.photo?.type === 'required' && <p class="text-red-500 text-xs italic">Invalid Email</p>}
   <input type="password" {...register("password", { required: true })} aria-invalid={errors.password ? "true" : "false"} placeholder="password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
   {errors?.password?.type === 'required' && <p class="text-red-500 text-xs italic">Please choose a password.</p>}
   <input type="password" {...register("password2", { required: true })} aria-invalid={errors.password ? "true" : "false"} placeholder="Re password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
   {errors?.password?.type === 'required' && <p class="text-red-500 text-xs italic">Please choose Re-password.</p>}
+  <input
+        type="photoURL"
+        value={photoURL}
+        onChange={(e) => setPhotoURL(e.target.value)}
+      />
   <a class="inline-block align-baseline py-2 font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
         Forgot Password?
       </a>

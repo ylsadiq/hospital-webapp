@@ -6,12 +6,15 @@ import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import './Login.css'
 import Loading from '../../Shared/Loading/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [signInWithFacebook, fUser, fLoading, fError ] = useSignInWithFacebook(auth);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
   const [
     signInWithEmailAndPassword,
     eUser,
@@ -19,7 +22,7 @@ const Login = () => {
     eError,
   ] = useSignInWithEmailAndPassword(auth);
     if(eUser){
-      console.log(gUser);
+      navigate(from, {replace: true});
     }
   const { register, formState: { errors }, handleSubmit } = useForm();
   const onSubmit = data => {

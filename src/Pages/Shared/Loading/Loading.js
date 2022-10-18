@@ -3,8 +3,8 @@ import React from 'react';
 const Loading = () => {
     return (
         <div className='loading-section'>
-            <div class="shadow  max-w-sm mx-auto">
-  <div class="animate-pulse flex space-x-4">
+            <div className="shadow  max-w-sm mx-auto">
+  <div className="animate-pulse flex space-x-4">
   <div className="login-section h-screen bg-slate-200">
 <div className="flex w-full">
   <div className="grid flex-grow card rounded-box lg:mt-8">
@@ -19,9 +19,9 @@ const Loading = () => {
     <form className="grid flex-grow card rounded-box pl-5 input-field">
   <input type="email" className="w-full h-2 max-w-xs border-slate-300 " />
   <input type="password" className="w-full h-2 max-w-xs border-slate-300" />
-  <a class="inline-block align-baseline py-2 font-bold text-sm text-blue-500" href="#">
+  <a className="inline-block align-baseline py-2 font-bold text-sm text-blue-500" href="#">
       </a>
-    <button type="submit" class="w-full max-w-xs bg-blue-500 text-white py-2">
+    <button type="submit" className="w-full max-w-xs bg-blue-500 text-white py-2">
       </button>
       </form>
 </div>

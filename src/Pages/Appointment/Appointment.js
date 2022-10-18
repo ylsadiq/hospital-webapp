@@ -5,7 +5,7 @@ import './Appointment.css'
 
 const Appointment = () => {
   const [date, setDate] = useState(new Date());
-  let stringDate = date.toDateString();
+
     return (
         <div>
           <AppointmentBanner date={date} setDate={setDate}/>

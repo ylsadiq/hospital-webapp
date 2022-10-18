@@ -16,7 +16,6 @@ const Navbar = () => {
   const [selected, setSelected] = useState("GB");
   const { t, i18n } = useTranslation(["common"]);
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
   const logout = () => {
     signOut(auth);
   };

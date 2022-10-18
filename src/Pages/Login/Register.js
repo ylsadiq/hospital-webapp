@@ -21,15 +21,14 @@ const Register = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate()
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
-
+  let unmatchPassword;
   const onSubmit = async (data) => {
     if(data.password !== data.password2){
-      return console.log("went someting wrong"); 
+     return unmatchPassword = <p className="text-red-500 text-xs italic">Password not massing</p>; 
      }
      await createUserWithEmailAndPassword(data?.email, data?.password);
      await updateProfile({ displayName: data.name, photoURL: data?.photo })
      reset()
-     console.log(data);
      navigate('/appointment')
   }
 
@@ -38,7 +37,7 @@ const Register = () => {
      return <Loading />
   }
   if(error || fError || gError || updateError){
-    signInError = <p class="text-red-500 text-xs italic">{error?.message || fError?.message || gError?.message || updateError?.message}</p>
+    signInError = <p className="text-red-500 text-xs italic">{error?.message || fError?.message || gError?.message || updateError?.message}</p>
   }
     return (
         <div className="login-container lg:mt-28">
@@ -55,25 +54,22 @@ const Register = () => {
 
     <form className="grid flex-grow card rounded-box w-2/4 pl-5 input-field" onSubmit={handleSubmit(onSubmit)}>
   <input {...register("name", { required: true })} aria-invalid={errors.email ? "true" : "false"} type="text" placeholder="Your name" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
-  {errors?.name?.type === 'required' && <p class="text-red-500 text-xs italic">Invalid User</p>}
-  <input  {...register("email", { required: true })} aria-invalid={errors.email ? "true" : "false"} type="email" placeholder="Your email address" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
-  {errors?.email?.type === 'required' && <p class="text-red-500 text-xs italic">Invalid Email</p>}
+  {errors?.name?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid User</p>}
+  <input {...register("email", { required: true })} aria-invalid={errors.email ? "true" : "false"} type="email" placeholder="Your email address" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
+  {errors?.email?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid Email</p>}
   <input  {...register("photo", { required: true })} type="photoURL" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
-  {errors?.photo?.type === 'required' && <p class="text-red-500 text-xs italic">Invalid Email</p>}
+  {errors?.photo?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid Email</p>}
   <input type="password" {...register("password", { required: true })} aria-invalid={errors.password ? "true" : "false"} placeholder="password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
-  {errors?.password?.type === 'required' && <p class="text-red-500 text-xs italic">Please choose a password.</p>}
+  {errors?.password?.type === 'required' && <p className="text-red-500 text-xs italic">Please choose a password.</p>}
   <input type="password" {...register("password2", { required: true })} aria-invalid={errors.password ? "true" : "false"} placeholder="Re password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
-  {errors?.password?.type === 'required' && <p class="text-red-500 text-xs italic">Please choose Re-password.</p>}
+  {errors?.password?.type === 'required' && <p className="text-red-500 text-xs italic">Please choose Re-password.</p>}
   <input
         type="photoURL"
         value={photoURL}
         onChange={(e) => setPhotoURL(e.target.value)}
       />
-  <a class="inline-block align-baseline py-2 font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-        Forgot Password?
-      </a>
       {signInError}
-    <button type="submit" class="w-full max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+    <button type="submit" className="w-full max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
         Sign In
       </button>
       </form>

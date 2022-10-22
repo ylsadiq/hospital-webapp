@@ -10,7 +10,7 @@ const Service = ({service, setTreatment}) => {
                 <p>{
                     slots.length ? <span>{slots[0]}</span> : <span className='text-red-500'>No Slot Available</span>
                     }</p>
-                <p>{slots?.length} {slots?.length > 1 ? 'spacs' : 'space'} available</p>
+                <p>{slots?.length} {slots?.length > 1 ? 'spaces' : 'space'} available</p>
                 <div className="card-actions justify-end">
                 <label onClick={() => setTreatment(service)} disabled={slots.length === 0} htmlFor="booking-modal" className="btn btn-primary modal-button">open modal</label>
                 </div>

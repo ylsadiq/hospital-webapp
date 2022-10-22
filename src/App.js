@@ -9,7 +9,8 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register';
 import RequireAuth from './Pages/Login/RequireAuth';
 import ForgetPassword from './Pages/Login/Login/ForgetPassword/ForgetPassword';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route path="/forgetpassword" element={<ForgetPassword />} />
       </Routes> 
     </Suspense>
-          
+    <ToastContainer />   
     </div>
   );
 }

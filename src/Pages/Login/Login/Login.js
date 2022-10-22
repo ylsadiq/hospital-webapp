@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faLinkedin, faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import { useSignInWithGoogle, useSignInWithFacebook, useSignInWithEmailAndPassword, useUpdatePassword} from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
-import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import './Login.css'
 import Loading from '../../Shared/Loading/Loading';
@@ -30,10 +29,6 @@ const Login = () => {
   const onSubmit = async (data) => {
     await signInWithEmailAndPassword(data?.email, data?.password);
   };
-const updateOnHandle = async (data) =>{
-  await updatePassword({email: data?.email});
-    alert('Updated password');
-}
 
   let signInError;
   if( fLoading || eLoading || updating){
@@ -58,38 +53,17 @@ const updateOnHandle = async (data) =>{
     <form className="grid flex-grow card rounded-box w-2/4 pl-5 input-field" onSubmit={handleSubmit(onSubmit)}>
   <input {...register("email", { required: true })} aria-invalid={errors.email ? "true" : "false"} type="email" placeholder="Your email address" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
   {errors?.email?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid Email</p>}
-  <input type="password"{...register("password", { required: true })} aria-invalid={errors.password ? "true" : "false"} type="password" placeholder="Your password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
+  <input {...register("password", { required: true })} aria-invalid={errors.password ? "true" : "false"} type="password" placeholder="Your password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
   {errors?.email?.type === 'required' && <p className="text-red-500 text-xs italic">Please choose a password.</p>}
-  {/* <a className="inline-block align-baseline py-2 font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-        
-      </a> */}
-      {/* forget password */}
+  <Link to={'/forgetpassword'} className="inline-block align-baseline py-2 font-bold text-sm text-blue-500 hover:text-blue-800">
+        Forget Password
+      </Link>
 
       {signInError}
     <button type="submit" className="w-full max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
         Sign In
       </button>
       </form>
-      <label htmlFor="my-modal-3" className="inline-block align-baseline py-2 font-bold text-sm text-blue-500 hover:text-blue-800">Forgot Password?</label>
-
-<input type="checkbox" id="my-modal-3" className="modal-toggle" />
-<div className="modal">
-  <div className="modal-box relative">
-    <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-    <form className="grid flex-grow card rounded-box w-2/4 pl-5 input-field" onSubmit={handleSubmit(updateOnHandle)}>
-    <p className='text-left flex font-bold'>Reset new Password</p>
-    <input {...register("updateemail", { required: true })} aria-invalid={errors.email ? "true" : "false"} type="email" placeholder="Your email address" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
-  {errors?.email?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid Email</p>}
-    <input type="password" {...register("password", { required: true })} aria-invalid={errors.password ? "true" : "false"} placeholder="password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
-  {errors?.password?.type === 'required' && <p className="text-red-500 text-xs italic">Please choose a password.</p>}
-  <input type="password" {...register("password2", { required: true })} aria-invalid={errors.password ? "true" : "false"} placeholder="Re password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
-  {errors?.password?.type === 'required' && <p className="text-red-500 text-xs italic">Please choose Re-password.</p>}
-  <button type="submit" className="w-full max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Submit
-      </button>
-  </form>
-  </div>
-</div>
 </div>
 </div>
 <p>Do not have an account yet?<Link href="" to='/register' className='text-red-500'>Register now!</Link></p>

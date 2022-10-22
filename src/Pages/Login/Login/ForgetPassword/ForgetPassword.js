@@ -1,35 +1,40 @@
-import React from 'react';
-import { useUpdatePassword } from 'react-firebase-hooks/auth';
+import React, { useState } from 'react';
+import { useAuthState, useSendPasswordResetEmail  } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../../../firebase.init';
 
 const ForgetPassword = () => {
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const [updatePassword, updating, updateError] = useUpdatePassword(auth);
-    let updatePasswordError;
-    const onSubmit = async (data) =>{
-        if(data.password !== data.password2){
-            updatePasswordError =  <p className="text-red-500 text-xs italic">Password not massing</p>; 
-           }
-        await updatePassword( {email: data?.email, password: data?.password} );
-          alert('Updated password');
-          reset()
-        }
+    // const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const [email, setEmail] = useState('');
+    const [user, loading, error] = useAuthState(auth);
+    console.log(email);
+    const [sendPasswordResetEmail, sending, updateError] = useSendPasswordResetEmail(auth);
+    if (updateError) {
+      return (
+        <div>
+          <p className="text-red-500 text-xs italic text-lg">Error: {updateError?.message}</p>
+        </div>
+      );
+    }
+    if (sending) {
+      return <p>Sending...</p>;
+    }
+
     return (
         <div className='flex justify-center items-center'>
-    <form className="grid flex-grow card rounded-box w-2/4 pl-5 input-field" onSubmit={handleSubmit(onSubmit)}>
-    <p className='text-left flex font-bold'>Reset new Password</p>
-    <input {...register("updateemail", { required: true })} aria-invalid={errors.email ? "true" : "false"} type="email" placeholder="Your email address" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
-  {errors?.email?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid Email</p>}
-    <input type="password" {...register("password", { required: true })} aria-invalid={errors.password ? "true" : "false"} placeholder="password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
-  {errors?.password?.type === 'required' && <p className="text-red-500 text-xs italic">Please choose a password.</p>}
-  <input type="password" {...register("password2", { required: true })} aria-invalid={errors.password ? "true" : "false"} placeholder="Re password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
-  {errors?.password?.type === 'required' && <p className="text-red-500 text-xs italic">Please choose Re-password.</p>}
-  {updatePasswordError}
-  <button type="submit" className="w-full max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Update Password
+    <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <button
+        onClick={async () => {
+          await sendPasswordResetEmail(email);
+          alert('Sent email');
+        }}
+      >
+        Reset password
       </button>
-  </form>
   </div>
     );
 };

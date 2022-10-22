@@ -1,16 +1,45 @@
 import { format } from 'date-fns';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
 import auth from '../../../../firebase.init';
+import { toast } from 'react-toastify';
 import './BookingModal.css'
 
 const BookingModal = ({treatment, date, setTreatment}) => {
     const {_id, name, slots} = treatment;
+    const formattedDate = format(date, 'PP');
+    const { register, formState: { errors }} = useForm();
     const [user, loading, error] = useAuthState(auth);
-    const handleBooking = event =>{
+    const handleBooking = (event) =>{
         event.preventDefault();
         const slot = event?.target?.slot.value;
-        setTreatment(null)
+        const booking = {
+          treatmentId: _id,
+          treatmentName: name,
+          date: formattedDate,
+          slot,
+          patient: user.email,
+          patientName: event.target.name.value,
+          phone: event.target.phone.value
+        }
+        fetch('http://localhost:5000/booking', {
+          method: "POST",
+          headers:{
+            "content-type": "application/json"
+          },
+          body: JSON.stringify(booking)
+        })
+        .then(res => res.json())
+        .then(data =>{
+          if(data.success){
+            toast(`Appointment is set, ${formattedDate} at ${slot}`)
+          }
+          else{
+            toast.error(`Already have an appointment on, ${data?.booking?.date} at ${data?.booking?.slot}`)
+          }
+          setTreatment(null);
+        })
     }
 
     return (
@@ -28,10 +57,12 @@ const BookingModal = ({treatment, date, setTreatment}) => {
     slots?.map((slot, index) => <option key={index} value={slot}>{slot}</option>)
   }
 </select>
-    <input disabled type="text" name='name' value={user?.displayName} placeholder="Name" className="input w-full max-w-xs" />
+    <input {...register("name", { required: true })} type="text" name='name' placeholder="Name" className="input w-full max-w-xs" />
+    {errors?.name?.type === 'required' && <p className="text-red-500 text-xs italic">Patent Name</p>}
     {/* <img src={user?.photoURL} alt="" /> */}
     <input disabled type="email" name='email' value={user?.email} placeholder="Email" className="input w-full max-w-xs" />
-    <input type="number" name='phone' placeholder="Phone" className="input w-full max-w-xs" />
+    <input {...register("phone", { required: true })} type="number" name='phone' placeholder="Phone" className="input w-full max-w-xs" />
+    {errors?.phone?.type === 'required' && <p className="text-red-500 text-xs italic">Phone Number</p>}
     <div className="modal-action">
       <button htmlFor="booking-modal" className="w-full max-w-xs btn">Submit</button>
     </div>

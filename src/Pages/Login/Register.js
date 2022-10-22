@@ -24,7 +24,7 @@ const Register = () => {
   let unmatchPassword;
   const onSubmit = async (data) => {
     if(data.password !== data.password2){
-     return unmatchPassword = <p className="text-red-500 text-xs italic">Password not massing</p>; 
+    return unmatchPassword = <p className="text-red-500 text-xs italic">Password not massing</p>; 
      }
      await createUserWithEmailAndPassword(data?.email, data?.password);
      await updateProfile({ displayName: data.name, photoURL: data?.photo })
@@ -59,16 +59,16 @@ const Register = () => {
   {errors?.email?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid Email</p>}
   <input  {...register("photo", { required: true })} type="photoURL" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
   {errors?.photo?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid Email</p>}
-  <input type="password" {...register("password", { required: true })} aria-invalid={errors.password ? "true" : "false"} placeholder="password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
+  <input type="password" {...register("password", { required: true })}  aria-invalid={errors.password ? "true" : "false"} name='password' placeholder="password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
   {errors?.password?.type === 'required' && <p className="text-red-500 text-xs italic">Please choose a password.</p>}
-  <input type="password" {...register("password2", { required: true })} aria-invalid={errors.password ? "true" : "false"} placeholder="Re password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
+  <input type="password" {...register("password2", { required: true })} aria-invalid={errors.password ? "true" : "false"} name='password2' placeholder="Re password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
   {errors?.password?.type === 'required' && <p className="text-red-500 text-xs italic">Please choose Re-password.</p>}
   <input
         type="photoURL"
         value={photoURL}
         onChange={(e) => setPhotoURL(e.target.value)}
       />
-      {signInError}
+      {signInError || unmatchPassword}
     <button type="submit" className="w-full max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
         Sign In
       </button>

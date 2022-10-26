@@ -6,7 +6,7 @@ import auth from '../../../../firebase.init';
 import { toast } from 'react-toastify';
 import './BookingModal.css'
 
-const BookingModal = ({treatment, date, setTreatment}) => {
+const BookingModal = ({treatment, date, setTreatment, refetch}) => {
     const {_id, name, slots} = treatment;
     const formattedDate = format(date, 'PP');
     const { register, formState: { errors }} = useForm();
@@ -39,6 +39,7 @@ const BookingModal = ({treatment, date, setTreatment}) => {
           else{
             toast.error(`Already have an appointment on, ${data?.booking?.date} at ${data?.booking?.slot}`)
           }
+          refetch()
           setTreatment(null);
         })
     }

@@ -19,6 +19,7 @@ const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
   const logout = () => {
     signOut(auth);
+    localStorage.removeItem('accessToken')
   };
   useEffect(() => {
 		if (localStorage.getItem("i18nextLng")?.length > 2) {

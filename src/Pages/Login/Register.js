@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 import './Login/Login.css'
 import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/usetoken';
 
 const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -21,6 +22,13 @@ const Register = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate()
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
+  const [token] = useToken(user || gUser || fUser);
+  
+  if(token){
+    console.log(user || gUser || fUser);
+    navigate('/appointment')
+  }
+
   let unmatchPassword;
   const onSubmit = async (data) => {
     if(data.password !== data.password2){
@@ -29,9 +37,7 @@ const Register = () => {
      await createUserWithEmailAndPassword(data?.email, data?.password);
      await updateProfile({ displayName: data.name, photoURL: data?.photo })
      reset()
-     navigate('/appointment')
   }
-
   let signInError;
   if(loading || gLoading || fLoading || updating){
      return <Loading />

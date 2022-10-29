@@ -7,6 +7,7 @@ import './Login.css'
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import useToken from '../../../hooks/usetoken';
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [signInWithFacebook, fUser, fLoading, fError ] = useSignInWithFacebook(auth);
@@ -19,12 +20,13 @@ const Login = () => {
     eLoading,
     eError,
   ] = useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(eUser || gUser || fUser);
   const [updatePassword, updating, updateError] = useUpdatePassword(auth);
     useEffect(() =>{
-      if(eUser || fUser || gUser){
+      if(token){
         navigate(from, {replace: true});
       }
-    }, [eUser, gUser, from, fUser, navigate])
+    }, [token, from, navigate])
   const { register, formState: { errors }, handleSubmit } = useForm();
   const onSubmit = async (data) => {
     await signInWithEmailAndPassword(data?.email, data?.password);

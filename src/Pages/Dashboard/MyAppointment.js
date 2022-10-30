@@ -7,6 +7,7 @@ import { signOut } from 'firebase/auth';
 
 const MyAppointment = () => {
     const [user] = useAuthState(auth);
+
     const [appointments, setAppointments] = useState([]);
     const navigate = useNavigate()
 
@@ -19,7 +20,6 @@ const MyAppointment = () => {
               }
             })
         .then(res => {
-          console.log('res', res);
           if(res.status === 401 || res.status === 403){
               signOut(auth);
               localStorage.removeItem('accessToken')
@@ -48,7 +48,7 @@ const MyAppointment = () => {
       </tr>
     </thead>
     {appointments.map((ap, index) =>
-        <tbody>
+        <tbody key={index}>
       <tr>
         <th>{index + 1}</th>
         <td>{ap?.patientName}</td>

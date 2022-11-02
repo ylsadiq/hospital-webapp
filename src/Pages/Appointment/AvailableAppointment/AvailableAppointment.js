@@ -12,7 +12,7 @@ const AvailableAppointment = ({date}) => {
     const [treatment, setTreatment] = useState({});
     const formattedDate = format(date, 'PP');
     const { isLoading, refetch, error, data: services } = useQuery(['available', formattedDate], () =>
-    fetch(`http://localhost:5000/available?date=${formattedDate}`).then(res =>
+    fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`).then(res =>
        res.json()
      )
    )
@@ -20,7 +20,7 @@ const AvailableAppointment = ({date}) => {
  
    if (error) return 'An error has occurred: ' + error.message
     // useEffect(() =>{
-    //     fetch(`http://localhost:5000/available?date=${formattedDate}`)
+    //     fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`)
     //     .then(res => res.json())
     //     .then(data => setServices(data))
     // }, [])

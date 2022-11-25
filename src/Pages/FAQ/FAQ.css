@@ -1,5 +1,4 @@
 .faq-section {
-  margin-bottom: 2rem;
   position: relative;
 }
 .faq-section .faq-heading h5 {
@@ -22,7 +21,9 @@
   top: 0;
   right: 2rem;
   width: 300px;
+  max-width: auto;
   height: 300px;
+  max-height: auto;
   max-width: 400px;
 }
 .faq-section .faq-container .faq-img img {

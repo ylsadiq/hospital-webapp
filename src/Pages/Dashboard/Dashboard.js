@@ -44,7 +44,9 @@ const Dashboard = () => {
     <ul className="menu p-4 overflow-y-auto w-52 bg-red-100 text-base-content">
         <li><Link to='/dashboard'>My Appointment</Link></li>
       <li><Link to='/dashboard/review'>Review</Link></li>
-      {admin ? <li><Link to='/dashboard/users'>All Users</Link></li> : null}
+      {admin ? 
+      <li><Link to='/dashboard/users'>All Users</Link></li>
+       : null}
     </ul>
   
   </div>

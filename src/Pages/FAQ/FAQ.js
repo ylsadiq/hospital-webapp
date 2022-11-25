@@ -11,7 +11,7 @@ const FAQ = () => {
           </div>
             <div className="faq-container">
             <div className="rounded-box w-2/5 mt-4">
-            <div className="collapse collapse-plus border-base-300 bg-base-100 rounded-box">
+            <div className="collapse collapse-plus border-base-300 rounded-box">
   <input type="checkbox" /> 
   <div className="collapse-title text-xl font-medium">
   Get Your General Answer 
@@ -20,7 +20,7 @@ const FAQ = () => {
     <p>his is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the, though the transition does limit overflow.</p>
   </div>
 </div>
-            <div className="collapse collapse-plus border-base-300 bg-base-100 rounded-box">
+            <div className="collapse collapse-plus border-base-300 rounded-box">
   <input type="checkbox" /> 
   <div className="collapse-title text-xl font-medium">
   Will I always see my own doctor? 
@@ -29,7 +29,7 @@ const FAQ = () => {
     <p>This is the second item's accordion body It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the accordion-body though the transition does limit overflow.</p>
   </div>
 </div>
-            <div className="collapse collapse-plus border-base-300 bg-base-100 rounded-box">
+            <div className="collapse collapse-plus border-base-300 rounded-box">
   <input type="checkbox" /> 
   <div className="collapse-title text-xl font-medium">
   What is one Medical’s care?
@@ -38,7 +38,7 @@ const FAQ = () => {
     <p>This is the third item's accordion body.It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the.</p>
   </div>
 </div>
-            <div className="collapse collapse-plus border-base-300 bg-base-100 rounded-box">
+            <div className="collapse collapse-plus border-base-300 rounded-box">
   <input type="checkbox" /> 
   <div className="collapse-title text-xl font-medium">
   What is evidence based medicine? 

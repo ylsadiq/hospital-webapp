@@ -28,6 +28,14 @@
     top: 0;
   }
 }
+.services {
+  background: linear-gradient(0deg, rgba(235, 144, 237, 0.185778535) 0%, rgba(144, 212, 237, 0.3510446415) 100%);
+}
+
+.blog {
+  background: linear-gradient(0deg, rgba(144, 237, 204, 0.2586076667) 0%, rgba(235, 144, 237, 0.2137897395) 100%);
+}
+
 .footer {
-  background: linear-gradient(90deg, rgb(209, 238, 228) 0%, rgb(250, 250, 250) 39%, rgb(254, 253, 254) 69%, rgb(240, 219, 244) 100%);
+  background: linear-gradient(0deg, rgba(144, 212, 237, 0.2698121485) 0%, rgb(233, 238, 247) 100%);
 }/*# sourceMappingURL=Home.css.map */

@@ -18,7 +18,7 @@ const Loading = () => {
 
     <form className="grid flex-grow card rounded-box pl-5 input-field">
   <input type="email" className="w-full h-2 max-w-xs border-slate-300 " />
-  <input type="password" className="w-full h-2 max-w-xs border-slate-300" />
+  <input type="current-password" className="w-full h-2 max-w-xs border-slate-300" />
   <a className="inline-block align-baseline py-2 font-bold text-sm text-blue-500" href="#">
       </a>
     <button type="submit" className="w-full max-w-xs bg-blue-500 text-white py-2">

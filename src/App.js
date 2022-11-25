@@ -17,6 +17,7 @@ import MyAppointment from './Pages/Dashboard/MyAppointment';
 import Review from './Pages/Dashboard/Review';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import RequireAdmin from './Pages/Login/Login/RequireAdmin';
+import AllTreatment from './Pages/AllTreatment/AllTreatment';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/bookingmodal" element={<AllTreatment />} />
           <Route path="/appointment" element={
             <RequireAuth>
               <Appointment />

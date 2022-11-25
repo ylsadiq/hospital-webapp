@@ -1,1 +1,49 @@
-/*# sourceMappingURL=AvailableAppointment.css.map */
+.treatment_container .treatment_slot {
+  padding: 1rem 1.5rem;
+  border: 2px solid #10816F;
+}
+.treatment_container .right_card h3 {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  background: #10b981;
+  font-size: 1.2rem;
+}
+.treatment_container .right_card h4 {
+  margin-top: 0.5rem;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  background: #34d399;
+}
+.treatment_container .thankyou_card {
+  display: block;
+  text-align: center;
+}
+.treatment_container .thankyou_card h2 {
+  display: block;
+  text-align: center;
+}
+.treatment_container .thankyou_card figure {
+  font-size: 10rem;
+}
+.treatment_container .steps li {
+  font-size: 0.9rem;
+}
+.treatment_container .scrollbar {
+  margin-left: 30px;
+  float: left;
+  height: 300px;
+  width: 65px;
+  background: #F5F5F5;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+}
+.treatment_container .scrollbar #style-1::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+.treatment_container .scrollbar #style-1::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}/*# sourceMappingURL=AvailableAppointment.css.map */

@@ -5,9 +5,14 @@ import './OurProcess.css'
 
 const OurProcess = () => {
     return (
-        <section className='our-process px-4 my-4'>
-            <h5>How we do it?</h5>
+        <section className='our-process px-4 py-6'>
+            <div className='mb-5'>
+            <h5>
+                How we do it?
+                </h5>
+                
             <h2>Our Process</h2>
+                </div>
             <div className="process grid grid-cols-3 gap-4">
                 <div className="heart-pulse">
                 <a href="">

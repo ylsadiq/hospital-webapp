@@ -4,13 +4,14 @@ a {
 }
 
 .blogs-and-news {
-  padding: 2.5rem 0;
+  font-family: "Inter", sans-serif;
+  font-family: "Bree Serif", serif;
 }
 .blogs-and-news h5 {
-  font-size: 1.1rem;
+  font-size: 22px;
 }
 .blogs-and-news h2 {
-  font-size: 1.6rem;
+  font-size: 32px;
   font-weight: 600;
 }
 .blogs-and-news .blog-news-header {

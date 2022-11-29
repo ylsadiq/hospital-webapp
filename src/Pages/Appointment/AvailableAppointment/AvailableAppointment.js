@@ -18,11 +18,11 @@
 //    if (isLoading) return <button className='btn loading'>Loding</button>
  
 //    if (error) return 'An error has occurred: ' + error.message
-//     // useEffect(() =>{
-//     //     fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`)
-//     //     .then(res => res.json())
-//     //     .then(data => setServices(data))
-//     // }, [])
+    // useEffect(() =>{
+    //     fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`)
+    //     .then(res => res.json())
+    //     .then(data => setServices(data))
+    // }, [])
 //     return (
 //         <div>
 //             <div  className='grid lg:grid-cols-3 md:grid-cols-2  gap-4'>
@@ -40,7 +40,7 @@
 
 // export default AvailableAppointment;
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -51,9 +51,11 @@ import auth from '../../../firebase.init';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './AvailableAppointment.css';
 import { faArrowLeft, faArrowRight, faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
+import Services from '../Services/Services';
 
 const AvailableAppointment = ({date, setDate}) => {
     const [treatment, setTreatment] = useState();
+    const [services, setServices] = useState([]);
     const [slotTime, setSlotTime] = useState('');
     const [user] = useAuthState(auth);
     const [option, setOption] = useState(false);
@@ -101,14 +103,26 @@ const AvailableAppointment = ({date, setDate}) => {
     }
     const { register, formState: { errors, isValid } } = useForm({mode: 'all'});
 
-    const { isLoading, refetch, error, data: services } = useQuery(['available', formattedDate], () =>
-    fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`).then(res =>
-       res.json()
-     )
-   )
-   if (isLoading) return <button className="btn loading">loading</button>
+  //   const { isLoading, refetch, error, } = useQuery(['available', formattedDate], () =>
+  //   fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`).then(res =>
+  //      res.json()
+  //    )
+  //  )
+  //  if (isLoading) return <button className="btn loading">loading</button>
  
-   if (error) return 'An error has occurred: ' + error.message
+  //  if (error) return 'An error has occurred: ' + error.message;
+
+  //  useEffect(() =>{
+  //       fetch('http://localhost:5000//available')
+  //       .then(res => res.json())
+  //       .then(data => setServices(data))
+  //   }, [])
+    useEffect(() =>{
+        fetch('/services.json')
+        .then(res => res.json())
+        .then(data => setServices(data))
+    }, [])
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const slotTime = treatmentSlot;
@@ -154,9 +168,15 @@ const AvailableAppointment = ({date, setDate}) => {
   <div>
   {formStep >= 0 ? <div className={formStep === 0 ? 'block': 'hidden'}>
     <h2 className='text-center'>Book an Appointment</h2>
-  <div  className='grid lg:grid-cols-3 md:grid-cols-2 gap-4'>
-                {
+  <div  className='grid lg:grid-cols-3 md:grid-cols-2 gap-2'>
+                {/* {
                     services.map(service =><Service key={service._id}
+                         setTreatment={setTreatment}
+                         treatment={treatment}
+                         service={service}/>)
+                } */}
+                {
+                    services.map(service =><Services key={service._id}
                          setTreatment={setTreatment}
                          treatment={treatment}
                          service={service}/>)

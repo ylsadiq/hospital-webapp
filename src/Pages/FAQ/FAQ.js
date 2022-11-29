@@ -1,16 +1,23 @@
 import React from 'react';
+import { motion } from "framer-motion"
 import './FAQ.css'
 
 const FAQ = () => {
     var faq1 = require('../../images/faq-doc.png');
     return (
-        <section className='faq-section'>
-          <div className="faq-heading md:pl-4">
+        <section className='faq-section py-6'>
+          <motion.div
+          initial={{ y: 100 }}
+          whileInView={{ y: 0 }}
+          className="faq-heading md:pl-4">
           <h5>FAQ Qusetions</h5>
           <h2>Get Your General Anwser</h2>
-          </div>
+          </motion.div>
             <div className="faq-container">
-            <div className="rounded-box w-2/5 mt-4">
+            <motion.div
+            initial={{ opacity: 0.8}}
+            whileInView={{ opacity: 1, duration: 1 }}
+            className="rounded-box w-2/5 mt-4">
             <div className="collapse collapse-plus border-base-300 rounded-box">
   <input type="checkbox" /> 
   <div className="collapse-title text-xl font-medium">
@@ -47,10 +54,12 @@ const FAQ = () => {
     <p>This is the third item's accordion body.It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the.accordion-body, though the transition does limit overflow</p>
   </div>
 </div>
-            </div>
-            <div className="faq-img w-2/5">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, duration: 0.3 }} className="faq-img w-2/5">
             <img src={faq1} alt="" />
-            </div>
+            </motion.div>
             </div>
         </section>
     );

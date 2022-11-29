@@ -12,6 +12,7 @@ const Menu = () => {
     const [selected, setSelected] = useState("GB");
   const { t, i18n } = useTranslation(["common"]);
   const [user, loading, error] = useAuthState(auth);
+  const [stickyNav, setStickyNav] = useState(false);
   const logout = () => {
     signOut(auth);
     localStorage.removeItem('accessToken')
@@ -22,12 +23,19 @@ const Menu = () => {
 		}
 	}, []);
 
+  useEffect(() => {
+    window.onscroll = () => {
+      setStickyNav(window.pageYOffset === 0 ? false : true);
+      return () => (window.onscroll = null);
+    };
+  }, []);
+
   const handleLanguageChange = (e) => {
 		setSelected(i18n.changeLanguage(e))
     setSelected(e)
 	};
     return (
-        <div>
+        <div className={`w-full top-0  z-[1000] ${stickyNav ? 'bg-indigo-200 fixed' : ''} }`}>
             <div className="navbar">
   <div className="navbar-start">
   <div className="dropdown">
@@ -41,7 +49,7 @@ const Menu = () => {
       </ul>
     </div>
   </div>
-  <div className="navbar-center hidden lg:flex">
+  <div className="navbar-center hidden lg:flex ">
     <ul className="menu menu-horizontal p-0">
       <li><Link to='/'>{t("home")}</Link></li>
       <li tabIndex={0}>

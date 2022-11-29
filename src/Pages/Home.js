@@ -17,11 +17,11 @@ const Home = () => {
             <Blog />
            </div>
            <div className="blog">
-            
             <FAQ />
+            <Footer />
            </div>
            <div className="footer">
-            <Footer />
+            
            </div>
         </div>
     );

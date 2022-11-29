@@ -1,3 +1,14 @@
+.hero-container h1 {
+  font-family: "Inter", sans-serif;
+}
+.hero-container .banner-subHeader {
+  font-family: "Bree Serif", serif;
+}
+.hero-container .banner-subHeader button {
+  background-color: #2D89FF;
+  border: none;
+  color: #fff;
+}
 .hero-container .outer_circle {
   position: relative;
   width: 440px;
@@ -37,6 +48,7 @@
   height: 100%;
 }
 .hero-container .banner-left {
+  font-family: "Bree Serif", serif;
   position: relative;
 }
 .hero-container .banner-left .doctors-card {
@@ -52,6 +64,8 @@
 .hero-container .banner-left .doctors-card h5 {
   text-align: left;
   padding: 0.5rem 0;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
 }
 .hero-container .banner-left .doctors-card .doc-info {
   display: flex;
@@ -87,22 +101,23 @@
   border-radius: 50px;
 }
 .hero-container .countup {
-  margin: 1.4rem 0;
+  font-family: "Bree Serif", serif;
   text-align: left;
 }
 .hero-container .countup h4 {
   text-align: left;
-  font-size: 24px;
+  font-size: 25px;
   line-height: 29px;
   font-weight: 600;
 }
 .hero-container .countup h6 {
-  font-size: 16px;
+  font-size: 22px;
 }
 
 @media (min-width: 320px) and (max-width: 640px) {
   .hero-container h1 {
     font-size: 2.5rem;
+    font-family: "Inter", sans-serif;
   }
   .hero-container .outer_circle {
     text-align: center;

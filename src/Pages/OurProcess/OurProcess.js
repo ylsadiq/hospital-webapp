@@ -1,11 +1,36 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeartPulse, faHouseMedical, faTruckMedical } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
+import { motion, Variants } from "framer-motion"
 import './OurProcess.css'
 
 const OurProcess = () => {
+
+    const cardVariants: Variants = {
+        offscreen: {
+            y: 100,
+            opacity: 0
+        },
+        onscreen: {
+        y: 0,
+        opacity: 1,
+          transition: {
+            type: "spring",
+            bounce: 0.5,
+            duration: 0.3
+          }
+        }
+      };
+
     return (
-        <section className='our-process px-4 py-6'>
+        <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        >
+        <motion.div
+        variants={cardVariants}
+        className='card card-container our-process px-4 py-6'>
             <div className='mb-5'>
             <h5>
                 How we do it?
@@ -60,7 +85,8 @@ const OurProcess = () => {
                 <p>Proin ultrices, lorem ac maximus laoreet, ante neque viverra libero, non auctor leo eros vel lorem. Morbi dictum consectetur tristique.</p>
                 </div>
             </div>
-        </section>
+        </motion.div>
+        </motion.div>
     );
 };
 

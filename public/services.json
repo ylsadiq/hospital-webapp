@@ -1,6 +1,8 @@
 [
     {
         "name": "Teeth Orthodontics",
+        "image":"https://i.ibb.co/MDDwty2/dental-implant.png",
+        "service_image":"http://medicare.bold-themes.com/dentist/wp-content/uploads/sites/3/2015/12/shutterstock_192351722-320x200.jpg",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -23,6 +25,8 @@
     },
     {
         "name": "Cosmetic Dentistry",
+        "image":"https://i.ibb.co/PCy5bbL/gabity-tooth.png",
+        "service_image":"http://medicare.bold-themes.com/dentist/wp-content/uploads/sites/3/2015/12/shutterstock_227481766-320x200.jpg" ,
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -45,6 +49,8 @@
     },
     {
         "name": "Teeth Cleaning",
+        "image":"https://i.ibb.co/ggbybW1/happy-tooth.png",
+        "service_image":"http://medicare.bold-themes.com/dentist/wp-content/uploads/sites/3/2015/12/shutterstock_270756593-320x200.jpg",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -67,6 +73,8 @@
     },
     {
         "name": "Cavity Protection",
+        "image":"https://i.ibb.co/RchHmRD/tooth-brush.png",
+        "service_image":"http://medicare.bold-themes.com/dentist/wp-content/uploads/sites/3/2015/12/shutterstock_156787064-320x200.jpg",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -89,6 +97,8 @@
     },
     {
         "name": "Pediatric Dental",
+        "image":"https://i.ibb.co/FY4YRtZ/tooth-whitening.png",
+        "service_image":"http://medicare.bold-themes.com/dentist/wp-content/uploads/sites/3/2015/12/shutterstock_142427935-320x200.jpg",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -111,6 +121,80 @@
     },
     {
         "name": "Oral Surgery",
+        "image":"https://i.ibb.co/m9JYDLS/adjust-tooth.png",
+        "service_image":"http://medicare.bold-themes.com/dentist/wp-content/uploads/sites/3/2015/12/shutterstock_124314160-320x200.jpg",
+        "slots": [
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM",
+            "09.00 AM - 09.30 AM",
+            "09.30 AM - 10.00 AM",
+            "10.00 AM - 10.30 AM",
+            "10.30 AM - 11.00 AM",
+            "11.00 AM - 11.30 AM",
+            "11.30 AM - 12.00 AM",
+            "12.00 AM - 12.30 AM",
+            "12.30 AM - 01.00 AM",
+            "03.00 AM - 03.30 AM",
+            "03.30 AM - 04.00 AM",
+            "04.00 AM - 04.30 AM",
+            "07.00 AM - 07.30 AM",
+            "07.30 AM - 08.00 AM",
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM"
+        ]
+    },
+    {
+        "name": "DENTAL BRIDGES",
+        "image":"https://i.ibb.co/vspskg6/brace.png",
+        "service_image":"http://medicare.bold-themes.com/dentist/wp-content/uploads/sites/3/2015/12/shutterstock_118733071-320x200.jpg" ,
+        "slots": [
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM",
+            "09.00 AM - 09.30 AM",
+            "09.30 AM - 10.00 AM",
+            "10.00 AM - 10.30 AM",
+            "10.30 AM - 11.00 AM",
+            "11.00 AM - 11.30 AM",
+            "11.30 AM - 12.00 AM",
+            "12.00 AM - 12.30 AM",
+            "12.30 AM - 01.00 AM",
+            "03.00 AM - 03.30 AM",
+            "03.30 AM - 04.00 AM",
+            "04.00 AM - 04.30 AM",
+            "07.00 AM - 07.30 AM",
+            "07.30 AM - 08.00 AM",
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM"
+        ]
+    },
+    {
+        "name": "INVISALIGN",
+        "image":"https://i.ibb.co/nP6SszZ/clear-tooth.png",
+        "service_image":"http://medicare.bold-themes.com/dentist/wp-content/uploads/sites/3/2015/12/shutterstock_118733071-320x200.jpg" ,
+        "slots": [
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM",
+            "09.00 AM - 09.30 AM",
+            "09.30 AM - 10.00 AM",
+            "10.00 AM - 10.30 AM",
+            "10.30 AM - 11.00 AM",
+            "11.00 AM - 11.30 AM",
+            "11.30 AM - 12.00 AM",
+            "12.00 AM - 12.30 AM",
+            "12.30 AM - 01.00 AM",
+            "03.00 AM - 03.30 AM",
+            "03.30 AM - 04.00 AM",
+            "04.00 AM - 04.30 AM",
+            "07.00 AM - 07.30 AM",
+            "07.30 AM - 08.00 AM",
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM"
+        ]
+    },
+    {
+        "name": "VENEERS",
+        "image":"https://i.ibb.co/WpqxfnR/dental-care.png",
+        "service_image":"http://medicare.bold-themes.com/dentist/wp-content/uploads/sites/3/2015/12/shutterstock_77455267-320x200.jpg",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",

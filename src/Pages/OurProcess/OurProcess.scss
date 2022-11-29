@@ -1,13 +1,28 @@
+@use '../SCSS/_style';
+
 body{
     text-decoration: none;
 }
 .our-process{
+    font-family: style.$font-primary-family;
+    font-family: style.$font-second-family;
     h5{
-        font-size: 1.2rem;
+        font-family: style.$font-second-family;
     }
-
+    
     h2{
-        font-size: 36px;
+        font-size: style.$h2;
+        font-family: style.$font-second-family;
+        font-weight: 600;
+    }
+    h4{
+        font-size: style.$h4;
+        margin: .7rem 0;
+    }
+    h6{
+        font-size: style.$h6;
+        font-family: style.$font-second-family;
+        margin-top: .6rem;
     }
     .process{
         .heart-pulse{
@@ -20,9 +35,9 @@ body{
             position: relative;
             width: 100px;
             height: 100px;
-            background: #005b88;
+            background: #2D89FF;
             border-radius: 5rem;
-            box-shadow: 0 0 0 1em #005b88 inset, 0 1px 2px rgba(0, 0, 0, .1);
+            box-shadow: 0 0 0 1em #2D89FF inset, 0 1px 2px rgba(0, 0, 0, .1);
             // transform: translate(-50%, -50%);
             .circle-icons{
                 font-size: 2.1rem;
@@ -36,14 +51,14 @@ body{
                 }
                 .circle-icons{
                     transition-delay: .3s;
-                    color: #005b88;
+                    color: #2D89FF;
                 }
             }
             .inner-circle{
                 z-index: -111;
                 width: 0;
                 height: 0;
-                background: rgb(228, 227, 226);
+                background: #ffff;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -52,6 +67,7 @@ body{
                 -webkit-transition: all .4s ease-in-out; 
                 
         }
+        
         }
     }
 }

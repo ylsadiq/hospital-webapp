@@ -33,7 +33,7 @@ const Navbar = () => {
 	};
     return (
         <section className='header-container'>
-          <nav className='px-4'>
+          <nav>
 
           <div className="top-bar flex justify-end items-center">
           <FontAwesomeIcon icon={faPhone} /><span>{t("emergency")}: +0089892</span>
@@ -65,7 +65,9 @@ const Navbar = () => {
           </div>
           <Menu />
 {/* Banner section added */}
-<Banner/>
+        <span className='px-4'>
+        <Banner/>
+        </span>
         </nav>
         </section>
     );

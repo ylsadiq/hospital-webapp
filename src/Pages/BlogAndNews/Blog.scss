@@ -1,14 +1,16 @@
+@use '../SCSS/_style';
 a{
     text-decoration: none;
     box-shadow: whitesmoke;
 }
 .blogs-and-news{
-    padding: 2.5rem 0;
+    font-family: style.$font-second-family;
+    font-family: style.$font-base-family;
     h5{
-        font-size: 1.1rem;
+        font-size: style.$h6;
     }
     h2{
-        font-size: 1.6rem;
+        font-size: style.$h2;
         font-weight: 600;
     }
     .blog-news-header{
@@ -16,6 +18,16 @@ a{
         align-items: center;
         justify-content: space-between;
         margin-bottom: 2rem;
+        .blog-news-healine{
+            h5{
+                
+            }
+        }
+        .blog-news-explore{
+            a{
+
+            }
+        }
     }
         .common-blog{
             margin-top: 2.5rem;

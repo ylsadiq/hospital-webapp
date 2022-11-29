@@ -5,7 +5,7 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <section className='footer-section px-4'>
+        <section className='footer-section px-4 py-6'>
             
             <div className="grid grid-cols-2 gap-4">
                 <div className="footer-contract">

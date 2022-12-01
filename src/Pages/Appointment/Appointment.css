@@ -1,3 +1,11 @@
+.appointment-container {
+  background: linear-gradient(0deg, rgba(144, 237, 204, 0.2586076667) 0%, rgba(235, 144, 237, 0.2137897395) 100%);
+}
+.appointment-container h2 {
+  font-size: 32px;
+  font-family: "Bree Serif", serif;
+}
+
 .day-pick {
   display: flex;
   align-items: center;

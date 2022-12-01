@@ -1,62 +1,18 @@
-// import React from 'react';
-// import { useState, useEffect } from 'react';
-// import { format } from 'date-fns';
-// import Service from '../Service/Service';
-// import BookingModal from './BookingModal/BookingModal';
-// import { useQuery } from 'react-query'
-// import './AvailableAppointment.css';
-
-// const AvailableAppointment = ({date}) => {
-//     // const [services, setServices] = useState([]);
-//     const [treatment, setTreatment] = useState({});
-//     const formattedDate = format(date, 'PP');
-//     const { isLoading, refetch, error, data: services } = useQuery(['available', formattedDate], () =>
-//     fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`).then(res =>
-//        res.json()
-//      )
-//    )
-//    if (isLoading) return <button className='btn loading'>Loding</button>
- 
-//    if (error) return 'An error has occurred: ' + error.message
-    // useEffect(() =>{
-    //     fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`)
-    //     .then(res => res.json())
-    //     .then(data => setServices(data))
-    // }, [])
-//     return (
-//         <div>
-//             <div  className='grid lg:grid-cols-3 md:grid-cols-2  gap-4'>
-//                 {
-//                     services.map(service =><Service key={service._id}
-//                         setTreatment={setTreatment}
-//                         service={service}/>)
-//                 }
-//             </div>
-            
-//             {treatment && <BookingModal setTreatment={setTreatment} treatment={treatment} refetch={refetch} date={date}></BookingModal>}
-//         </div>
-//     );
-// };
-
-// export default AvailableAppointment;
-
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { format } from 'date-fns';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
-import Service from '../Service/Service';
 import auth from '../../../firebase.init';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from "framer-motion";
 import './AvailableAppointment.css';
 import { faArrowLeft, faArrowRight, faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 import Services from '../Services/Services';
 
 const AvailableAppointment = ({date, setDate}) => {
     const [treatment, setTreatment] = useState();
-    const [services, setServices] = useState([]);
-    const [slotTime, setSlotTime] = useState('');
     const [user] = useAuthState(auth);
     const [option, setOption] = useState(false);
     const [formStep, setFormStep] = useState(0);
@@ -67,6 +23,9 @@ const AvailableAppointment = ({date, setDate}) => {
     const MAX_STEPS = 3;
     const goToPreStep = () =>{
       setFormStep(cur => cur - 1)
+      if(formStep ===  1){
+        setTreatmentSlot(null)
+      }
     }
     const completeFormStep = () =>{
       setFormStep(cur => cur + 1)
@@ -82,19 +41,18 @@ const AvailableAppointment = ({date, setDate}) => {
       }else if(formStep === 2){
         return(
           <button
-          type='submit'  
-          disabled={!isValid}
+          type='submit treatment_btn'  
+          disabled={!isValid }
           defaultValue={option} 
-          className="btn btn-primary">Finish</button>
+          className="btn px-5 treatment_btn">Finish</button>
         )
-      }
-      else{
+      }else{
         return(
           <button
           type='button'   
           onClick={completeFormStep}
-          disabled={!treatment}
-           className="btn btn-primary text-white px-5">
+          disabled={!treatment && !isValid}
+           className={!treatment? 'disable_treatment not_allow btn px-5' : "btn px-5 treatment_btn"}>
             <span>Next
               <FontAwesomeIcon className='ml-2' icon={faArrowRight}/></span>
             </button>
@@ -103,25 +61,14 @@ const AvailableAppointment = ({date, setDate}) => {
     }
     const { register, formState: { errors, isValid } } = useForm({mode: 'all'});
 
-  //   const { isLoading, refetch, error, } = useQuery(['available', formattedDate], () =>
-  //   fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`).then(res =>
-  //      res.json()
-  //    )
-  //  )
-  //  if (isLoading) return <button className="btn loading">loading</button>
+    const { isLoading, refetch, error, data: services } = useQuery(['available', formattedDate], () =>
+    fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`).then(res =>
+       res.json()
+     )
+   )
+   if (isLoading) return <div className='text-center mt-36'><button className="btn h-full loading">loading</button></div>
  
-  //  if (error) return 'An error has occurred: ' + error.message;
-
-  //  useEffect(() =>{
-  //       fetch('http://localhost:5000//available')
-  //       .then(res => res.json())
-  //       .then(data => setServices(data))
-  //   }, [])
-    useEffect(() =>{
-        fetch('/services.json')
-        .then(res => res.json())
-        .then(data => setServices(data))
-    }, [])
+   if (error) return 'An error has occurred: ' + error.message;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -139,24 +86,24 @@ const AvailableAppointment = ({date, setDate}) => {
         completeFormStep();
         // JSON.stringify(booking, null, 2);
       console.log(booking);
-    //   fetch('https://floating-escarpment-89752.herokuapp.com/booking', {
-    //     method: "POST",
-    //     headers:{
-    //       "content-type": "application/json"
-    //     },
-    //     body: JSON.stringify(booking, null, 2)
-    //   })
-    //   .then(res => res.json())
-    //   .then(data =>{
-    //     if(data.success){
-    //       toast(`Appointment is set, ${formattedDate} at ${treatmentSlot}`)
-    //     }
-    //     else{
-    //       toast.error(`Already have an appointment on, ${data?.booking?.date} at ${data?.booking?.slot}`)
-    //     }
-    //     refetch()
-    //     setTreatment(null);
-    //   })
+      fetch('https://floating-escarpment-89752.herokuapp.com/booking', {
+        method: "POST",
+        headers:{
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(booking, null, 2)
+      })
+      .then(res => res.json())
+      .then(data =>{
+        if(data.success){
+          toast(`Appointment is set, ${formattedDate} at ${treatmentSlot}`)
+        }
+        else{
+          toast.error(`Already have an appointment on, ${data?.booking?.date} at ${data?.booking?.slot}`)
+        }
+        refetch()
+        setTreatment(null);
+      })
     }
   }
 
@@ -168,13 +115,7 @@ const AvailableAppointment = ({date, setDate}) => {
   <div>
   {formStep >= 0 ? <div className={formStep === 0 ? 'block': 'hidden'}>
     <h2 className='text-center'>Book an Appointment</h2>
-  <div  className='grid lg:grid-cols-3 md:grid-cols-2 gap-2'>
-                {/* {
-                    services.map(service =><Service key={service._id}
-                         setTreatment={setTreatment}
-                         treatment={treatment}
-                         service={service}/>)
-                } */}
+  <div  className='grid lg:grid-cols-3 md:grid-cols-2 gap-3'>
                 {
                     services.map(service =><Services key={service._id}
                          setTreatment={setTreatment}
@@ -185,7 +126,7 @@ const AvailableAppointment = ({date, setDate}) => {
   </div> : null}
   {formStep >= 1 ? <div className={formStep === 1 ? 'block': 'hidden'}>
     <h2 className='text-center'>Choose Time</h2>
-    <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-4'>
+    <div className='grid lg:grid-cols-4 md:grid-cols-2 gap-3 w-full'>
   {treatment?.slots?.map((slot, index) => <div
   key={index}
   >
@@ -216,40 +157,48 @@ const AvailableAppointment = ({date, setDate}) => {
   </div>
     </> : null}
     
-    {formStep === 3 ? <div className="w-96 bg-base-100 shadow-xl">
+    {formStep === 3 ? <motion.div
+     initial={{ opacity: 0, scale: 0.5 }}
+     animate={{ opacity: 1, scale: 1 }}
+     transition={{
+       duration: 0.8,
+       delay: 0.5,
+       ease: [0, 0.71, 0.2, 1.01]
+     }}
+     className="w-96 shadow-xl box">
   <div className="card-body thankyou_card">
   <h4>Healling Hospital</h4>
-      <h4>Healling Hospital @ gmail.com</h4>
+      <h6>Healling Hospital @ gmail.com</h6>
       <figure><FontAwesomeIcon className='mr-2' icon={faCalendarCheck}/></figure>
     <h2 className="card-title">Thank You</h2>
     <p>We look forword to speaking with you soon and getting you the right coverage</p>
   </div>
-</div>: null}
+</motion.div>: null}
     
   </div>
-  <div className="card ">
-  <div className="card-body bg-base-100 shadow-xl right_card">
+  <div className={treatment ? 'third_card lg:mt-40 h-full card mt-5 p-2': 'card p-2 lg:mt-64'}>
+  <div className="shadow-xl right_card p-5">
     
     {/* {formStep === 3 ? null: <button onClick={goToPreStep}> previous</button>} */}
  {formStep < MAX_STEPS && <ul className="steps">
   <>
-  <li className={formStep === 0 ? 'step step-primary' : 'step'}>Appointment</li>
-  <li className={formStep === 1 ? 'step step-primary' : 'step'}>Choose Time</li>
-  <li className={formStep === 2 ? 'step step-primary' : 'step'}>fill input field</li>
+  <li className={formStep === 0 ? 'step step-accent' : 'step'}>Appointment</li>
+  <li className={formStep === 1 ? 'step step-accent' : 'step'}>Choose Time</li>
+  <li className={formStep === 2 ? 'step step-accent' : 'step'}>fill input field</li>
   </>
 </ul>}
 {treatment ? <h3>{treatment?.name}</h3> : null}
 {treatmentSlot ? <h4>{treatmentSlot}</h4> : null}
     <div className="card-actions justify-end">
     <div className="flex items-center justify-center mt-4">
-    {formStep > 0 ? <button className={formStep === 3 ? 'hidden': 'btn btn-primary mr-2 text-white block px-5'} onClick={goToPreStep}> <span>
+    {formStep > 0 ? <button className={formStep === 3 ? 'hidden': 'btn mr-2 treatment_btn block px-5'} onClick={goToPreStep}><span>
       <FontAwesomeIcon className='mr-2' icon={faArrowLeft}/></span>Back
       </button>: null}
       {renderBtn()}
     </div>
     </div>
   </div>
-  </div>
+</div>
 </div>
       </form>
         </div>

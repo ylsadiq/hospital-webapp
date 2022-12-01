@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeartPulse, faHouseMedical, faTruckMedical } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
-import { motion, Variants } from "framer-motion"
+import { motion, Variants } from "framer-motion";
 import './OurProcess.css'
 
 const OurProcess = () => {
@@ -23,22 +23,25 @@ const OurProcess = () => {
       };
 
     return (
+        <section className='process-section'>
         <motion.div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
-        >
-        <motion.div
-        variants={cardVariants}
         className='card card-container our-process px-4 py-6'>
-            <div className='mb-5'>
+            <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className='mb-5'>
             <h5>
                 How we do it?
                 </h5>
                 
             <h2>Our Process</h2>
-                </div>
-            <div className="process grid grid-cols-3 gap-4">
+                </motion.div>
+            <motion.div
+            variants={cardVariants}
+            className="process grid grid-cols-3 gap-4">
                 <div className="heart-pulse">
                 <a href="">
                 <div className="main-circle">
@@ -84,9 +87,9 @@ const OurProcess = () => {
                 <h4>Medical Services</h4>
                 <p>Proin ultrices, lorem ac maximus laoreet, ante neque viverra libero, non auctor leo eros vel lorem. Morbi dictum consectetur tristique.</p>
                 </div>
-            </div>
+            </motion.div>
         </motion.div>
-        </motion.div>
+        </section>
     );
 };
 

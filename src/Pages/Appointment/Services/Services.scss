@@ -1,20 +1,10 @@
 .service-section{
-    margin: 2.5rem 0;
-    h2{
-        text-align: left;
-        font-size: 32px;
-        margin: 1rem 0;
-        font-weight: 600;
-    }
-    a{
-            text-decoration: none;
-        }
     .common-service{
         height: 320px;
         max-height: 500px;
         position: relative;
-        background: rgba(0, 113, 220, 0.05);
-        border: 1px solid rgba(152, 162, 176, 0.34);
+        background: #90D4ED;
+        border: 1px solid #90D4ED;
         border-radius: 6px;
         overflow: hidden;
         transition: all ease-in .2s;
@@ -32,7 +22,7 @@
             position: absolute;
             top: 0; right: 0; bottom: 0; left: 0;
             inset: 0 0 0 0;
-            background-color: rgba(0, 113, 220, 1);
+            background-color: #90D4ED;
             z-index: -1;
             transition: transform .3s ease;
         }
@@ -77,12 +67,29 @@
             padding: 0 .5rem;                
             h3{
                 font-weight: 600;
+                margin: .6rem 0;
             }
-            button{
-                margin: .3rem 0;
-                visibility: hidden;
+            .booking-btn{
+                display: flex;
+                justify-content: flex-end;
+                button{
+                    margin-top: 1.3rem;
+                    background-color: #EB90ED;
+                    border: none;
+                    color: #fff;
+                    span{
+                        transition: all ease-out .2s;
+                    }
+                    &:hover{
+                        background-color: #fff;
+                        color: #EB90ED;
+                        span{
+                            margin-left: .4rem;
+                        }
+                    }
+                }
             }
- 
+             
         }
         .service-inner-box{
             position: absolute;
@@ -90,7 +97,7 @@
             right: -10px;
             opacity: 1;
             .inner-img{
-                background-color: rgba(0, 113, 220, 1);
+                background-color: #EB90ED;
                 height: 80px;
                 width: 80px;
                 border-radius: 50%;
@@ -101,7 +108,7 @@
                     border-radius: 5rem;
                     background: #fff;
                     position: absolute;
-                    top: -.5rem;
+                    top: -.2rem;
                     bottom: 0;
                     left: .2rem;
                     right: 0;

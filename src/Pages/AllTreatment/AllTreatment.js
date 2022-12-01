@@ -101,7 +101,7 @@ const AllTreatment = () => {
     return (
         <div className='flex justify-center items-center'>
             {/* <h1>Booking Id: {id}</h1> */}
-            <div className="card bg-base-100 shadow-xl lg:card-side lg:w-10/12 lg:auto">
+            <div className="card shadow-xl lg:card-side lg:w-10/12 lg:auto">
   <div className="card-body w-9/12 items-center">
     <form onSubmit={handleSubmit}>
   {formStep >= 0 ? <div className={formStep === 0 ? 'block': 'hidden'}>

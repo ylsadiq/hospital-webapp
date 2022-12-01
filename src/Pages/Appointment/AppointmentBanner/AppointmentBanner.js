@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 import React from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
+import { motion } from "framer-motion";
 import './AppointmentBanner.css'
 
 const AppointmentBanner = ({date, setDate}) => {
@@ -9,7 +10,10 @@ const AppointmentBanner = ({date, setDate}) => {
         { from: new Date(date)}
       ];
     return (
-        <div>
+        <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        >
             <h2 className='text-center'>choose a date</h2>
             <div className='day-pick'>
             <DayPicker
@@ -19,8 +23,8 @@ const AppointmentBanner = ({date, setDate}) => {
       onSelect={setDate}
     /> 
         </div>
-    <p>Please pick a day.{format(date, 'PP')}</p>
-        </div>
+    <p className='text-center'>Please pick a day <span className='font-semibold'>{format(date, 'PP')}</span></p>
+        </motion.div>
     );
 };
 

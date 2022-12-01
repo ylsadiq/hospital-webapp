@@ -17,12 +17,11 @@ const AppointmentServices = ({date, treatment, setTreatment, setOption}) => {
 
     return (
         <div>
-             <div  className='grid lg:grid-cols-3 md:grid-cols-2  gap-4'>
+             <div  className='grid lg:grid-cols-3 md:grid-cols-2 gap-4'>
                 {
                     services.map((service, index) =>(
-
-                            <div key={index} className="service">
-                <div className="card lg:max-w-96 bg-base-100 shadow-xl">
+                        <div key={index} className="service">
+                <div className="card lg:max-w-96 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title">{service?.name}</h2>
                     <p>{

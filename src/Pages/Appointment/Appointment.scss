@@ -1,3 +1,12 @@
+@use '../SCSS/_style';
+
+.appointment-container{
+    h2{
+        font-size: style.$h2;
+        font-family: style.$font-base-family
+    }
+    background: linear-gradient(0deg, rgba(144,237,204,0.2586076666994923) 0%, rgba(235,144,237,0.2137897395286239) 100%);
+}
 .day-pick{
     display: flex;
     align-items: center;

@@ -48,7 +48,7 @@ const AllTreatment = () => {
     const { register, formState: { errors, isValid } } = useForm({mode: 'all'});
 
     const { isLoading, refetch, error, data: services } = useQuery(['available', formattedDate], () =>
-    fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`).then(res =>
+    fetch(`https://healing-hospitalserver.up.railway.app/available?date=${formattedDate}`).then(res =>
        res.json()
      )
    )
@@ -70,7 +70,7 @@ const AllTreatment = () => {
       completeFormStep()
       JSON.stringify(booking, null, 2);
       console.log(booking);
-    //   fetch('https://floating-escarpment-89752.herokuapp.com/booking', {
+    //   fetch('https://healing-hospitalserver.up.railway.app/booking', {
     //     method: "POST",
     //     headers:{
     //       "content-type": "application/json"
@@ -93,7 +93,7 @@ const AllTreatment = () => {
   }
 
     // useEffect(() =>{
-    //     fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`)
+    //     fetch(`https://healing-hospitalserver.up.railway.app/available?date=${formattedDate}`)
     //     .then(res => res.json())
     //     .then(data => setServices(data))
     // }, [])

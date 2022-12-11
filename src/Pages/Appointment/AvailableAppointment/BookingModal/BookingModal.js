@@ -65,7 +65,7 @@ const BookingModal = ({treatment, date, setTreatment, refetch, slot}) => {
           completeFormStep();
           // JSON.stringify(booking, null, 2);
         console.log(booking);
-        // fetch('https://floating-escarpment-89752.herokuapp.com/booking', {
+        // fetch('https://healing-hospitalserver.up.railway.app/booking', {
         //   method: "POST",
         //   headers:{
         //     "content-type": "application/json"

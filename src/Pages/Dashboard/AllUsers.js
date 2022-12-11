@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 import MakeAdmin from './MakeAdmin';
 
 const AllUsers = () => {
-    const {data: users, isLoading, refetch} = useQuery('users', () => fetch('https://floating-escarpment-89752.herokuapp.com/users', {
+    const {data: users, isLoading, refetch} = useQuery('users', () => fetch('https://healing-hospitalserver.up.railway.app/users', {
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -7,7 +7,7 @@ const AppointmentServices = ({date, treatment, setTreatment, setOption}) => {
     const formattedDate = format(date, 'PP');
     
     const { isLoading, refetch, error, data: services } = useQuery(['available', formattedDate], () =>
-    fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`).then(res =>
+    fetch(`https://healing-hospitalserver.up.railway.app/available?date=${formattedDate}`).then(res =>
        res.json()
      )
    )

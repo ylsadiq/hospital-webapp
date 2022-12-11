@@ -15,14 +15,17 @@ const MyAppointment = () => {
     const navigate = useNavigate()
     const [control , setControl] = useState(true);
     const [modalOpen, setModalOpen] = useState(false);
-    useEffect(() =>{
+
+
+    useEffect(() => {
+      const fetchData = async () => {
         if(user){
-            fetch(`https://floating-escarpment-89752.herokuapp.com/booking?patient=${user?.email}`,{
-              method: 'GET',
-              headers:{
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-              }
-            })
+          await fetch(`https://healing-hospitalserver.up.railway.app/booking?patient=${user?.email}`,{
+          method: 'GET',
+          headers:{
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+          }
+        })
         .then(res => {
           if(res.status === 401 || res.status === 403){
               signOut(auth);
@@ -34,8 +37,41 @@ const MyAppointment = () => {
         .then(data => {
           setAppointments(data)}
           )
+          .catch((e) => console.error(e));
         }
+      };
+      const timer = setTimeout(() => {
+        if(appointments >= 0){
+            fetchData()
+        }else{
+          return <p>No BOoking add</p>
+        }
+      }, 5000);
+  
+      return () => clearTimeout(timer);
     }, [user]);
+
+    // useEffect(() =>{
+    //     if(user){
+    //         fetch(`https://healing-hospitalserver.up.railway.app/booking?patient=${user?.email}`,{
+    //           method: 'GET',
+    //           headers:{
+    //             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    //           }
+    //         })
+    //     .then(res => {
+    //       if(res.status === 401 || res.status === 403){
+    //           signOut(auth);
+    //           localStorage.removeItem('accessToken')
+    //           navigate('/')
+    //       }
+    //       return res.json()
+    //     })
+    //     .then(data => {
+    //       setAppointments(data)}
+    //       )
+    //     }
+    // }, [user]);
 
     const handleDelete = (id) => {
       const proceed = window.confirm('Are you sure, you want to delete?');

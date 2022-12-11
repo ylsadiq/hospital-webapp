@@ -5,7 +5,6 @@ import './Services.css'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const Services = ({service, setTreatment, treatment}) => {
     const {name, slots, service_image, image} = service;
-    console.log(treatment);
     const [isActive, setIsActive] = useState(false);
     const handleTreatment = (service) =>{
         setTreatment(service);

@@ -62,11 +62,11 @@ const AvailableAppointment = ({date, setDate}) => {
     const { register, formState: { errors, isValid } } = useForm({mode: 'all'});
 
     const { isLoading, refetch, error, data: services } = useQuery(['available', formattedDate], () =>
-    fetch(`https://floating-escarpment-89752.herokuapp.com/available?date=${formattedDate}`).then(res =>
+    fetch(`https://healing-hospitalserver.up.railway.app/available?date=${formattedDate}`).then(res =>
        res.json()
      )
    )
-   if (isLoading) return <div className='text-center mt-36'><button className="btn h-full loading">loading</button></div>
+   if (isLoading) return <div className='text-center block h-full mt-36'><button className="btn loading">loading</button></div>
  
    if (error) return 'An error has occurred: ' + error.message;
 
@@ -86,7 +86,7 @@ const AvailableAppointment = ({date, setDate}) => {
         completeFormStep();
         // JSON.stringify(booking, null, 2);
       console.log(booking);
-      fetch('https://floating-escarpment-89752.herokuapp.com/booking', {
+      fetch('https://healing-hospitalserver.up.railway.app/booking', {
         method: "POST",
         headers:{
           "content-type": "application/json"
@@ -108,7 +108,7 @@ const AvailableAppointment = ({date, setDate}) => {
   }
 
     return (
-        <div className='flex justify-center items-center treatment_container'>
+        <div className='flex justify-center items-center  treatment_container'>
             {/* <h1>Booking Id: {id}</h1> */}
     <form onSubmit={handleSubmit}>
             <div className="card lg:card-side lg:auto">

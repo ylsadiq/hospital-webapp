@@ -1,122 +1,49 @@
-[debug] [2022-12-01T19:41:31.706Z] ----------------------------------------------------------------------
-[debug] [2022-12-01T19:41:31.735Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ThinkPadE490\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
-[debug] [2022-12-01T19:41:31.739Z] CLI Version:   11.16.0
-[debug] [2022-12-01T19:41:31.740Z] Platform:      win32
-[debug] [2022-12-01T19:41:31.742Z] Node Version:  v16.16.0
-[debug] [2022-12-01T19:41:31.888Z] Time:          Fri Dec 02 2022 01:41:31 GMT+0600 (Bangladesh Standard Time)
-[debug] [2022-12-01T19:41:31.893Z] ----------------------------------------------------------------------
+[debug] [2022-12-12T04:58:52.363Z] ----------------------------------------------------------------------
+[debug] [2022-12-12T04:58:52.365Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ThinkPadE490\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-12-12T04:58:52.366Z] CLI Version:   11.17.0
+[debug] [2022-12-12T04:58:52.366Z] Platform:      win32
+[debug] [2022-12-12T04:58:52.366Z] Node Version:  v16.16.0
+[debug] [2022-12-12T04:58:52.367Z] Time:          Mon Dec 12 2022 10:58:52 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-12T04:58:52.367Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2022-12-01T19:41:32.003Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
-[debug] [2022-12-01T19:41:32.669Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2022-12-01T19:41:32.670Z] > authorizing via signed-in user (mhsadiq.alom@gmail.com)
-[debug] [2022-12-01T19:41:32.671Z] [iam] checking project healling-hospital-c3c96 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2022-12-01T19:41:32.674Z] > refreshing access token with scopes: []
-[debug] [2022-12-01T19:41:32.682Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
-[debug] [2022-12-01T19:41:32.683Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2022-12-01T19:41:34.266Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
-[debug] [2022-12-01T19:41:34.269Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2022-12-01T19:41:34.403Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/healling-hospital-c3c96:testIamPermissions [none]
-[debug] [2022-12-01T19:41:34.405Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/healling-hospital-c3c96:testIamPermissions x-goog-quota-user=projects/healling-hospital-c3c96
-[debug] [2022-12-01T19:41:34.407Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/healling-hospital-c3c96:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2022-12-01T19:41:34.814Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
-[debug] [2022-12-01T19:41:34.815Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
-[debug] [2022-12-01T19:41:38.807Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/healling-hospital-c3c96:testIamPermissions 200
-[debug] [2022-12-01T19:41:38.809Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/healling-hospital-c3c96:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2022-12-01T19:41:38.818Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/healling-hospital-c3c96 [none]
-[debug] [2022-12-01T19:41:42.160Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/healling-hospital-c3c96 200
-[debug] [2022-12-01T19:41:42.165Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/healling-hospital-c3c96 {"projectId":"healling-hospital-c3c96","projectNumber":"71117896871","displayName":"healling-hospital","name":"projects/healling-hospital-c3c96","resources":{"hostingSite":"healling-hospital-c3c96"},"state":"ACTIVE","etag":"1_18af3700-c747-4645-bcd5-f786e1c281c8"}
+[debug] [2022-12-12T04:58:52.440Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-12T04:58:52.440Z] > authorizing via signed-in user (mhsadiq.alom@gmail.com)
 [info] 
-[info] === Deploying to 'healling-hospital-c3c96'...
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\Programming-hero\secret-4\healing-hospital_webapps\healing-hospital_client
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
 [info] 
-[info] i  deploying hosting 
-[debug] [2022-12-01T19:41:42.218Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/versions [none]
-[debug] [2022-12-01T19:41:42.219Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
-[debug] [2022-12-01T19:41:44.135Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/versions 200
-[debug] [2022-12-01T19:41:44.137Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/versions {"name":"projects/71117896871/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
-[info] i  hosting[healling-hospital-c3c96]: beginning deploy... 
-[info] i  hosting[healling-hospital-c3c96]: found 28 files in build 
-[debug] [2022-12-01T19:41:44.228Z] [hosting] uploading with 200 concurrency
-[debug] [2022-12-01T19:41:46.301Z] [hosting] hash cache [YnVpbGQ] stored for 28 files
-[debug] [2022-12-01T19:41:46.303Z] [hosting][hash queue][FINAL] {"max":1999,"min":11,"avg":112.78571428571429,"active":0,"complete":28,"success":28,"errored":0,"retried":0,"total":28,"elapsed":2030}
-[debug] [2022-12-01T19:41:46.307Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/71117896871/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce:populateFiles [none]
-[debug] [2022-12-01T19:41:46.308Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/71117896871/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce:populateFiles {"files":{"/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/assets/i18n/banner/bd.json":"134e3965c576cf43d18b3617774a91453210323e8c54bb4daf3b94b83f45dd73","/assets/i18n/banner/en.json":"ff26f6598e769a2ae43ab63838e3e124eb02b5d553fac42a455f3de70cce9275","/assets/i18n/banner/es.json":"db38bc5fe4bc0a3523aa3c2ff182355416f1d3e7f33a84bdbbd444d65c25408c","/assets/i18n/banner/fr.json":"e5a08b006f814f3e7d63d8d0f1f0b3ec55c4b00d5e4cc99c77d90eef18acb0b2","/assets/i18n/common/bd.json":"ee02f5b04700989ead3f1cac9ce5b4b27497bd6b4e9af156c914b1e2ce1eaef1","/assets/i18n/common/en.json":"51c1c1e2c013c9d0d9e675df15d733aa4b9946eadc3b7bd2413524b71331336f","/assets/i18n/common/es.json":"2025d931d65a4cb2943ac098256fed12c53811f718c88f4003476d7ec1d6e534","/assets/i18n/common/fr.json":"b8a57e127468148a319fe3e55381b8b8efb6610c0da43013b3c4acf1519b89d8","/assets/i18n/profit/en.json":"a605a6861307fb75030ff06cfa2c3de92ab926bde507b5879a5fc7a11e2f4251","/assets/i18n/profit/es.json":"bfbeb78adc33385a7eaf7d70a9b2a68f0a5bea9ce9a83cdaeccc282591b10bcc","/assets/i18n/profit/fr.json":"a8c0bf95e0743f99ba34e16eb5e863ff9d56857111f12d85bbc47898f2b9d4a2","/asset-manifest.json":"3d6b42fe85554a449b4dd3365a232b4caf5ba544e6c359661cd784f414f63331","/index.html":"ccff1f8cd969a3265c4e8dad7a0ed702a5d9c22134dc923f59e2af82e18db063","/services.json":"28d3ea71eaa1e3a6380b97cbbc5539f970c2400e8c4c825b5c38c072f9d68e14","/static/js/787.58140c8c.chunk.js":"119fbfbe607e265477684e2050365f43da8d5e24a762bbd04feff10374ba0724","/static/js/787.58140c8c.chunk.js.map":"f1f6be091120cece0d9c2f3f80cda407a092564e12c72c67c37ec7ed4e1e9311","/static/js/main.0f12bb4f.js.LICENSE.txt":"90bbbe767cc615022dbbeb668fb97828df0324a10cdd85de05f11fc1527b11cf","/static/media/getFetch.40f37ddea2378391108f.cjs":"7677e08e523fac6103af10bece99e01a900f172ee0b24aece04e6d4895ca0029","/static/css/main.75cb0187.css":"429b2467304c829e9f5189df371296346fa95921b245403555f1426d95f8be73","/static/media/faq-doc.5254974dcb509bc2fad2.png":"4fba7ad79dc1e2a7cc171bf1320239c8686a55c66df53ced37074b753ee7b6b8","/static/css/main.75cb0187.css.map":"749fa5e2a7d22ac21821c4aa62f3a958adb05dd65a331030e1c41b48f294691f","/static/js/main.0f12bb4f.js":"20486ada96a76e25dd353def3d3efb535c0c7123575eaa0e4942371a58458025","/static/js/main.0f12bb4f.js.map":"5e0526b45145c2b59d11883d28b6b3e3360dc6202ef4144158aa9dd01ddac97b"}}
-[debug] [2022-12-01T19:41:50.740Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/71117896871/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce:populateFiles 200
-[debug] [2022-12-01T19:41:50.741Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/71117896871/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce:populateFiles {"uploadRequiredHashes":["3d6b42fe85554a449b4dd3365a232b4caf5ba544e6c359661cd784f414f63331","20486ada96a76e25dd353def3d3efb535c0c7123575eaa0e4942371a58458025","ccff1f8cd969a3265c4e8dad7a0ed702a5d9c22134dc923f59e2af82e18db063","429b2467304c829e9f5189df371296346fa95921b245403555f1426d95f8be73","749fa5e2a7d22ac21821c4aa62f3a958adb05dd65a331030e1c41b48f294691f","5e0526b45145c2b59d11883d28b6b3e3360dc6202ef4144158aa9dd01ddac97b","28d3ea71eaa1e3a6380b97cbbc5539f970c2400e8c4c825b5c38c072f9d68e14"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files"}
-[debug] [2022-12-01T19:41:50.758Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/3d6b42fe85554a449b4dd3365a232b4caf5ba544e6c359661cd784f414f63331 [none]
-[debug] [2022-12-01T19:41:50.760Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/3d6b42fe85554a449b4dd3365a232b4caf5ba544e6c359661cd784f414f63331 [stream]
-[debug] [2022-12-01T19:41:50.771Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/20486ada96a76e25dd353def3d3efb535c0c7123575eaa0e4942371a58458025 [none]
-[debug] [2022-12-01T19:41:50.771Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/20486ada96a76e25dd353def3d3efb535c0c7123575eaa0e4942371a58458025 [stream]
-[debug] [2022-12-01T19:41:50.779Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/ccff1f8cd969a3265c4e8dad7a0ed702a5d9c22134dc923f59e2af82e18db063 [none]
-[debug] [2022-12-01T19:41:50.781Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/ccff1f8cd969a3265c4e8dad7a0ed702a5d9c22134dc923f59e2af82e18db063 [stream]
-[debug] [2022-12-01T19:41:50.791Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/429b2467304c829e9f5189df371296346fa95921b245403555f1426d95f8be73 [none]
-[debug] [2022-12-01T19:41:50.792Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/429b2467304c829e9f5189df371296346fa95921b245403555f1426d95f8be73 [stream]
-[debug] [2022-12-01T19:41:50.798Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/749fa5e2a7d22ac21821c4aa62f3a958adb05dd65a331030e1c41b48f294691f [none]
-[debug] [2022-12-01T19:41:50.798Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/749fa5e2a7d22ac21821c4aa62f3a958adb05dd65a331030e1c41b48f294691f [stream]
-[debug] [2022-12-01T19:41:50.802Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/5e0526b45145c2b59d11883d28b6b3e3360dc6202ef4144158aa9dd01ddac97b [none]
-[debug] [2022-12-01T19:41:50.802Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/5e0526b45145c2b59d11883d28b6b3e3360dc6202ef4144158aa9dd01ddac97b [stream]
-[debug] [2022-12-01T19:41:50.812Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/28d3ea71eaa1e3a6380b97cbbc5539f970c2400e8c4c825b5c38c072f9d68e14 [none]
-[debug] [2022-12-01T19:41:50.812Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/28d3ea71eaa1e3a6380b97cbbc5539f970c2400e8c4c825b5c38c072f9d68e14 [stream]
-[debug] [2022-12-01T19:41:50.815Z] [hosting][populate queue][FINAL] {"max":4460,"min":4460,"avg":4460,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":4518}
-[debug] [2022-12-01T19:41:50.815Z] [hosting] uploads queued: 7
-[debug] [2022-12-01T19:41:54.228Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/28d3ea71eaa1e3a6380b97cbbc5539f970c2400e8c4c825b5c38c072f9d68e14 200
-[debug] [2022-12-01T19:41:54.229Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/28d3ea71eaa1e3a6380b97cbbc5539f970c2400e8c4c825b5c38c072f9d68e14 [stream]
-[debug] [2022-12-01T19:41:55.113Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/749fa5e2a7d22ac21821c4aa62f3a958adb05dd65a331030e1c41b48f294691f 200
-[debug] [2022-12-01T19:41:55.114Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/749fa5e2a7d22ac21821c4aa62f3a958adb05dd65a331030e1c41b48f294691f [stream]
-[debug] [2022-12-01T19:41:55.124Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/429b2467304c829e9f5189df371296346fa95921b245403555f1426d95f8be73 200
-[debug] [2022-12-01T19:41:55.125Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/429b2467304c829e9f5189df371296346fa95921b245403555f1426d95f8be73 [stream]
-[debug] [2022-12-01T19:41:55.131Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/ccff1f8cd969a3265c4e8dad7a0ed702a5d9c22134dc923f59e2af82e18db063 200
-[debug] [2022-12-01T19:41:55.132Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/ccff1f8cd969a3265c4e8dad7a0ed702a5d9c22134dc923f59e2af82e18db063 [stream]
-[debug] [2022-12-01T19:41:55.137Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/3d6b42fe85554a449b4dd3365a232b4caf5ba544e6c359661cd784f414f63331 200
-[debug] [2022-12-01T19:41:55.138Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/3d6b42fe85554a449b4dd3365a232b4caf5ba544e6c359661cd784f414f63331 [stream]
-[debug] [2022-12-01T19:41:57.282Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/20486ada96a76e25dd353def3d3efb535c0c7123575eaa0e4942371a58458025 200
-[debug] [2022-12-01T19:41:57.283Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/20486ada96a76e25dd353def3d3efb535c0c7123575eaa0e4942371a58458025 [stream]
-[debug] [2022-12-01T19:42:11.314Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/5e0526b45145c2b59d11883d28b6b3e3360dc6202ef4144158aa9dd01ddac97b 200
-[debug] [2022-12-01T19:42:11.314Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce/files/5e0526b45145c2b59d11883d28b6b3e3360dc6202ef4144158aa9dd01ddac97b [stream]
-[debug] [2022-12-01T19:42:11.315Z] [hosting][upload queue][FINAL] {"max":20560,"min":3474,"avg":6868.571428571428,"active":0,"complete":7,"success":7,"errored":0,"retried":0,"total":7,"elapsed":20571}
-[info] +  hosting[healling-hospital-c3c96]: file upload complete 
-[debug] [2022-12-01T19:42:11.319Z] [hosting] deploy completed after 27167ms
-[debug] [2022-12-01T19:42:11.332Z] [
-  {
-    "config": {
-      "public": "build",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ],
-      "site": "healling-hospital-c3c96"
-    },
-    "version": "projects/71117896871/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce"
-  }
-]
-[info] i  hosting[healling-hospital-c3c96]: finalizing version... 
-[debug] [2022-12-01T19:42:11.342Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce updateMask=status%2Cconfig
-[debug] [2022-12-01T19:42:11.343Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
-[debug] [2022-12-01T19:42:12.935Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce 200
-[debug] [2022-12-01T19:42:12.936Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce {"name":"projects/71117896871/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-01T19:41:42.777595Z","createUser":{"email":"mhsadiq.alom@gmail.com"},"finalizeTime":"2022-12-01T19:42:11.553392Z","finalizeUser":{"email":"mhsadiq.alom@gmail.com"}}
-[debug] [2022-12-01T19:42:12.936Z] [hosting] finalized version for healling-hospital-c3c96:[object Object]
-[info] +  hosting[healling-hospital-c3c96]: version finalized 
-[info] i  hosting[healling-hospital-c3c96]: releasing new version... 
-[debug] [2022-12-01T19:42:12.941Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/channels/live/releases versionName=projects%2F71117896871%2Fsites%2Fhealling-hospital-c3c96%2Fversions%2F0c8b0c35b8e228ce
-[debug] [2022-12-01T19:42:12.941Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/channels/live/releases {}
-[debug] [2022-12-01T19:42:15.370Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/channels/live/releases 200
-[debug] [2022-12-01T19:42:15.372Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/healling-hospital-c3c96/channels/live/releases {"name":"projects/71117896871/sites/healling-hospital-c3c96/channels/live/releases/1669923732893562","version":{"name":"projects/71117896871/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-01T19:41:42.777595Z","createUser":{"email":"mhsadiq.alom@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu3eQBCvKVkOSg_SrMb65mBAmSy4PFzeVwXsuvQb=mo"},"finalizeTime":"2022-12-01T19:42:11.553392Z","finalizeUser":{"email":"mhsadiq.alom@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu3eQBCvKVkOSg_SrMb65mBAmSy4PFzeVwXsuvQb=mo"}},"type":"DEPLOY","releaseTime":"2022-12-01T19:42:12.893562263Z","releaseUser":{"email":"mhsadiq.alom@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu3eQBCvKVkOSg_SrMb65mBAmSy4PFzeVwXsuvQb=mo"}}
-[debug] [2022-12-01T19:42:15.373Z] [hosting] release: {"name":"projects/71117896871/sites/healling-hospital-c3c96/channels/live/releases/1669923732893562","version":{"name":"projects/71117896871/sites/healling-hospital-c3c96/versions/0c8b0c35b8e228ce","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-01T19:41:42.777595Z","createUser":{"email":"mhsadiq.alom@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu3eQBCvKVkOSg_SrMb65mBAmSy4PFzeVwXsuvQb=mo"},"finalizeTime":"2022-12-01T19:42:11.553392Z","finalizeUser":{"email":"mhsadiq.alom@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu3eQBCvKVkOSg_SrMb65mBAmSy4PFzeVwXsuvQb=mo"}},"type":"DEPLOY","releaseTime":"2022-12-01T19:42:12.893562263Z","releaseUser":{"email":"mhsadiq.alom@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu3eQBCvKVkOSg_SrMb65mBAmSy4PFzeVwXsuvQb=mo"}}
-[info] +  hosting[healling-hospital-c3c96]: release complete 
+=== Project Setup
 [info] 
-[info] +  Deploy complete! 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
 [info] 
-[info] Project Console: https://console.firebase.google.com/project/healling-hospital-c3c96/overview
-[info] Hosting URL: https://healling-hospital-c3c96.web.app
-[debug] [2022-12-01T19:42:23.619Z] Error: Timed out.
-    at Timeout._onTimeout (C:\Users\ThinkPadE490\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
-    at listOnTimeout (node:internal/timers:559:17)
-    at processTimers (node:internal/timers:502:7)
-[error] 
-[error] Error: An unexpected error has occurred.
+[debug] [2022-12-12T04:59:11.467Z] Using project from CLI flag: healling-hospital-c3c96
+[debug] [2022-12-12T04:59:11.468Z] > refreshing access token with scopes: []
+[debug] [2022-12-12T04:59:11.470Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-12T04:59:11.470Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-12T04:59:11.867Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-12-12T04:59:11.868Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-12T04:59:11.995Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/healling-hospital-c3c96 [none]
+[debug] [2022-12-12T04:59:12.720Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/healling-hospital-c3c96 200
+[debug] [2022-12-12T04:59:12.721Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/healling-hospital-c3c96 {"projectId":"healling-hospital-c3c96","projectNumber":"71117896871","displayName":"healling-hospital","name":"projects/healling-hospital-c3c96","resources":{"hostingSite":"healling-hospital-c3c96"},"state":"ACTIVE","etag":"1_50616541-ce82-43fb-8087-f487e35408c7"}
+[info] i  Using project healling-hospital-c3c96 (healling-hospital) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 

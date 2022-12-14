@@ -8,8 +8,8 @@ const Service = ({service, setTreatment, treatment}) => {
         
     // }
     const handleTreatment = (service) =>{
+        setIsActive(!isActive);
         setTreatment(service);
-            setIsActive(!isActive);
         // setIsActive(current => (!current));
         // if(selected && selected.length > 1){
         //     return null

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from "framer-motion";
 import './Services.css'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Card } from '@contentful/f36-components';
 const Services = ({service, setTreatment, treatment}) => {
     const {name, slots, service_image, image} = service;
     const [isActive, setIsActive] = useState(false);
@@ -28,7 +29,8 @@ const Services = ({service, setTreatment, treatment}) => {
                 </span>
                 <motion.div className="overlay">
                 </motion.div>
-                <motion.div className="service-card">
+                <motion.div
+            className="service-card">
                 <motion.h3>{name}</motion.h3>
                 <motion.h6>{slots?.length} {slots?.length > 1 ? 'spaces' : 'space'} available</motion.h6>
                 <motion.p>{

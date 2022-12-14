@@ -10,14 +10,16 @@ import { motion } from "framer-motion";
 import './AvailableAppointment.css';
 import { faArrowLeft, faArrowRight, faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 import Services from '../Services/Services';
+import { Card } from '@contentful/f36-components';
 
 const AvailableAppointment = ({date, setDate}) => {
     const [treatment, setTreatment] = useState();
     const [user] = useAuthState(auth);
     const [option, setOption] = useState(false);
     const [formStep, setFormStep] = useState(0);
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(null);
     const [treatmentSlot, setTreatmentSlot] = useState('');
+    const [show, setShow] = useState(false)
     const formattedDate = format(date, 'PP');
     
     const MAX_STEPS = 3;
@@ -31,8 +33,25 @@ const AvailableAppointment = ({date, setDate}) => {
       setFormStep(cur => cur + 1)
     }
     const handleSlot = (slot) =>{
-        setTreatmentSlot(slot);
-        setIsActive(!isActive);
+      setShow(!show)
+      setTreatmentSlot(slot);
+      setIsActive(slot);
+      // const array = treatment?.slots?.filter(slot => slot)
+      // if(isActive === slot){
+      // setTreatmentSlot(slot);
+      // setIsActive(isActive => !isActive)
+      // }else{
+      //   return null
+      // }
+      
+        // if(selected.lenght > 1){
+        //   console.log(selected, slot);
+        // }else{
+        //   setSelected(selected)
+        //   console.log(selected.lenght);
+        // }
+        
+        // setIsActive(!isActive);
     }
 
     const renderBtn = () => {
@@ -130,9 +149,12 @@ const AvailableAppointment = ({date, setDate}) => {
   {treatment?.slots?.map((slot, index) => <div
   key={index}
   >
-    <button className="treatment_slot" 
-    type='button'
-    onClick={() => handleSlot(slot)} value={slot}>{slot}</button>
+    <Card
+    className='treatment_slot'
+    type='button' 
+    isSelected={true}
+    isHovered={true}
+    onClick={() => handleSlot(slot)} value={slot}>{slot}</Card>
   </div>
   )}
   </div>

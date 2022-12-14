@@ -28,9 +28,14 @@
         cursor: default;
         border: none;
     }
+    .active{
+        background-color: green;
+        color: fff;
+    }
     .treatment_slot{
         padding: 1rem 1.5rem;
         border: 2px solid style.$next-color;
+        
     }
     .third_card{
         background-color: #90D4ED;       

@@ -24,6 +24,10 @@
   cursor: default;
   border: none;
 }
+.treatment_container .active {
+  background-color: green;
+  color: fff;
+}
 .treatment_container .treatment_slot {
   padding: 1rem 1.5rem;
   border: 2px solid #EB90ED;

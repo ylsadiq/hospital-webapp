@@ -23,7 +23,9 @@ const Services = ({service, setTreatment, treatment}) => {
 
     return (
         <section className='service-section'>
-            <motion.div className='common-service'>
+            <div
+            isSelected={true}
+            className='common-service'>
                 <span className='common-img'>
                     <img src={service_image} alt="" />
                 </span>
@@ -48,7 +50,7 @@ const Services = ({service, setTreatment, treatment}) => {
                             </span>
                     </div>
                 </div>
-            </motion.div>
+            </div>
         </section>
     );
 };

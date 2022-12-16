@@ -104,7 +104,7 @@ const AvailableAppointment = ({date, setDate}) => {
     if(formStep === 2){
         completeFormStep();
         // JSON.stringify(booking, null, 2);
-      console.log(booking);
+      // console.log(booking);
       fetch('https://healing-hospitalserver.up.railway.app/booking', {
         method: "POST",
         headers:{
@@ -112,7 +112,10 @@ const AvailableAppointment = ({date, setDate}) => {
         },
         body: JSON.stringify(booking, null, 2)
       })
-      .then(res => res.json())
+      .then(res => {
+        console.log(res, "res")
+        res.json()
+      })
       .then(data =>{
         if(data.success){
           toast(`Appointment is set, ${formattedDate} at ${treatmentSlot}`)

@@ -12,10 +12,8 @@ const MyAppointment = () => {
     const [user] = useAuthState(auth);
     const [appointments, setAppointments] = useState([]);
     const [control, setControl] = useState(true);
-    console.log(appointments)
     const navigate = useNavigate()
 
-    
       useEffect(() =>{
         if(user){
             fetch(`https://healing-hospitalserver.up.railway.app/booking?patient=${user?.email}`,{
@@ -26,7 +24,6 @@ const MyAppointment = () => {
               }
             })
         .then(res => {
-          console.log(res, "res")
           if(res.status === 401 || res.status === 403){
               signOut(auth);
               localStorage.removeItem('accessToken')
@@ -44,7 +41,7 @@ const MyAppointment = () => {
     const handelCancel = (id) => {
       const proceed = window.confirm('Are you sure, you want to delete?');
     if(proceed){
-        const url = `http://localhost:5000/booking/${id}`;
+        const url = `https://healing-hospitalserver.up.railway.app/booking/${id}`;
         fetch(url, {
          method: "DELETE",
         })

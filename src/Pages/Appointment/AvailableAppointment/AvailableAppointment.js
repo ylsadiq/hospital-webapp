@@ -91,36 +91,35 @@ const AvailableAppointment = ({date, setDate}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const slotTime = treatmentSlot;
+    const slot = treatmentSlot;
     const booking = {
       treatmentId: treatment?._id,
       treatment: treatment?.name,
       date: formattedDate,
-      slotTime,
+      slot,
       patient: user.email,
       patientName: event?.target?.name?.value,
       phone: event?.target?.phone?.value
     }
     if(formStep === 2){
         completeFormStep();
-        // JSON.stringify(booking, null, 2);
-      // console.log(booking);
+        JSON.stringify(booking, null, 2);
+      console.log(booking);
       fetch('https://healing-hospitalserver.up.railway.app/booking', {
         method: "POST",
         headers:{
           "content-type": "application/json"
         },
-        body: JSON.stringify(booking, null, 2)
+        body: JSON.stringify(booking)
       })
-      .then(res => {
-        console.log(res, "res")
-        res.json()
-      })
+      .then(res => res.json())
       .then(data =>{
         if(data.success){
+          console.log('successful facing')
           toast(`Appointment is set, ${formattedDate} at ${treatmentSlot}`)
         }
         else{
+          console.log('error facing')
           toast.error(`Already have an appointment on, ${data?.booking?.date} at ${data?.booking?.slot}`)
         }
         refetch()

@@ -45,7 +45,10 @@ const Dashboard = () => {
         <li><Link to='/dashboard'>My Appointment</Link></li>
       <li><Link to='/dashboard/review'>Review</Link></li>
       {admin ? 
+      <>
       <li><Link to='/dashboard/users'>All Users</Link></li>
+      <li><Link to='/dashboard/addDoctors'>Add Doctors</Link></li>
+      </>
        : null}
     </ul>
   

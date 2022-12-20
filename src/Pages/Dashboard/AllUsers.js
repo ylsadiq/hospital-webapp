@@ -24,25 +24,20 @@ const AllUsers = () => {
       console.log(id);
       const proceed = window.confirm('Are you sure, you want to delete?');
     if(proceed){
-        const url = `https://healing-hospitalserver.up.railway.app/users/${id}`;
+        const url = `https://healing-hospitalserver.up.railway.app/users/${id}`
         fetch(url, {
-         method: "DELETE",
-         headers:{
-          'Content-Type': 'application/json',
-          'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-        }
-        
+         method: "DELETE",       
         })
-        .then((res) => {
-          console.log(res, 'res');
-          res.json()})
-         .then((data) => {
-          console.log('delete UserId', data);
-         if (data.deletedCount) {
-          setIsUser(!isUser);
-         toast.success(`successfully Deleted ${id}`);
-         window.location.reload();
-         }
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        //  if (data.deletedCount === 1) {
+        //   setIsUser(!isUser);
+        //  toast.success(`successfully Deleted ${id}`);
+        //  window.location.reload();
+        //  }else{
+        //   console.log('Unable to Delete')
+        //  }
    })
     }
   };

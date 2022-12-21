@@ -6,7 +6,7 @@ import './AddDoctor.css'
 
 const AddDoctor = () => {
     const { register, formState: { errors }, reset , handleSubmit } = useForm();
-    const {data: services, isLoading } = useQuery('services', () => fetch('http://localhost:5000/service') .then(res => res.json()))
+    const {data: services, isLoading } = useQuery('services', () => fetch('https://healing-hospitalserver.up.railway.app/service') .then(res => res.json()))
     if(isLoading){
         return <button className="btn loading">loading</button>
     }
@@ -32,10 +32,10 @@ const AddDoctor = () => {
                     specialty: data.specialty,
                     img: img
                 }
-                fetch('http://localhost:5000/doctor', {
+                fetch('https://healing-hospitalserver.up.railway.app/doctor', {
                     method: 'POST',
                     headers:{
-                        'Content-Type': 'application/json',
+                        'content-type': 'application/json',
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
                     },
                     body: JSON.stringify(doctor)

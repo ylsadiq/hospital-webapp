@@ -20,6 +20,7 @@ import RequireAdmin from './Pages/Login/Login/RequireAdmin';
 import AllTreatment from './Pages/AllTreatment/AllTreatment';
 import Services from './Pages/Appointment/Services/Services';
 import AddDoctor from './Pages/Dashboard/AddDoctor/AddDoctor';
+import ManageDoctor from './Pages/Dashboard/ManageDoctor/ManageDoctor';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         <Route path='review' element={<Review />}></Route>
         <Route path='users' element={<RequireAdmin> <AllUsers /> </RequireAdmin>}></Route>
         <Route path='addDoctors' element={<RequireAdmin> <AddDoctor /> </RequireAdmin>}></Route>
+        <Route path='manageDoctors' element={<RequireAdmin> <ManageDoctor /> </RequireAdmin>}></Route>
       </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

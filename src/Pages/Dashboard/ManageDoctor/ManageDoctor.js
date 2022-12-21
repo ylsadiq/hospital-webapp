@@ -1,3 +1,5 @@
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useQuery } from 'react-query';
 
@@ -23,18 +25,27 @@ const ManageDoctor = () => {
     }
     return (
         <div className="overflow-x-auto">
+            {doctors.length}
   <table className="table w-full">
     <thead>
       <tr>
         <th></th>
         <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        <th>Email</th>
+        <th>specialty</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
-        <h2>manage Doc</h2>
-    {/* {doctors.map} */}
+        {doctors.map((doc, index) =>(
+            <tr>
+            <th>{index + 1}</th>
+            <td>{doc?.firstname} {doc?.lastname}</td>
+            <td>{doc?.email}</td>
+            <td>{doc?.specialty}</td>
+            <td><button className='btn btn-error text-white'><FontAwesomeIcon icon={faTrashCan}/></button></td>
+          </tr>
+        ))}
     </tbody>
   </table>
 </div>

@@ -81,7 +81,7 @@ const MyAppointment = () => {
         <td>{ap?.treatment}</td>
         <td><span className="badge-sm"><button
         onClick={() => handelCancel(ap?._id)}
-         className="btn btn-error btn-xs"><FontAwesomeIcon icon={faTrashCan}/></button></span></td>
+        className="btn btn-error btn-xs"><FontAwesomeIcon icon={faTrashCan}/></button></span></td>
       </tr>
     </tbody>
     )}

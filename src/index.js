@@ -9,7 +9,10 @@ import { BrowserRouter } from 'react-router-dom';
 import {
   QueryClient,
   QueryClientProvider,
-} from 'react-query'
+} from 'react-query';
+import { Suspense, lazy } from 'react';
+import FullLoading from './Pages/Shared/FullScreenLoding/FullLoading';
+const Componets = lazy(() => import('./App'));
  // Create a client
  const queryClient = new QueryClient()
 
@@ -19,7 +22,9 @@ root.render(
     <QueryClientProvider client={queryClient}>
     <BrowserRouter>
     <I18nextProvider i18n={i18n}>
+      <Suspense fallback={<FullLoading />}>
             <App/>
+      </Suspense>
     </I18nextProvider>
     </BrowserRouter>
     </QueryClientProvider>

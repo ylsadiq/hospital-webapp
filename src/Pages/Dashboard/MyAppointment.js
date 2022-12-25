@@ -7,11 +7,12 @@ import { signOut } from 'firebase/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
+import Modal from './Modal/Modal';
 
 const MyAppointment = () => {
     const [user] = useAuthState(auth);
     const [appointments, setAppointments] = useState([]);
-    const [control, setControl] = useState(true);
+    const [deletId, setDeleteId] = useState(null);
     const navigate = useNavigate()
 
       useEffect(() =>{
@@ -37,24 +38,6 @@ const MyAppointment = () => {
           .catch(error => (error))
         }
     }, [user])
-
-    const handelCancel = (id) => {
-      const proceed = window.confirm('Are you sure, you want to delete?');
-    if(proceed){
-        const url = `https://healing-hospitalserver.up.railway.app/booking/${id}`;
-        fetch(url, {
-         method: "DELETE",
-        })
-        .then((res) => res.json())
-         .then((data) => {
-         if (data.deletedCount) {
-         setControl(!control);
-         toast.success(`successfully Deleted ${id}`);
-         window.location.reload();
-         }
-   })
-    }
-  };
     
     return (
         <div>
@@ -72,6 +55,7 @@ const MyAppointment = () => {
       </tr>
     </thead>
     {appointments.map((ap, index) =>
+          <>
         <tbody key={index}>
       <tr>
         <th>{index + 1}</th>
@@ -79,12 +63,17 @@ const MyAppointment = () => {
         <td>{ap?.date}</td>
         <td>{ap?.slot}</td>
         <td>{ap?.treatment}</td>
-        <td><span className="badge-sm"><button
-        onClick={() => handelCancel(ap?._id)}
-        className="btn btn-error btn-xs"><FontAwesomeIcon icon={faTrashCan}/></button></span></td>
+        <td><span className="badge-sm">
+        <label onClick={() => setDeleteId(ap?._id)}
+        htmlFor="Delete-modal"
+        className="btn btn-error btn-xs"><FontAwesomeIcon icon={faTrashCan}/></label>
+        </span></td>
       </tr>
     </tbody>
+    {deletId && <Modal deletId={deletId}/>}
+      </>
     )}
+
   </table>
 </div>
         </div>

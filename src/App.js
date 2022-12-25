@@ -25,8 +25,7 @@ import ManageDoctor from './Pages/Dashboard/ManageDoctor/ManageDoctor';
 
 function App() {
   return (
-    <div>
-      <Suspense fallback="null">
+    <>
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -55,9 +54,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgetpassword" element={<ForgetPassword />} />
       </Routes> 
-    </Suspense>
     <ToastContainer />   
-    </div>
+    </>
   );
 }
 

@@ -14,14 +14,17 @@ const ManageDoctor = () => {
     // if(isLoading){
     //     return <div className="btn loading">Loading</div>
     // }
-    const {data: doctors, isLoading} = useQuery('doctors', () => fetch('http://localhost:5000/doctor',{
+    const {data: doctors, isLoading, refetch} = useQuery('doctors', () => fetch('http://localhost:5000/doctors', {
+        method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
-    }).then(res => res.json()))
-    console.log(doctors);
+    })
+    .then(res => {
+      console.log( "res Section",res);
+      res.json()}))
     if(isLoading){
-        return <div className="btn loading">Loading</div>
+        return <button className="btn loading">loading</button>
     }
     return (
         <div className="overflow-x-auto">
@@ -30,6 +33,7 @@ const ManageDoctor = () => {
     <thead>
       <tr>
         <th></th>
+        <th>Image</th>
         <th>Name</th>
         <th>Email</th>
         <th>specialty</th>
@@ -40,6 +44,13 @@ const ManageDoctor = () => {
         {doctors.map((doc, index) =>(
             <tr>
             <th>{index + 1}</th>
+            <th>
+            <div className="avatar">
+              <div className="mask mask-squircle w-12 h-12">
+                <img src={doc?.img} alt={doc?.name} />
+              </div>
+              </div>
+            </th>
             <td>{doc?.firstname} {doc?.lastname}</td>
             <td>{doc?.email}</td>
             <td>{doc?.specialty}</td>

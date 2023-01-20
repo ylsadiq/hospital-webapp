@@ -57,18 +57,18 @@ const Login = () => {
   {errors?.email?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid Email</p>}
   <input {...register("password", { required: true })} aria-invalid={errors.password ? "true" : "false"} type="password" placeholder="Your password" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
   {errors?.email?.type === 'required' && <p className="text-red-500 text-xs italic">Please choose a password.</p>}
-  <Link to={'/forgetpassword'} className="inline-block align-baseline py-2 font-bold text-sm text-blue-500 hover:text-blue-800">
+  <a to={'/forgetpassword'} className="inline-block align-baseline py-2 font-bold text-sm text-blue-500 hover:text-blue-800">
         Forget Password
-      </Link>
+      </a>
 
       {signInError}
-    <button type="submit" className="w-full max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+    <button type="submit" className="w-full max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline">
         Sign In
       </button>
       </form>
 </div>
 </div>
-<p>Do not have an account yet?<Link href="" to='/register' className='text-red-500'>Register now!</Link></p>
+<p>Do not have an account yet?<a href="" to='/register' className='text-red-500'>Register now!</a></p>
         </div>
     );
 };

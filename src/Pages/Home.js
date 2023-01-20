@@ -21,7 +21,7 @@ const Home = () => {
             <Footer />
            </div>
            <div className="footer">
-            
+    
            </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { getAuth, signOut } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -9,9 +9,9 @@ import '.././Navbar.css';
 import { useEffect } from 'react';
 import auth from '../../../firebase.init';
 const Menu = () => {
-    const [selected, setSelected] = useState("GB");
-  const { t, i18n } = useTranslation(["common"]);
-  const [user, loading, error] = useAuthState(auth);
+    const [ ] = useState("GB");
+  const { t } = useTranslation(["common"]);
+  const [user] = useAuthState(auth);
   const [stickyNav, setStickyNav] = useState(false);
   const logout = () => {
     signOut(auth);
@@ -30,10 +30,10 @@ const Menu = () => {
     };
   }, []);
 
-  const handleLanguageChange = (e) => {
-		setSelected(i18n.changeLanguage(e))
-    setSelected(e)
-	};
+  // const handleLanguageChange = (e) => {
+	// 	setSelected(i18n.changeLanguage(e))
+  //   setSelected(e)
+	// };
     return (
         <div className={`w-full top-0  z-[1000] ${stickyNav ? 'bg-indigo-200 fixed' : ''} }`}>
             <div className="navbar">
@@ -64,7 +64,7 @@ const Menu = () => {
           <li><a>Urology</a></li>
         </ul>
       </li>
-      <li><a>{t("doctor")}</a></li>
+      <li><Link to='/doctors'>{t("doctors")}</Link></li>
       <li><Link to='/appointment'>{t("Appointment")}</Link></li>
       <li><a>{t("blog")}</a></li>
       <li><a>{t("contract")}</a></li>
@@ -75,7 +75,8 @@ const Menu = () => {
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           {user?.photoURL ? <img src={user?.photoURL} />:
-          <img src="https://placeimg.com/80/80/people" />}
+          <img src="https://placeimg.com/80/80/people" />
+          }
         </div>
       </label>
       <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -85,7 +86,6 @@ const Menu = () => {
             My Dashboard
           </Link>
         </li>}
-        <li><a>Settings</a></li>
         <li><button onClick={logout}>Logout</button></li>
       </ul>
     </div> : <button className='btn btn-ghost'><Link to='/login'>login</Link></button>}

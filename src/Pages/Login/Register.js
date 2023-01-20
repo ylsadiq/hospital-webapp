@@ -75,13 +75,13 @@ const Register = () => {
         onChange={(e) => setPhotoURL(e.target.value)}
       />
       {signInError || unmatchPassword}
-    <button type="submit" className="w-full max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+    <button type="submit" className="w-full max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline">
         Sign In
       </button>
       </form>
 </div>
         </div>
-        <p>Already Have an Account?<Link href="" to='/login' className='text-red-500'>Login now!</Link></p>
+        <p>Already Have an Account?<a href="" to='/login' className='text-red-500'>Login now!</a></p>
         </div>
     );
 };

@@ -4,31 +4,17 @@ import React from 'react';
 import { useQuery } from 'react-query';
 
 const ManageDoctor = () => {
-    // const {data: doctors, isLoading } = useQuery('doctors', () => fetch('https://healing-hospitalserver.up.railway.app/doctor',{
-    //     method: 'GET',
-    //     headers: {
-    //         authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    //     }
-    // }).then(res => res.json()));
-    // console.log(doctors);
-    // if(isLoading){
-    //     return <div className="btn loading">Loading</div>
-    // }
-    const {data: doctors, isLoading, refetch} = useQuery('doctors', () => fetch('http://localhost:5000/doctors', {
+    const {data: doctors, isLoading } = useQuery('doctors', () => fetch('https://healing-hospitalserver.up.railway.app/doctor',{
         method: 'GET',
-        headers:{
+        headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
-    })
-    .then(res => {
-      console.log( "res Section",res);
-      res.json()}))
+    }).then(res => res.json()));
     if(isLoading){
-        return <button className="btn loading">loading</button>
+        return <div className="btn loading">Loading</div>
     }
     return (
         <div className="overflow-x-auto">
-            {doctors.length}
   <table className="table w-full">
     <thead>
       <tr>
@@ -46,7 +32,7 @@ const ManageDoctor = () => {
             <th>{index + 1}</th>
             <th>
             <div className="avatar">
-              <div className="mask mask-squircle w-12 h-12">
+              <div className="mask mask-squircle w-20 h-20">
                 <img src={doc?.img} alt={doc?.name} />
               </div>
               </div>

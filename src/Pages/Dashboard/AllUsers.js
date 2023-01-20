@@ -4,10 +4,10 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { useQuery } from 'react-query';
 import MakeAdmin from './MakeAdmin';
 import { useState } from 'react';
-import { toast } from 'react-toastify';
+import AllUsersModal from './AllUsersModal/AllUsersModal';
 
 const AllUsers = () => {
-  const [isUser, setIsUser] = useState(false);
+  const [deletId, setDeleteId] = useState(null);
 
     const {data: users, isLoading, refetch} = useQuery('users', () => fetch('https://healing-hospitalserver.up.railway.app/users', {
         method: 'GET',
@@ -16,31 +16,10 @@ const AllUsers = () => {
         }
     })
     .then(res => res.json()))
+    console.log(deletId);
     if(isLoading){
         return <button className="btn loading">loading</button>
     }
-
-    const handelCancel = (id) => {
-      console.log(id);
-      const proceed = window.confirm('Are you sure, you want to delete?');
-    if(proceed){
-        const url = `https://healing-hospitalserver.up.railway.app/users/${id}`
-        fetch(url, {
-         method: "DELETE",       
-        })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        //  if (data.deletedCount === 1) {
-        //   setIsUser(!isUser);
-        //  toast.success(`successfully Deleted ${id}`);
-        //  window.location.reload();
-        //  }else{
-        //   console.log('Unable to Delete')
-        //  }
-   })
-    }
-  };
     
     return (
         <div>
@@ -61,14 +40,17 @@ const AllUsers = () => {
      <th>{index + 1}</th> 
      <td>{user.email}</td> 
     <td><MakeAdmin user={user} refetch={refetch}/></td>
-    <td><span className="badge-sm"><button
-        onClick={() => handelCancel(user?._id)}
-         className="btn btn-error btn-xs"><FontAwesomeIcon icon={faTrashCan}/></button></span></td>
+    <td><span className="badge-sm">
+    <label
+    htmlFor="user-modal"
+    onClick={() => setDeleteId(user?._id)}
+    className="btn btn-error btn-xs"><FontAwesomeIcon icon={faTrashCan}/></label></span></td>
    </tr>
  </tbody>
-   )  }
+    )}
   </table>
 </div>
+    {deletId && <AllUsersModal deletId={deletId} refetch={refetch}/>}
         </div>
     );
 };

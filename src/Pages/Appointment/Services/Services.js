@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from "framer-motion";
 import './Services.css'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { Card } from '@contentful/f36-components';
 const Services = ({service, setTreatment, treatment}) => {
     const {name, slots, service_image, image} = service;
     const [isActive, setIsActive] = useState(false);
@@ -11,15 +10,6 @@ const Services = ({service, setTreatment, treatment}) => {
         setTreatment(service);
             setIsActive(!isActive);
     }
-    
-    // var Diamond6 = require('../../../images/brace.png');
-    // var Diamond2 = require('../../../images/adjust-tooth.png');
-    // var Diamond3 = require('../../../images/clear-tooth.png');
-    // var Diamond7 = require('../../../images/dental-care.png');
-    // var Diamond5 = require('../../../images/gabity-tooth.png');
-    // var Diamond8 = require('../../../images/tooth-whitening.png');
-    // var Diamond4 = require('../../../images/dental-implant.png');
-    // var Diamond = require('../../../images/happy-tooth.png');
 
     return (
         <section className='service-section'>
@@ -40,7 +30,7 @@ const Services = ({service, setTreatment, treatment}) => {
                 }</motion.p>
                 <div className="booking-btn">
                 <button className='btn' onClick={() => handleTreatment(service)} disabled={slots.length === 0}>
-      Book Now <span><FontAwesomeIcon className='mr-2' icon={faArrowRight}/></span></button>
+      Book Now <span className='ml-2'><FontAwesomeIcon icon={faArrowRight}/></span></button>
                 </div>
                 </motion.div>
                 <div className="service-inner-box">

@@ -2,11 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import './Modal.css';
-const Modal = ({deletId}) => {
+const Modal = ({deletId, refetch}) => {
 const [control, setControl] = useState(true);
 
   const handelCancel = (deletId) => {
-      const url = `http://localhost:5000/booking/${deletId}`;
+      const url = `https://healing-hospitalserver.up.railway.app/booking/${deletId}`;
       fetch(url, {
        method: "DELETE",
       })
@@ -15,10 +15,10 @@ const [control, setControl] = useState(true);
        if (data.deletedCount) {
        setControl(!control);
        toast.success(`successfully Deleted ${deletId}`);
-       window.location.reload();
+       refetch()
        }
- })
-};
+    })
+  };
     return (
         <div>
             <input

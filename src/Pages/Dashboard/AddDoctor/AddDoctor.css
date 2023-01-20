@@ -1,3 +1,6 @@
+.add-doctors-section .doctors-container {
+  max-width: 110rem;
+}
 .add-doctors-section form input {
   display: flex;
 }/*# sourceMappingURL=AddDoctor.css.map */

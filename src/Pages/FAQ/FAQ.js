@@ -5,7 +5,7 @@ import './FAQ.css'
 const FAQ = () => {
     var faq1 = require('../../images/faq-doc.png');
     return (
-        <section className='faq-section py-6'>
+        <section className='faq-section px-8 py-10'>
           <motion.div
           initial={{ y: 100 }}
           whileInView={{ y: 0 }}

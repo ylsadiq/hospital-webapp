@@ -8,15 +8,14 @@ import './Navbar.css';
 import Banner from '../Banner/Banner';
 import { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { getAuth, signOut } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
 import auth from '../../firebase.init';
-import { Link } from 'react-router-dom';
 import Menu from './Menu/Menu';
 
 const Navbar = () => {
   const [selected, setSelected] = useState("GB");
   const { t, i18n } = useTranslation(["common"]);
-  const [user, loading, error] = useAuthState(auth);
+  const [] = useAuthState(auth);
   const logout = () => {
     signOut(auth);
     localStorage.removeItem('accessToken')
@@ -34,7 +33,6 @@ const Navbar = () => {
     return (
         <section className='header-container'>
           <nav>
-
           <div className="top-bar flex justify-end items-center">
           <FontAwesomeIcon icon={faPhone} /><span>{t("emergency")}: +0089892</span>
           <div className="lang-select">
@@ -48,24 +46,9 @@ const Navbar = () => {
           className="menu-flags"
         />
           </div>
-          
-        {/* <div className="lang-select">
-        <label>Select Language</label>
-        <select 
-        className="w-full max-w-xs"
-        value={localStorage.getItem("i18nextLng")}
-				onChange={handleLanguageChange}
-        >
-        <option selected>English</option>
-        <option value="bn">Bangla</option>
-				<option value="fr">Français</option>
-				<option value="es">Español</option>
-      </select>
-        </div> */}
           </div>
-          <Menu />
-{/* Banner section added */}
-        <span className='px-4'>
+        <span className='px-10'>
+        <Menu />
         <Banner/>
         </span>
         </nav>

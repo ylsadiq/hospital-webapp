@@ -13,6 +13,7 @@ const AddDoctor = () => {
     const imgStorageKey='eb7f506c449c2e7a6323f2a986fd6e78';
 
     const onSubmit = async data => {
+        console.log(data);
         const image = data.file[0];
         const formData = new FormData();
         formData.append('image', image);
@@ -30,7 +31,8 @@ const AddDoctor = () => {
                     lastname: data.lastName,
                     email: data.email,
                     specialty: data.specialty,
-                    img: img
+                    img: img,
+                    discription: data.textarea
                 }
                 fetch('https://healing-hospitalserver.up.railway.app/doctor', {
                     method: 'POST',
@@ -59,20 +61,27 @@ const AddDoctor = () => {
   {errors?.firstName?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid firstName</p>}
   <input {...register("lastName", { required: true })} aria-invalid={errors.lastName ? "true" : "false"} type="lastName" placeholder="Your lastName" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
   {errors?.lastName?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid lastName</p>}
-  <label className='my-2' for='specialty'>Choose your spacility</label>
+    <label className='my-2' for='specialty'>Choose your spacility</label>
   <select id='specialty' className='select w-full max-w-xs' {...register("specialty")}>
     {services.map(service => <option
     key={service?._id}
     value={service?.name}
-    >{service?.name}</option>)}
+    >{service?.name}
+    </option>
+    )}
     </select>
     {errors?.specialty?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid specialty</p>}
-    <label className='my-2' for='photo'>Choose your specialty</label>
+    <span>
+    <label className='my-2' for='photo'>Choose your Photo</label>
     <input id='photo' {...register("file", { required: true })} aria-invalid={errors.file ? "true" : "false"} type="file" className="file-input file-input-bordered w-full max-w-xs" />
     {errors?.file?.type === 'required' && <p className="text-red-500 text-xs italic">Invalid file</p>}
+    </span>
+
   <input {...register("email", { required: true })} aria-invalid={errors.email ? "true" : "false"} type="email" placeholder="Your email" className="my-2 input w-full max-w-xs border border-slate-300 hover:border-indigo-300" />
   {errors?.email?.type === 'required' && <p className="text-red-500 text-xs italic">Please choose a email.</p>}
-      <input className='btn btn-indigo-500' type="submit" />
+  <label htmlFor="text-field"></label>
+  <textarea {...register("textarea", { required: true })} type="text" name="textarea" placeholder='textarea' className="textarea mt-2 mb-2 w-4/5"></textarea>
+    <input className='btn btn-indigo-500 w-4/5' type="submit" />
     </form>
             </div>
         </div>

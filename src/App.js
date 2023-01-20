@@ -1,6 +1,5 @@
-import React, { Suspense } from 'react';
-import './App.css';
-import { Route, Routes } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './Pages/About/About';
 import Blog from './Pages/Blog/Blog';
 import Home from './Pages/Home';
@@ -9,10 +8,8 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register';
 import RequireAuth from './Pages/Login/RequireAuth';
 import ForgetPassword from './Pages/Login/Login/ForgetPassword/ForgetPassword';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import Dashboard from './Pages/Dashboard/Dashboard';
-import Menu from './Pages/Shared/Menu/Menu';
 import MyAppointment from './Pages/Dashboard/MyAppointment';
 import Review from './Pages/Dashboard/Review';
 import AllUsers from './Pages/Dashboard/AllUsers';
@@ -21,17 +18,26 @@ import AllTreatment from './Pages/AllTreatment/AllTreatment';
 import Services from './Pages/Appointment/Services/Services';
 import AddDoctor from './Pages/Dashboard/AddDoctor/AddDoctor';
 import ManageDoctor from './Pages/Dashboard/ManageDoctor/ManageDoctor';
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
+import Doctors from './Pages/Doctors/Doctors';
+import Menu from './Pages/Shared/Menu/Menu';
+import Navbar from './Pages/Shared/Navbar';
 
 
 function App() {
   return (
     <>
+    <BrowserRouter>
+    {window.location.pathname !=="/login" ? null : <Navbar /> } 
       <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />{" "}
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/services" element={<Services />} />
           <Route path="/bookingmodal" element={<AllTreatment />} />
+          <Route path="/doctors" element={<Doctors />} />
           <Route path="/appointment" element={
             <RequireAuth>
               <Appointment />
@@ -53,7 +59,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgetpassword" element={<ForgetPassword />} />
-      </Routes> 
+      </Routes>
+      </BrowserRouter> 
     <ToastContainer />   
     </>
   );

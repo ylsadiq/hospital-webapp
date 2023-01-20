@@ -1,44 +1,26 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { signOut } from 'firebase/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
-import { toast } from 'react-toastify';
 import Modal from './Modal/Modal';
+import { useQuery } from 'react-query';
 
 const MyAppointment = () => {
     const [user] = useAuthState(auth);
-    const [appointments, setAppointments] = useState([]);
     const [deletId, setDeleteId] = useState(null);
-    const navigate = useNavigate()
+    const {data: appointments, isLoading, refetch} = useQuery('appointments', () => fetch(`https://healing-hospitalserver.up.railway.app/booking?patient=${user?.email}`, {
+      method: 'GET',
+      headers:{
+        'Content-Type': 'application/json',
+          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+      }
+  })
+  .then(res => res.json()))
+  if(isLoading){
+      return <button className="btn loading">loading</button>
+  }
 
-      useEffect(() =>{
-        if(user){
-            fetch(`https://healing-hospitalserver.up.railway.app/booking?patient=${user?.email}`,{
-              method: 'GET',
-              headers:{
-                'Content-Type': 'application/json',
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-              }
-            })
-        .then(res => {
-          if(res.status === 401 || res.status === 403){
-              signOut(auth);
-              localStorage.removeItem('accessToken')
-              navigate('/')
-          }
-          return res.json()
-        })
-        .then(data => {
-          setAppointments(data)}
-          )
-          .catch(error => (error))
-        }
-    }, [user])
-    
     return (
         <div>
             <h2>My Appointment: {appointments?.length}</h2>
@@ -70,7 +52,7 @@ const MyAppointment = () => {
         </span></td>
       </tr>
     </tbody>
-    {deletId && <Modal deletId={deletId}/>}
+    {deletId && <Modal deletId={deletId} refetch={refetch}/>}
       </>
     )}
 

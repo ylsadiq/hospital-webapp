@@ -23,12 +23,12 @@ const OurProcess = () => {
       };
 
     return (
-        <section className='process-section'>
+        <section className='process-section px-5 py-10'>
         <motion.div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
-        className='card card-container our-process px-4 py-6'>
+        className='card card-container our-process px-7 py-6'>
             <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

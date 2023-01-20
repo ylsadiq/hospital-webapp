@@ -1,10 +1,10 @@
 import React from 'react';
-import { motion, Variants } from "framer-motion"
+import { motion } from "framer-motion"
 import './Blog.css'
 
 const Blog = () => {
 
-    const cardVariants: Variants = {
+    const cardVariants = {
         offscreen: {
             y: 100,
             opacity: 0
@@ -20,7 +20,7 @@ const Blog = () => {
         }
       };
     return (
-        <section className='blogs-and-news px-4 py-6'>
+        <section className='blogs-and-news px-10 py-10'>
             <div className="blog-news-header">
             <motion.div
             initial={{ opacity: 0 }}
@@ -48,7 +48,7 @@ tempor incididunt ut labore et dolore magna aliqua.</p>
                     <img src="https://doccure-wp.dreamguystech.com/wp-content/uploads/2021/09/blog-01-600x480.jpg" alt="" />
                     </div>
                     <span className='blog-img-batch'>
-                        <p classname="btn-ghost">25 sep 2022</p>
+                        <p className="btn-ghost">25 sep 2022</p>
                     </span>
                     </div>
                     <div className="blog-details">
@@ -64,13 +64,13 @@ tempor incididunt ut labore et dolore magna aliqua.</p>
                     <img src="https://doccure-wp.dreamguystech.com/wp-content/uploads/2021/09/blog-01-600x480.jpg" alt="" />
                     </div>
                     <span className='blog-img-batch'>
-                        <p classname="btn-ghost">25 sep 2022</p>
+                        <p className="btn-ghost">25 sep 2022</p>
                     </span>
                     </div>
                     <div className="blog-details">
                     <h5>5 Great reasons to use an online doctor</h5>
                     <h3>we care</h3>
-                    <p classname="btn-ghost">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu hendrerit ex. Quisque imperdiet vel odio nec scelerisque.</p>
+                    <p className="btn-ghost">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu hendrerit ex. Quisque imperdiet vel odio nec scelerisque.</p>
                     <div className="read-more text-primary">
                         Read More ...
                     </div>
@@ -80,7 +80,7 @@ tempor incididunt ut labore et dolore magna aliqua.</p>
                     <img src="https://doccure-wp.dreamguystech.com/wp-content/uploads/2021/09/blog-01-600x480.jpg" alt="" />
                     </div>
                     <span className='blog-img-batch'>
-                        <p classname="btn-ghost">25 sep 2022</p>
+                        <p className="btn-ghost">25 sep 2022</p>
                     </span>
                     </div>
                     <div className="blog-details">
@@ -96,7 +96,7 @@ tempor incididunt ut labore et dolore magna aliqua.</p>
                     <img src="https://doccure-wp.dreamguystech.com/wp-content/uploads/2021/09/blog-01-600x480.jpg" alt="" />
                     </div>
                     <span className='blog-img-batch'>
-                        <p classname="btn-ghost">25 sep 2022</p>
+                        <p className="btn-ghost">25 sep 2022</p>
                     </span>
                     </div>
                     <div className="blog-details">

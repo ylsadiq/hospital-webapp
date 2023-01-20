@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
 
 const MakeAdmin = ({user, refetch}) => {
@@ -26,8 +24,8 @@ const MakeAdmin = ({user, refetch}) => {
     }
     return (
         <div>
-            {role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button> : null}
-     <span className="badge-sm"><button className="btn btn-error btn-xs"><FontAwesomeIcon icon={faTrashCan}/></button></span>
+            {role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button> : "Admin"}
+     {/* <span className="badge-sm"><button className="btn btn-error btn-xs"><FontAwesomeIcon icon={faTrashCan}/></button></span> */}
      
         </div>
     );

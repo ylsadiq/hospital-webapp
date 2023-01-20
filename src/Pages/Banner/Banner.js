@@ -10,7 +10,7 @@ const Banner = () => {
   const { t, i18n } = useTranslation(["banner"]);
 
     return (
-            <section className="hero-section mt-10 px-4">
+            <section className="hero-section mt-10 px-10">
                 <motion.div className="container"
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}

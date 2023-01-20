@@ -5,7 +5,6 @@ import App from './App';
 import i18n from "./i18n";
 import reportWebVitals from './reportWebVitals';
 import {I18nextProvider} from "react-i18next";
-import { BrowserRouter } from 'react-router-dom';
 import {
   QueryClient,
   QueryClientProvider,
@@ -20,13 +19,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
+    
     <I18nextProvider i18n={i18n}>
       <Suspense fallback={<FullLoading />}>
             <App/>
       </Suspense>
     </I18nextProvider>
-    </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>
 );

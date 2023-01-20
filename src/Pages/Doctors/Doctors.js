@@ -1,10 +1,44 @@
-import React from 'react';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useQuery } from 'react-query';
+import './Doctors.css'
 
 const Doctors = () => {
+    const {data: doctors, isLoading } = useQuery('doctors', () => fetch('https://healing-hospitalserver.up.railway.app/doctor',{
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()));
+    if(isLoading){
+        return <div className="btn loading">Loading</div>
+    }
     return (
-        <div>
-            
-        </div>
+        <section className="doctor-container">
+            <div className="container">
+                <h3>Our Doctors</h3>
+                <div className="doctor-list">
+                <div className="doctors-list-card">
+                    {doctors.map((doc, index) =>(
+                <div className="card w-96 h-max glass">
+                    <span className='block h-72'>
+                        <img className='h-full w-full' src={doc?.img} alt="doctor"/>
+                    </span>
+                    <div className="card-body bg-sky-400">
+                        <h5 className='text-slate-300'>{doc?.specialty}</h5>
+                        <h2 className="card-title text-white">{doc?.firstname} {doc?.lastname}</h2>
+                        <p className='text-white'>{doc?.discription}</p>
+                        <div className="card-actions justify-end">
+                            <button>Book Appointment <span className='mr-2'><FontAwesomeIcon icon={faArrowRight}/></span></button>
+                        </div>
+                    </div>
+                    </div>
+                    ))}
+                </div>
+                </div>
+               
+            </div>
+        </section>
     );
 };
 

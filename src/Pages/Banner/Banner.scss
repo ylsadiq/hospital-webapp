@@ -133,21 +133,21 @@ $smMedium: 640px;
         }
         .outer_circle{
             text-align: center;
-            margin-top: 4rem;
-            width: 340px;
-            height: 340px; 
+            margin-top: 3rem;
+            width: 280px;
+            height: 280px;
     
             button{
                 bottom: 9rem;
                 left: -5rem;
-                padding: 12px 24px;
+                padding: 9px 21px;
             }
         }
         .inner_circle {
             top: 1.3rem;
             left: 1.4rem;
-            width: 300px;
-            height: 300px;
+            width: 236px;
+            height: 236px;
     
             .inner-img{
 
@@ -155,6 +155,26 @@ $smMedium: 640px;
                 left: -1rem;
             }
         }
+        .banner-left{
+            .doctors-card{
+                width: 180px;
+                bottom: 0.3rem;
+                right: 0rem;
+            }
+        }
+        .countup{
+            font-family: style.$font-base-family;
+            text-align: left;
+            h4{
+                text-align: left;
+                font-size: 1.3rem;
+                line-height: 18px;
+                font-weight: 600;
+            }
+             h6{
+                font-size: 1.2rem;
+            }
+        } 
         
     }
 }

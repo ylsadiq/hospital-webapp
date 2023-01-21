@@ -19,9 +19,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.doctor-container .doctors-list-card {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
 }/*# sourceMappingURL=Doctor.css.map */

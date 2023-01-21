@@ -19,7 +19,7 @@ const Doctors = () => {
             <div className="container">
                 <h3>Our Doctors</h3>
                 <div className="doctor-list px-8 py-1">
-                <div className="doctors-list-card">
+                <div className="doctors-list-card grid lg:grid-cols-3 gap-2">
                     {doctors.map((doc, index) =>(
                 <div className="card w-96 h-max glass">
                     <span className='block h-72'>

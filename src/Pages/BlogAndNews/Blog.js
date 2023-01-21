@@ -42,7 +42,7 @@ tempor incididunt ut labore et dolore magna aliqua.</p>
                 >
                 <motion.div
                 variants={cardVariants}
-                className="common-blog grid grid-cols-4 gap-4">
+                className="common-blog grid lg:grid-cols-4 sm:grid-cols-1 gap-4">
                     <div className="blog-news">
                     <div className="blog-img">
                     <img src="https://doccure-wp.dreamguystech.com/wp-content/uploads/2021/09/blog-01-600x480.jpg" alt="" />

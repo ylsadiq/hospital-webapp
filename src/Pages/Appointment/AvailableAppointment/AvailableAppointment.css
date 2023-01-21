@@ -97,4 +97,10 @@
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #555;
+}
+
+@media (min-width: 320px) and (max-width: 640px) {
+  .common-service {
+    height: 100%;
+  }
 }/*# sourceMappingURL=AvailableAppointment.css.map */

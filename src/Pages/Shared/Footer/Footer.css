@@ -32,9 +32,13 @@
 .footer-section .social-media .social-heading .tooth-whiting h2 {
   line-height: 1.6rem;
 }
+.footer-section .social-media .social-heading .tooth-whiting .tooth-white {
+  position: relative;
+}
 .footer-section .social-media .social-heading .tooth-whiting .tooth-white .tooth-link {
   position: absolute;
-  right: 25rem;
+  top: 6rem;
+  right: 0;
 }
 .footer-section .social-media .social-heading .tooth-whiting .tooth-white .tooth-link ul li {
   line-height: 1.6rem;
@@ -53,4 +57,15 @@
 }
 .footer-section .social-media .social-heading h5 {
   font-size: 1.1rem;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 640px) {
+  .tooth-white {
+    position: relative;
+  }
+  .tooth-white .tooth-link {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+  }
 }/*# sourceMappingURL=Footer.css.map */

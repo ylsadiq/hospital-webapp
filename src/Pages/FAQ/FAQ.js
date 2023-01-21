@@ -5,7 +5,7 @@ import './FAQ.css'
 const FAQ = () => {
     var faq1 = require('../../images/faq-doc.png');
     return (
-        <section className='faq-section px-8 py-10'>
+        <section className='faq-section px-8 sm:px-6 py-10 sm:py-6'>
           <motion.div
           initial={{ y: 100 }}
           whileInView={{ y: 0 }}
@@ -17,7 +17,7 @@ const FAQ = () => {
             <motion.div
             initial={{ opacity: 0.8}}
             whileInView={{ opacity: 1, duration: 1 }}
-            className="rounded-box w-2/5 mt-4">
+            className="rounded-box sm:w-1/3 lg:w-2/5 mt-4">
             <div className="collapse collapse-plus border-base-300 rounded-box">
   <input type="checkbox" /> 
   <div className="collapse-title text-xl font-medium">
@@ -29,7 +29,7 @@ const FAQ = () => {
 </div>
             <div className="collapse collapse-plus border-base-300 rounded-box">
   <input type="checkbox" /> 
-  <div className="collapse-title text-xl font-medium">
+  <div className="collapse-title lg:text-xl font-medium">
   Will I always see my own doctor? 
   </div>
   <div className="collapse-content"> 
@@ -38,7 +38,7 @@ const FAQ = () => {
 </div>
             <div className="collapse collapse-plus border-base-300 rounded-box">
   <input type="checkbox" /> 
-  <div className="collapse-title text-xl font-medium">
+  <div className="collapse-title lg:text-xl font-medium">
   What is one Medical’s care?
   </div>
   <div className="collapse-content"> 

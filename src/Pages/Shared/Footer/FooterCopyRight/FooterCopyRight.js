@@ -15,7 +15,7 @@ function FooterCopyRight() {
                          <img src="https://i.ibb.co/9ZQ2QkQ/Group-1.png" alt="" />
                      </div>
                      <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has bee</p>
-                     <div className="social-icon">
+                     <div className="social-icon py-2">
                      <FontAwesomeIcon icon={faFacebook} />
                      <FontAwesomeIcon icon={faInstagram} />
                      <FontAwesomeIcon icon={faGoogle} />
@@ -26,7 +26,7 @@ function FooterCopyRight() {
 
                 <div className="grid gap-4 grid-cols-1">
                     <div className="quick-links-section">
-                    <h5 className='secondary ms-4'>Quick Links</h5>
+                    <h5 className='secondary py-2 '>Quick Links</h5>
                     <ul className='footer-items'>
                         <li className='footer-item'><a className='footer-link' href="">About Us</a></li>
                         <li className='footer-item'><a className='footer-link' href="">Our Pricing</a></li>

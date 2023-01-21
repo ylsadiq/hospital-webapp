@@ -1,7 +1,11 @@
+$mdSmall: 640px;
+$mdMedium: 767px;
+$smSmall: 320px;
+$smMedium: 640px;
+@use '../../SCSS/_style';
 .footer-section{
     font-family: 'Inter', sans-serif;
     font-family: 'Bree Serif', serif;
-    background:#E9EEF7;
     h2{
         font-size: 1.6rem;
         font-weight: 600;
@@ -23,9 +27,6 @@
                             margin-bottom: .6rem;
                             font-size: 1.1rem;
                         }
-                        p{
-                            
-                        }
                     }
                 }
             }
@@ -46,9 +47,11 @@
                     line-height: 1.6rem;
                 }
                 .tooth-white{
+                    position: relative;
                     .tooth-link{
                         position: absolute;
-                            right: 25rem;
+                        top: 6rem;
+                        right: 0;
                             ul{
                                 li{
                                     line-height: 1.6rem;
@@ -70,9 +73,7 @@
                     }
                     }
                 }
-                .action{
 
-                }
                 h5{
                     font-size: 1.1rem;
                 }
@@ -80,4 +81,14 @@
             }
             
         }
+    }
+    @media only screen and (min-width: $smSmall) and (max-width: $mdSmall){
+        .tooth-white{
+            position: relative;
+        .tooth-link {
+            position: absolute;
+            top: 2rem;
+            right: 1rem;
+        }
+    }
     }

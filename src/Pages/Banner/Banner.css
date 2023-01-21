@@ -121,24 +121,42 @@
   }
   .hero-container .outer_circle {
     text-align: center;
-    margin-top: 4rem;
-    width: 340px;
-    height: 340px;
+    margin-top: 3rem;
+    width: 280px;
+    height: 280px;
   }
   .hero-container .outer_circle button {
     bottom: 9rem;
     left: -5rem;
-    padding: 12px 24px;
+    padding: 9px 21px;
   }
   .hero-container .inner_circle {
     top: 1.3rem;
     left: 1.4rem;
-    width: 300px;
-    height: 300px;
+    width: 236px;
+    height: 236px;
   }
   .hero-container .inner_circle .inner-img {
     bottom: 3rem;
     left: -1rem;
+  }
+  .hero-container .banner-left .doctors-card {
+    width: 180px;
+    bottom: 0.3rem;
+    right: 0rem;
+  }
+  .hero-container .countup {
+    font-family: "Bree Serif", serif;
+    text-align: left;
+  }
+  .hero-container .countup h4 {
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 18px;
+    font-weight: 600;
+  }
+  .hero-container .countup h6 {
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 640px) and (max-width: 767px) {

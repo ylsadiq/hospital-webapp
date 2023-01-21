@@ -1,3 +1,9 @@
+$mdSmall: 640px;
+$mdMedium: 767px;
+$smSmall: 320px;
+$smMedium: 640px;
+@use '../SCSS/_style';
+
 .faq-section{
     font-family: 'Inter', sans-serif;
     font-family: 'Bree Serif', serif;
@@ -34,4 +40,10 @@
         }
     }
     
+}
+
+@media only screen and (min-width: $smSmall) and (max-width: $mdSmall){
+    .faq-img img{
+        opacity: .2;
+    }
 }

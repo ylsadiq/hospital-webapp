@@ -115,7 +115,7 @@ const AvailableAppointment = ({date, setDate}) => {
     return (
         <div className='flex justify-center items-center  treatment_container'>
     <form onSubmit={handleSubmit}>
-            <div className="card lg:card-side lg:auto">
+            <div className="card">
   <div>
   {formStep >= 0 ? <div className={formStep === 0 ? 'block': 'hidden'}>
     <h2 className='text-center'>Book an Appointment</h2>

@@ -1,6 +1,6 @@
 .footerCopyRight {
   text-align: left;
-  background: #1E1E1E;
+  background: rgba(30, 30, 30, 0.8784313725);
   color: #fff;
 }
 .footerCopyRight .footer-logo {

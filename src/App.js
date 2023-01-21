@@ -24,6 +24,7 @@ import Doctors from './Pages/Doctors/Doctors';
 import Menu from './Pages/Shared/Menu/Menu';
 import Navbar from './Pages/Shared/Navbar';
 import FooterCopyRight from './Pages/Shared/Footer/FooterCopyRight/FooterCopyRight';
+import Contract from './Pages/contract/Contract';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/contract" element={<Contract />} />
           <Route path="/bookingmodal" element={<AllTreatment />} />
           <Route path="/doctors" element={
             <RequireAuth>

@@ -21,16 +21,16 @@ const Banner = () => {
                 }}
                 >
                 <div className="hero-container md:flex justify-items-center justify-between">
-  <div className='md:w-3/5 md:text-left sm:text-center'>
-      <h1 className="lg:text-5xl sm:text-4xl font-bold"><span className='block'>Your <span className='text-sky-400'>Health</span> is Our</span>  Top <span className='text-blue-500'>Priority</span></h1>
-      <span className='banner-subHeader'>
-      <p className="py-6 text-lg">{t("bannerParagraph")}</p>
-      
-      <motion.button
-      whileHover={{ scale: 1.1 }}
-      className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg my-3">{t("bannerBtn")}</motion.button>
-      </span>
-      <div className="countup text-primary my-4 grid grid-cols-3 gap-2">
+            <div className='md:w-3/5 md:text-left sm:text-center'>
+              <h1 className="lg:text-5xl sm:text-4xl font-bold"><span className='block'>Your <span className='text-sky-400'>Health</span> is Our</span>  Top <span className='text-blue-500'>Priority</span></h1>
+              <span className='banner-subHeader'>
+              <p className="py-6 text-lg">{t("bannerParagraph")}</p>
+              
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              className="btn btn-x md:btn-md lg:btn-lg my-3">{t("bannerBtn")}</motion.button>
+              </span>
+            <div className="countup text-primary my-4 grid lg:grid-cols-3 sm:grid-cols-1 gap-2">
                         <div className="count1">
                         <h4 className='secondary'><CountUp end={262} />k+
                         </h4>

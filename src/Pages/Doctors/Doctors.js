@@ -1,7 +1,8 @@
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useQuery } from 'react-query';
-import './Doctors.css'
+import { Link } from 'react-router-dom';
+import './Doctor.css'
 
 const Doctors = () => {
     const {data: doctors, isLoading } = useQuery('doctors', () => fetch('https://healing-hospitalserver.up.railway.app/doctor',{
@@ -17,7 +18,7 @@ const Doctors = () => {
         <section className="doctor-container">
             <div className="container">
                 <h3>Our Doctors</h3>
-                <div className="doctor-list">
+                <div className="doctor-list px-8 py-1">
                 <div className="doctors-list-card">
                     {doctors.map((doc, index) =>(
                 <div className="card w-96 h-max glass">
@@ -29,7 +30,7 @@ const Doctors = () => {
                         <h2 className="card-title text-white">{doc?.firstname} {doc?.lastname}</h2>
                         <p className='text-white'>{doc?.discription}</p>
                         <div className="card-actions justify-end">
-                            <button>Book Appointment <span className='mr-2'><FontAwesomeIcon icon={faArrowRight}/></span></button>
+                            <button className='btn'><Link to='/appointment'>Book Appointment</Link> <span className='mr-2'><FontAwesomeIcon icon={faArrowRight}/></span></button>
                         </div>
                     </div>
                     </div>

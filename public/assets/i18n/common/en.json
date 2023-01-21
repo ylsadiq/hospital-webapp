@@ -2,8 +2,7 @@
 	"emergency": "Emergency",
 	"home": "Home",
 	"departments": "Departments",
-	"doctor": "Profile",
-	"about": "About",
-	"blog": "Blog",
+	"Doctors": "Profile",
+	"Appointment": "Appointemnt",
 	"contract": "Contract Us"
 }

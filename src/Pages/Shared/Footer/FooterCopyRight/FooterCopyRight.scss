@@ -1,0 +1,48 @@
+.footerCopyRight{
+    text-align: left;
+    background: #1E1E1E;
+    color: #fff;
+
+    .footer-logo{
+        margin: .4rem 0;
+    }
+    .quick-links-section{
+        text-align: left;
+    }
+    svg{
+        margin-right: .4rem;
+        padding: .5rem;
+        border-radius: 50%;
+        color: #fff;
+        background: #575757;
+        transition: all ease-out .2s;
+    }
+    svg:hover{
+        background: #F7F7F7;
+        color: #575757;
+        cursor: pointer;
+    }
+    p{
+        font-size: 12px;
+    }
+    .footer-items{
+        text-align: left;
+        .footer-item{
+            list-style: none;
+        }
+        .footer-link{
+            text-decoration: none;
+            color: #fff;
+        }
+        .quick-links{
+            text-align: left;
+        }
+        .quick-links li{
+            text-align: left;
+        }
+        span{
+            text-align: left;
+            color: #2D89FF;
+        }
+    }
+}

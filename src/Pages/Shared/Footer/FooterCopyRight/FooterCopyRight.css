@@ -1,0 +1,47 @@
+.footerCopyRight {
+  text-align: left;
+  background: #1E1E1E;
+  color: #fff;
+}
+.footerCopyRight .footer-logo {
+  margin: 0.4rem 0;
+}
+.footerCopyRight .quick-links-section {
+  text-align: left;
+}
+.footerCopyRight svg {
+  margin-right: 0.4rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: #fff;
+  background: #575757;
+  transition: all ease-out 0.2s;
+}
+.footerCopyRight svg:hover {
+  background: #F7F7F7;
+  color: #575757;
+  cursor: pointer;
+}
+.footerCopyRight p {
+  font-size: 12px;
+}
+.footerCopyRight .footer-items {
+  text-align: left;
+}
+.footerCopyRight .footer-items .footer-item {
+  list-style: none;
+}
+.footerCopyRight .footer-items .footer-link {
+  text-decoration: none;
+  color: #fff;
+}
+.footerCopyRight .footer-items .quick-links {
+  text-align: left;
+}
+.footerCopyRight .footer-items .quick-links li {
+  text-align: left;
+}
+.footerCopyRight .footer-items span {
+  text-align: left;
+  color: #2D89FF;
+}/*# sourceMappingURL=FooterCopyRight.css.map */

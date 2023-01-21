@@ -23,6 +23,7 @@ import './App.css';
 import Doctors from './Pages/Doctors/Doctors';
 import Menu from './Pages/Shared/Menu/Menu';
 import Navbar from './Pages/Shared/Navbar';
+import FooterCopyRight from './Pages/Shared/Footer/FooterCopyRight/FooterCopyRight';
 
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgetpassword" element={<ForgetPassword />} />
       </Routes>
+      <FooterCopyRight />
       </BrowserRouter> 
     <ToastContainer />   
     </>

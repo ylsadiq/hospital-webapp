@@ -60,9 +60,8 @@ const Menu = () => {
           <li><a>Urology</a></li>
         </ul>
       </li>
-      <li><Link to='/doctors'>{t("doctors")}</Link></li>
+      <li><Link to='/doctors'>{t("Doctors")}</Link></li>
       <li><Link to='/appointment'>{t("Appointment")}</Link></li>
-      <li><a>{t("blog")}</a></li>
       <li><a>{t("contract")}</a></li>
     </ul>
   </div>

@@ -20,9 +20,6 @@ const Home = () => {
             <FAQ />
             <Footer />
            </div>
-           <div className="footer">
-    
-           </div>
         </div>
     );
 };

@@ -2,8 +2,7 @@
     "emergency": "জরুরি",
 	"home": "হোম",
 	"departments": "বিভাগ",
-	"doctor": "ডাক্তার",
-    "about": "সম্পর্কে",
-	"blog": "ব্লগ",
+	"Doctors": "ডাক্তার",
+    "Appointment": "অ্যাপয়েন্টমেন্ট",
 	"contract": "যোগাযোগ"
 }

@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeartPulse, faHouseMedical, faTruckMedical } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import './OurProcess.css'
 
 const OurProcess = () => {
 
-    const cardVariants: Variants = {
+    const cardVariants = {
         offscreen: {
             y: 100,
             opacity: 0

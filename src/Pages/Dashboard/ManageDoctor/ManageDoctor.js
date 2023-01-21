@@ -1,15 +1,19 @@
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import DeleteDoctorsModal from './DeleteDoctorsModal';
 
 const ManageDoctor = () => {
-    const {data: doctors, isLoading } = useQuery('doctors', () => fetch('https://healing-hospitalserver.up.railway.app/doctor',{
+  const [deleteDoctor, setDeleteDoctor] = useState(null);
+
+    const {data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch('https://healing-hospitalserver.up.railway.app/doctor',{
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()));
+    
     if(isLoading){
         return <div className="btn loading">Loading</div>
     }
@@ -40,11 +44,19 @@ const ManageDoctor = () => {
             <td>{doc?.firstname} {doc?.lastname}</td>
             <td>{doc?.email}</td>
             <td>{doc?.specialty}</td>
-            <td><button className='btn btn-error text-white'><FontAwesomeIcon icon={faTrashCan}/></button></td>
+            <td>
+            <label 
+            className='btn btn-error text-white'
+            htmlFor="doctor-modal"
+            onClick={() => setDeleteDoctor(doc?._id)}
+            >
+            <FontAwesomeIcon icon={faTrashCan}/>
+            </label></td>
           </tr>
         ))}
     </tbody>
   </table>
+    {deleteDoctor && <DeleteDoctorsModal deleteDoctor={deleteDoctor} refetch={refetch}/>}
 </div>
     );
 };

@@ -13,7 +13,7 @@ const MyAppointment = () => {
       method: 'GET',
       headers:{
         'Content-Type': 'application/json',
-          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        authorization: `Bearer ${localStorage.getItem('accessToken')}`
       }
   })
   .then(res => res.json()))
@@ -52,7 +52,7 @@ const MyAppointment = () => {
         </span></td>
       </tr>
     </tbody>
-    {deletId && <Modal deletId={deletId} refetch={refetch}/>}
+    {deletId && <Modal deletId={deletId} refetch={refetch} key={index}/>}
       </>
     )}
 

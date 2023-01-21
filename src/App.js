@@ -29,7 +29,8 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    {window.location.pathname !=="/login" ? null : <Navbar /> } 
+    <Navbar />
+    <Menu />
       <Routes>
           <Route path="/" element={<Home />} />{" "}
           <Route path="/home" element={<Home />} />
@@ -37,7 +38,11 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/services" element={<Services />} />
           <Route path="/bookingmodal" element={<AllTreatment />} />
-          <Route path="/doctors" element={<Doctors />} />
+          <Route path="/doctors" element={
+            <RequireAuth>
+              <Doctors />
+            </RequireAuth>
+          } />
           <Route path="/appointment" element={
             <RequireAuth>
               <Appointment />

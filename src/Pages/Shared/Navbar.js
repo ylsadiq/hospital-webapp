@@ -47,10 +47,7 @@ const Navbar = () => {
         />
           </div>
           </div>
-        <span className='px-10'>
-        <Menu />
-        <Banner/>
-        </span>
+
         </nav>
         </section>
     );

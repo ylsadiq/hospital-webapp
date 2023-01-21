@@ -30,10 +30,6 @@ const Menu = () => {
     };
   }, []);
 
-  // const handleLanguageChange = (e) => {
-	// 	setSelected(i18n.changeLanguage(e))
-  //   setSelected(e)
-	// };
     return (
         <div className={`w-full top-0  z-[1000] ${stickyNav ? 'bg-indigo-200 fixed' : ''} }`}>
             <div className="navbar">

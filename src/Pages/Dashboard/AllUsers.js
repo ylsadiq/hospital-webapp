@@ -7,7 +7,7 @@ import { useState } from 'react';
 import AllUsersModal from './AllUsersModal/AllUsersModal';
 
 const AllUsers = () => {
-  const [deletId, setDeleteId] = useState(null);
+  const [userIdDelete, setUserIdDelete] = useState(null);
 
     const {data: users, isLoading, refetch} = useQuery('users', () => fetch('https://healing-hospitalserver.up.railway.app/users', {
         method: 'GET',
@@ -16,7 +16,6 @@ const AllUsers = () => {
         }
     })
     .then(res => res.json()))
-    console.log(deletId);
     if(isLoading){
         return <button className="btn loading">loading</button>
     }
@@ -43,14 +42,14 @@ const AllUsers = () => {
     <td><span className="badge-sm">
     <label
     htmlFor="user-modal"
-    onClick={() => setDeleteId(user?._id)}
+    onClick={() => setUserIdDelete(user?._id)}
     className="btn btn-error btn-xs"><FontAwesomeIcon icon={faTrashCan}/></label></span></td>
    </tr>
  </tbody>
     )}
   </table>
 </div>
-    {deletId && <AllUsersModal deletId={deletId} refetch={refetch}/>}
+    {userIdDelete && <AllUsersModal userIdDelete={userIdDelete} refetch={refetch}/>}
         </div>
     );
 };

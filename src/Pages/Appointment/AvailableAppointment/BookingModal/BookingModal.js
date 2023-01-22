@@ -65,7 +65,7 @@ const BookingModal = ({treatment, date, setTreatment, refetch, slot}) => {
           completeFormStep();
           // JSON.stringify(booking, null, 2);
         console.log(booking);
-        // fetch('https://healing-hospitalserver.up.railway.app/booking', {
+        // fetch('https://hospitalwebapps-production.up.railway.app/booking', {
         //   method: "POST",
         //   headers:{
         //     "content-type": "application/json"

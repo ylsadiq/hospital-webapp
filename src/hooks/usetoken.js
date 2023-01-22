@@ -7,7 +7,7 @@ const useToken = user =>{
         const email = user?.user?.email;
         const currentUser = {email: email}
         if(email){
-            fetch(`https://healing-hospitalserver.up.railway.app/user/${email}`, {
+            fetch(`https://hospitalwebapps-production.up.railway.app/user/${email}`, {
                 method: 'PUT',
                 headers:{
                     'content-type': 'application/json'

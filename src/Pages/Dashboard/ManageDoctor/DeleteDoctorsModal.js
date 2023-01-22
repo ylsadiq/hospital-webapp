@@ -5,7 +5,7 @@ function DeleteDoctorsModal({deleteDoctor, refetch}) {
     const [control, setControl] = useState(true);
 
     const handelCancel = (deleteDoctor) => {
-        const url = `https://healing-hospitalserver.up.railway.app/doctor/${deleteDoctor}`;
+        const url = `https://hospitalwebapps-production.up.railway.app/doctor/${deleteDoctor}`;
         fetch(url, {
          method: "DELETE",
             headers:{

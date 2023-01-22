@@ -9,7 +9,7 @@ import AllUsersModal from './AllUsersModal/AllUsersModal';
 const AllUsers = () => {
   const [userIdDelete, setUserIdDelete] = useState(null);
 
-    const {data: users, isLoading, refetch} = useQuery('users', () => fetch('https://healing-hospitalserver.up.railway.app/users', {
+    const {data: users, isLoading, refetch} = useQuery('users', () => fetch('https://hospitalwebapps-production.up.railway.app/users', {
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

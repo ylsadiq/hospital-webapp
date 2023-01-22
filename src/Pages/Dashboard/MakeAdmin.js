@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const MakeAdmin = ({user, refetch}) => {
     const {email, role} = user;
     const makeAdmin = () =>{
-        fetch(`https://healing-hospitalserver.up.railway.app/user/admin/${email}`,{
+        fetch(`https://hospitalwebapps-production.up.railway.app/user/admin/${email}`,{
             method: 'PUT',
             headers:{
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

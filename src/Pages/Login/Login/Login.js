@@ -68,7 +68,7 @@ const Login = () => {
       </form>
 </div>
 </div>
-<p>Do not have an account yet?<a href="" to='/register' className='text-red-500'>Register now!</a></p>
+<p>Do not have an account yet?<Link href="" to='/register' className='text-red-500'>Register now!</Link></p>
         </div>
     );
 };

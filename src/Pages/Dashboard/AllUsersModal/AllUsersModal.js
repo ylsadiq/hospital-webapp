@@ -5,7 +5,7 @@ function AllUsersModal({userIdDelete, refetch}) {
     const [control, setControl] = useState(true);
 
     const handelCancel = (userIdDelete) => {
-        const url = `https://healing-hospitalserver.up.railway.app/users/${userIdDelete}`;
+        const url = `https://hospitalwebapps-production.up.railway.app/users/${userIdDelete}`;
         fetch(url, {
          method: "DELETE",
             headers:{

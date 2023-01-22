@@ -10,7 +10,7 @@ const AppointmentCalander = ({date, setDate, treatment, setTreatment, slotTime, 
     setSlotTime(slot)
   }
    const { isLoading, refetch, error } = useQuery(['available', formattedDate], () =>
-    fetch(`https://healing-hospitalserver.up.railway.app/available?date=${formattedDate}`).then(res =>
+    fetch(`https://hospitalwebapps-production.up.railway.app/available?date=${formattedDate}`).then(res =>
        res.json()
      )
    )

@@ -9,7 +9,7 @@ import { useQuery } from 'react-query';
 const MyAppointment = () => {
     const [user] = useAuthState(auth);
     const [deletId, setDeleteId] = useState(null);
-    const {data: appointments, isLoading, refetch} = useQuery('appointments', () => fetch(`https://healing-hospitalserver.up.railway.app/booking?patient=${user?.email}`, {
+    const {data: appointments, isLoading, refetch} = useQuery('appointments', () => fetch(`https://hospitalwebapps-production.up.railway.app/booking?patient=${user?.email}`, {
       method: 'GET',
       headers:{
         'Content-Type': 'application/json',

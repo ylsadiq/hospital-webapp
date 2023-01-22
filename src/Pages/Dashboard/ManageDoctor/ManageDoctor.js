@@ -7,7 +7,7 @@ import DeleteDoctorsModal from './DeleteDoctorsModal';
 const ManageDoctor = () => {
   const [deleteDoctor, setDeleteDoctor] = useState(null);
 
-    const {data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch('https://healing-hospitalserver.up.railway.app/doctor',{
+    const {data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch('https://hospitalwebapps-production.up.railway.app/doctor',{
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

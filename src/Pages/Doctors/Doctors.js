@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './Doctor.css'
 
 const Doctors = () => {
-    const {data: doctors, isLoading } = useQuery('doctors', () => fetch('https://healing-hospitalserver.up.railway.app/doctor',{
+    const {data: doctors, isLoading } = useQuery('doctors', () => fetch('https://hospitalwebapps-production.up.railway.app/doctor',{
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
